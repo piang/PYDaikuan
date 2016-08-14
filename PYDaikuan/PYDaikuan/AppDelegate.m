@@ -7,18 +7,62 @@
 //
 
 #import "AppDelegate.h"
+#import "DKIndexViewController.h"
+#import "DKNavigationController.h"
+#import "DKNewsViewController.h"
+#import "DKWebViewController.h"
 
 @interface AppDelegate ()
 
 @end
 
-@implementation AppDelegate
+bool onlineSetting = false;
 
+@implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
     [NSThread sleepForTimeInterval:4.0];//设置启动页面时间
+    
+    onlineSetting = true;
+    
+    DKIndexViewController *indexViewController = [[DKIndexViewController alloc] init];
+    DKNavigationController *indextNC = [[DKNavigationController alloc] initWithRootViewController:indexViewController];
+    indextNC.title = @"第一个容器";
+    
+    DKNewsViewController *newsViewController = [[DKNewsViewController alloc] init];
+    DKNavigationController *newsNC = [[DKNavigationController alloc] initWithRootViewController:newsViewController];
+    newsNC.title = @"第二个容器";
+    
+    DKWebViewController *toolViewController = [[DKWebViewController alloc] initWithUrl:@"https://www.baidu.com"];
+    DKNavigationController *toolNC = [[DKNavigationController alloc] initWithRootViewController:toolViewController];
+    toolNC.title = @"第三个容器";
+    
+    UITabBarController *mainTabBarController = [[UITabBarController alloc] init];
+    
+    if (onlineSetting) {
+        UIViewController *fourthVC = [[UIViewController alloc] init];
+        fourthVC.view.backgroundColor = [UIColor greenColor];
+        UINavigationController *fourthNC = [[UINavigationController alloc] initWithRootViewController:fourthVC];
+        fourthNC.title = @"第四个容器";
+        
+        UIViewController *fifthVC = [[UIViewController alloc] init];
+        fifthVC.view.backgroundColor = [UIColor yellowColor];
+        UINavigationController *fifthNC = [[UINavigationController alloc] initWithRootViewController:fifthVC];
+        fifthNC.title = @"第五个容器";
+        
+        [mainTabBarController setViewControllers:@[indextNC,fourthNC,fifthNC,newsNC,toolNC]];
+    }
+    else {
+        [mainTabBarController setViewControllers:@[indextNC,newsNC,toolNC]];
+    }
+    
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    self.window.rootViewController = mainTabBarController;
+    [self.window makeKeyAndVisible];
+    
+    
     
     return YES;
 }
