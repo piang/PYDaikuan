@@ -29,30 +29,29 @@ bool onlineSetting = false;
     
     DKIndexViewController *indexViewController = [[DKIndexViewController alloc] init];
     DKNavigationController *indextNC = [[DKNavigationController alloc] initWithRootViewController:indexViewController];
-    indextNC.title = @"第一个容器";
+    indextNC.title = @"一键贷款";
     
     DKNewsViewController *newsViewController = [[DKNewsViewController alloc] init];
     DKNavigationController *newsNC = [[DKNavigationController alloc] initWithRootViewController:newsViewController];
-    newsNC.title = @"第二个容器";
+    newsNC.title = @"贷款咨询";
     
-    DKWebViewController *toolViewController = [[DKWebViewController alloc] initWithUrl:@"https://www.baidu.com"];
+    DKWebViewController *toolViewController = [[DKWebViewController alloc] initWithUrl:@"https://www.baidu.com/"];
     DKNavigationController *toolNC = [[DKNavigationController alloc] initWithRootViewController:toolViewController];
-    toolNC.title = @"第三个容器";
+    toolNC.title = @"贷款工具";
     
     UITabBarController *mainTabBarController = [[UITabBarController alloc] init];
     
     if (onlineSetting) {
-        UIViewController *fourthVC = [[UIViewController alloc] init];
-        fourthVC.view.backgroundColor = [UIColor greenColor];
-        UINavigationController *fourthNC = [[UINavigationController alloc] initWithRootViewController:fourthVC];
-        fourthNC.title = @"第四个容器";
+        DKWebViewController *CreditCardVC = [[DKWebViewController alloc] initWithUrl:@"http://8.yun.haodai.com/Mobile/creditcard?ref=hd_11014405"];
+        UINavigationController *CreditCardNC = [[UINavigationController alloc] initWithRootViewController:CreditCardVC];
+        CreditCardVC.title = @"信用卡";
         
         UIViewController *fifthVC = [[UIViewController alloc] init];
         fifthVC.view.backgroundColor = [UIColor yellowColor];
         UINavigationController *fifthNC = [[UINavigationController alloc] initWithRootViewController:fifthVC];
-        fifthNC.title = @"第五个容器";
+        fifthNC.title = @"贷款推荐";
         
-        [mainTabBarController setViewControllers:@[indextNC,fourthNC,fifthNC,newsNC,toolNC]];
+        [mainTabBarController setViewControllers:@[indextNC,CreditCardNC,fifthNC,newsNC,toolNC]];
     }
     else {
         [mainTabBarController setViewControllers:@[indextNC,newsNC,toolNC]];
@@ -61,8 +60,6 @@ bool onlineSetting = false;
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.rootViewController = mainTabBarController;
     [self.window makeKeyAndVisible];
-    
-    
     
     return YES;
 }

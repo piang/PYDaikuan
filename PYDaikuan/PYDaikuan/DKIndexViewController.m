@@ -12,6 +12,7 @@
 @interface DKIndexViewController ()<UITableViewDelegate, UITableViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableview;
+@property (strong, nonatomic) NSArray *dataSource;
 
 @end
 
@@ -22,8 +23,16 @@ extern bool onlineSetting;
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    self.navigationItem.title = @"一键贷款";
+    
+    self.dataSource = @[@{@"image":@"daikuan_rong360",@"url":@"https://m.rong360.com/express?from=sem21&utm_source=dl&utm_medium=cpa&utm_campaign=sem21"},@{@"image":@"daikuan_yiren",@"url":@"https://openapi.haodai.com/h5tuiguang/aff?ref=hd_11014405"},@{@"image":@"daikuan_haodai",@"url":@"https://openapi.haodai.com/h5tuiguang/aff?ref=hd_11014405"},@{@"image":@"daikuan_paipai",@"url":@"http://m.ppdai.com/landingcpsnew.html?regsourceid=xiaoedaikuanwx01"},@{@"image":@"daikuan_feidai",@"url":@"http://a2429.oadz.com/link/C/2429/375050/4J2vGhSAg0xRQn4jSo4n4eY12Qg_/a/0/http://xchannel.feidai.com/FeiDaiWebSite/feidai/down/sourcecount?code=87302"},@{@"image":@"daikuan_shanyin",@"url":@"http://ios.wecash.net/wep/simple_h5.html?version=h5&channelId=327&channelCode=70227a"}];
+    
     self.tableview.delegate = self;
     self.tableview.dataSource = self;
+    
+    self.tableview.tableFooterView = [[UIView alloc] init];
+    self.tableview.separatorStyle = UITableViewCellSeparatorStyleNone;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -34,7 +43,7 @@ extern bool onlineSetting;
 #pragma mark - UITableViewDataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 10;
+    return self.dataSource.count;
 }
 
 
@@ -46,9 +55,14 @@ extern bool onlineSetting;
     
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:indexTableViewCellIdentifier];
+        
+        UIImageView *backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:self.dataSource[indexPath.row][@"image"]]];
+        backgroundView.frame = CGRectMake(10, 5, CGRectGetWidth(self.tableview.frame) - 20, CGRectGetWidth(self.tableview.frame) / 2 - 10);
+        [cell.contentView addSubview:backgroundView];
     }
-    cell.backgroundColor = [UIColor redColor];
-    cell.textLabel.text = [NSString stringWithFormat:@"%ld", (long)indexPath.row];
+    
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    
     return cell;
     
 }
@@ -57,12 +71,16 @@ extern bool onlineSetting;
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (onlineSetting) {
-        DKWebViewController *webVC = [[DKWebViewController alloc] initWithUrl:@"https://www.baidu.com"];
+        DKWebViewController *webVC = [[DKWebViewController alloc] initWithUrl:self.dataSource[indexPath.row][@"url"]];
         [self.navigationController pushViewController:webVC animated:YES];
     }
     else {
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://www.baidu.com"]];
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:self.dataSource[indexPath.row][@"url"]]];
     }
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return CGRectGetWidth(self.tableview.frame) / 2;
 }
 
 /*

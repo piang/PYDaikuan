@@ -8,11 +8,13 @@
 
 #import "DKWebViewController.h"
 
-@interface DKWebViewController ()
+@interface DKWebViewController ()<UIWebViewDelegate>
 
 @property (nonatomic, strong) UIWebView *webview;
 
 @property (nonatomic, strong) NSString *url;
+
+@property (nonatomic, strong) UIButton *gotoInitPageButton;
 
 @end
 
@@ -30,14 +32,15 @@
     // Do any additional setup after loading the view from its nib.
     
     self.webview = [[UIWebView alloc] initWithFrame:self.view.frame];
+    self.webview.delegate = self;
     [self.view addSubview:self.webview];
     [self.webview loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:_url]]];
     
-    UIButton *gotoInitPageButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    gotoInitPageButton.frame = CGRectMake(CGRectGetWidth(self.view.frame) - 200, CGRectGetHeight(self.view.frame) - 200, 100, 100);
-    gotoInitPageButton.backgroundColor = [UIColor redColor];
-    [gotoInitPageButton addTarget:self action:@selector(webviewGoback) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:gotoInitPageButton];
+    self.gotoInitPageButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    self.gotoInitPageButton.frame = CGRectMake(CGRectGetWidth(self.view.frame) - 54 - 15, CGRectGetHeight(self.view.frame) - 54 - 49 - 15, 54, 54);
+    [self.gotoInitPageButton setBackgroundImage:[UIImage imageNamed:@"go_home"] forState:UIControlStateNormal];
+    [self.gotoInitPageButton addTarget:self action:@selector(webviewGoback) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:self.gotoInitPageButton];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -48,10 +51,29 @@
 - (void)webviewGoback {
     if ([self.webview canGoBack]) {
         [self.webview goBack];
+        if ([self.webview.request.URL.description isEqualToString:self.url]) {
+            [self.gotoInitPageButton setBackgroundImage:[UIImage imageNamed:@"go_home"] forState:UIControlStateNormal];
+        }
+        else {
+            [self.gotoInitPageButton setBackgroundImage:[UIImage imageNamed:@"go_back"] forState:UIControlStateNormal];
+        }
     }
-//    else {
-//        [self.navigationController popViewControllerAnimated:YES];
-//    }
+    else {
+        [self.gotoInitPageButton setBackgroundImage:[UIImage imageNamed:@"go_home"] forState:UIControlStateNormal];
+    }
+}
+
+- (void)webViewDidFinishLoad:(UIWebView *)webView {
+    
+    NSString *theTitle=[webView stringByEvaluatingJavaScriptFromString:@"document.title"];
+    self.navigationItem.title = theTitle;
+    
+    if ([self.webview.request.URL.description isEqualToString:self.url]) {
+        [self.gotoInitPageButton setBackgroundImage:[UIImage imageNamed:@"go_home"] forState:UIControlStateNormal];
+    }
+    else {
+        [self.gotoInitPageButton setBackgroundImage:[UIImage imageNamed:@"go_back"] forState:UIControlStateNormal];
+    }
 }
 
 /*

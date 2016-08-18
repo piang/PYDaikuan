@@ -60,7 +60,7 @@
 #pragma mark - UITableViewDelegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    DKWebViewController *webVC = [[DKWebViewController alloc] initWithUrl:@"https://www.baidu.com"];
+    DKWebViewController *webVC = [[DKWebViewController alloc] initWithUrl:@"https://www.baidu.com/"];
     [self.navigationController pushViewController:webVC animated:YES];
 }
 
