@@ -11,6 +11,7 @@
 #import "DKNavigationController.h"
 #import "DKNewsViewController.h"
 #import "DKWebViewController.h"
+#import <AVOSCloud/AVOSCloud.h>
 
 @interface AppDelegate ()
 
@@ -23,10 +24,41 @@ bool onlineSetting = false;
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
+    onlineSetting = [[[NSUserDefaults standardUserDefaults] objectForKey:@"onlineSetting"] boolValue];
+    
+    if (onlineSetting) {
+        [self setupViewController];
+    }
+    
+    else {
+        [AVOSCloud setApplicationId:@"XpuV4q5fN2hj9hGr4CwzYvHO-gzGzoHsz" clientKey:@"vOcE9YRm4PLFdxv3GYrnkTVb"];
+        [AVAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
+        
+        AVQuery *query = [AVQuery queryWithClassName:@"channel_switch"];
+        
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+            [query getObjectInBackgroundWithId:@"57b59a8c8ac2470064451a85" block:^(AVObject *object, NSError *error) {
+                NSLog(@"object%@",object);
+                if (object[@"is_open"]) {
+                    onlineSetting = true;
+                    [[NSUserDefaults standardUserDefaults] setObject:@(onlineSetting) forKey:@"onlineSetting"];
+                }
+                
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [self setupViewController];
+                });
+                
+            }];
+        });
+    }
+    
     [NSThread sleepForTimeInterval:4.0];//设置启动页面时间
+
     
-    onlineSetting = true;
-    
+    return YES;
+}
+
+- (void)setupViewController {
     DKIndexViewController *indexViewController = [[DKIndexViewController alloc] init];
     DKNavigationController *indextNC = [[DKNavigationController alloc] initWithRootViewController:indexViewController];
     indextNC.title = @"一键贷款";
@@ -60,8 +92,7 @@ bool onlineSetting = false;
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.rootViewController = mainTabBarController;
     [self.window makeKeyAndVisible];
-    
-    return YES;
+
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

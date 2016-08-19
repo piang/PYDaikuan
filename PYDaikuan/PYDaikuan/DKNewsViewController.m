@@ -9,9 +9,10 @@
 #import "DKNewsViewController.h"
 #import "DKWebViewController.h"
 
-@interface DKNewsViewController ()<UITableViewDelegate, UITableViewDataSource>
+@interface DKNewsViewController ()<UITableViewDelegate, UITableViewDataSource,NSURLSessionDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableview;
+@property (strong, nonatomic) NSArray *dataSource;
 
 @end
 
@@ -20,8 +21,32 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    self.navigationItem.title = @"贷款咨询";
+    
     self.tableview.delegate = self;
     self.tableview.dataSource = self;
+    
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://api.loan.app887.com/api/Articles.action?keyword=&opc=20&type=%E8%B4%B7%E6%AC%BE%E8%B5%84%E8%AE%AF&uid=658549&npc=0"]];
+    request.timeoutInterval = 15.0;
+    request.HTTPMethod = @"POST";
+    
+    NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
+    NSURLSession *session = [NSURLSession sessionWithConfiguration:configuration delegate:self delegateQueue:nil];
+    
+    NSURLSessionDataTask *postDataTask = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        NSDictionary *responseDic = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+        
+        NSLog(@"%@",responseDic);
+        
+        _dataSource = responseDic[@"root"][@"list"];
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [_tableview reloadData];
+        });
+    }];
+    
+    [postDataTask resume];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -32,7 +57,7 @@
 #pragma mark - UITableViewDataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 10;
+    return self.dataSource.count;
 }
 
 
@@ -44,14 +69,18 @@
     
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:newsTableViewCellIdentifier];
+        cell.textLabel.text = _dataSource[indexPath.row][@"title"];
+        cell.textLabel.numberOfLines = 0;
+        cell.textLabel.lineBreakMode = NSLineBreakByWordWrapping;
+        cell.detailTextLabel.text = _dataSource[indexPath.row][@"CTIME"];
+        cell.detailTextLabel.textColor = [UIColor lightGrayColor];
+        
+        UIImage *pic = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:_dataSource[indexPath.row][@"imglink"]]]];
+        
+        UIImageView *recommandIV = [[UIImageView alloc] initWithFrame:CGRectMake(CGRectGetMaxX(cell.frame) - 112, 0, 112, 63)];
+        recommandIV.image = pic;
+        cell.accessoryView = recommandIV;
     }
-    cell.backgroundColor = [UIColor orangeColor];
-    cell.textLabel.text = [NSString stringWithFormat:@"%ld", (long)indexPath.row];
-    cell.detailTextLabel.text = @"时间";
-    
-    UIImageView *recommandIV = [[UIImageView alloc] initWithFrame:CGRectMake(CGRectGetMaxX(cell.frame) - 100, 0, 100, CGRectGetHeight(cell.frame))];
-    recommandIV.backgroundColor = [UIColor redColor];
-    cell.accessoryView = recommandIV;
     
     return cell;
     
@@ -60,8 +89,12 @@
 #pragma mark - UITableViewDelegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    DKWebViewController *webVC = [[DKWebViewController alloc] initWithUrl:@"https://www.baidu.com/"];
+    DKWebViewController *webVC = [[DKWebViewController alloc] initWithUrl:_dataSource[indexPath.row][@"url"]];
     [self.navigationController pushViewController:webVC animated:YES];
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 100;
 }
 
 /*
