@@ -62,28 +62,33 @@ bool onlineSetting = false;
     DKIndexViewController *indexViewController = [[DKIndexViewController alloc] init];
     DKNavigationController *indextNC = [[DKNavigationController alloc] initWithRootViewController:indexViewController];
     indextNC.title = @"一键贷款";
+    indextNC.tabBarItem.image = [UIImage imageNamed:@"loan"];
     
     DKNewsViewController *newsViewController = [[DKNewsViewController alloc] init];
     DKNavigationController *newsNC = [[DKNavigationController alloc] initWithRootViewController:newsViewController];
-    newsNC.title = @"贷款咨询";
+    newsNC.title = @"贷款资讯";
+    newsNC.tabBarItem.image = [UIImage imageNamed:@"remendaikuanhui"];
     
     DKWebViewController *toolViewController = [[DKWebViewController alloc] initWithUrl:@"https://www.baidu.com/"];
     DKNavigationController *toolNC = [[DKNavigationController alloc] initWithRootViewController:toolViewController];
     toolNC.title = @"贷款工具";
+    toolNC.tabBarItem.image = [UIImage imageNamed:@"jisuanqihui"];
     
     UITabBarController *mainTabBarController = [[UITabBarController alloc] init];
     
     if (onlineSetting) {
-        DKWebViewController *CreditCardVC = [[DKWebViewController alloc] initWithUrl:@"http://8.yun.haodai.com/Mobile/creditcard?ref=hd_11014405"];
-        UINavigationController *CreditCardNC = [[UINavigationController alloc] initWithRootViewController:CreditCardVC];
-        CreditCardVC.title = @"信用卡";
+        DKWebViewController *creditCardVC = [[DKWebViewController alloc] initWithUrl:@"http://8.yun.haodai.com/Mobile/creditcard?ref=hd_11014405"];
+        UINavigationController *creditCardNC = [[UINavigationController alloc] initWithRootViewController:creditCardVC];
+        creditCardNC.title = @"信用卡";
+        creditCardNC.tabBarItem.image = [UIImage imageNamed:@"bank"];
         
         UIViewController *fifthVC = [[UIViewController alloc] init];
         fifthVC.view.backgroundColor = [UIColor yellowColor];
         UINavigationController *fifthNC = [[UINavigationController alloc] initWithRootViewController:fifthVC];
         fifthNC.title = @"贷款推荐";
+        fifthNC.tabBarItem.image = [UIImage imageNamed:@"iconmarka"];
         
-        [mainTabBarController setViewControllers:@[indextNC,CreditCardNC,fifthNC,newsNC,toolNC]];
+        [mainTabBarController setViewControllers:@[indextNC,creditCardNC,fifthNC,newsNC,toolNC]];
     }
     else {
         [mainTabBarController setViewControllers:@[indextNC,newsNC,toolNC]];
