@@ -69,7 +69,7 @@ bool onlineSetting = false;
     newsNC.title = @"贷款资讯";
     newsNC.tabBarItem.image = [UIImage imageNamed:@"remendaikuanhui"];
     
-    DKWebViewController *toolViewController = [[DKWebViewController alloc] initWithUrl:@"https://www.baidu.com/"];
+    DKWebViewController *toolViewController = [[DKWebViewController alloc] initWithUrl:@"http://51daikuan.org/index.php?s=/Mobile/calculator"];
     DKNavigationController *toolNC = [[DKNavigationController alloc] initWithRootViewController:toolViewController];
     toolNC.title = @"贷款工具";
     toolNC.tabBarItem.image = [UIImage imageNamed:@"jisuanqihui"];
@@ -82,13 +82,12 @@ bool onlineSetting = false;
         creditCardNC.title = @"信用卡";
         creditCardNC.tabBarItem.image = [UIImage imageNamed:@"bank"];
         
-        UIViewController *fifthVC = [[UIViewController alloc] init];
-        fifthVC.view.backgroundColor = [UIColor yellowColor];
-        UINavigationController *fifthNC = [[UINavigationController alloc] initWithRootViewController:fifthVC];
-        fifthNC.title = @"贷款推荐";
-        fifthNC.tabBarItem.image = [UIImage imageNamed:@"iconmarka"];
+        DKWebViewController *recommandVC = [[DKWebViewController alloc] initWithUrl:@"https://m.rong360.com/express?from=sem21&utm_source=dl&utm_medium=cpa&utm_campaign=sem21"];
+        UINavigationController *recommandNC = [[UINavigationController alloc] initWithRootViewController:recommandVC];
+        recommandNC.title = @"贷款推荐";
+        recommandNC.tabBarItem.image = [UIImage imageNamed:@"iconmarka"];
         
-        [mainTabBarController setViewControllers:@[indextNC,creditCardNC,fifthNC,newsNC,toolNC]];
+        [mainTabBarController setViewControllers:@[indextNC,creditCardNC,recommandNC,newsNC,toolNC]];
     }
     else {
         [mainTabBarController setViewControllers:@[indextNC,newsNC,toolNC]];
