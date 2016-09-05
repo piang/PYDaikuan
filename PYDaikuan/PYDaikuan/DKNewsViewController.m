@@ -69,18 +69,18 @@
     
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:newsTableViewCellIdentifier];
-        cell.textLabel.text = _dataSource[indexPath.row][@"title"];
-        cell.textLabel.numberOfLines = 0;
-        cell.textLabel.lineBreakMode = NSLineBreakByWordWrapping;
-        cell.detailTextLabel.text = _dataSource[indexPath.row][@"CTIME"];
-        cell.detailTextLabel.textColor = [UIColor lightGrayColor];
-        
-        UIImage *pic = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:_dataSource[indexPath.row][@"imglink"]]]];
-        
-        UIImageView *recommandIV = [[UIImageView alloc] initWithFrame:CGRectMake(CGRectGetMaxX(cell.frame) - 112, 0, 112, 63)];
-        recommandIV.image = pic;
-        cell.accessoryView = recommandIV;
     }
+    cell.textLabel.text = _dataSource[indexPath.row][@"title"];
+    cell.textLabel.numberOfLines = 0;
+    cell.textLabel.lineBreakMode = NSLineBreakByWordWrapping;
+    cell.detailTextLabel.text = _dataSource[indexPath.row][@"CTIME"];
+    cell.detailTextLabel.textColor = [UIColor lightGrayColor];
+    
+    UIImage *pic = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:_dataSource[indexPath.row][@"imglink"]]]];
+    
+    UIImageView *recommandIV = [[UIImageView alloc] initWithFrame:CGRectMake(CGRectGetMaxX(cell.frame) - 112, 0, 112, 63)];
+    recommandIV.image = pic;
+    cell.accessoryView = recommandIV;
     
     return cell;
     

@@ -31,7 +31,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    self.webview = [[UIWebView alloc] initWithFrame:self.view.frame];
+    self.webview = [[UIWebView alloc] initWithFrame:CGRectMake(0, -40, CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame) + 40)];
     self.webview.delegate = self;
     [self.view addSubview:self.webview];
     [self.webview loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:_url]]];
@@ -73,6 +73,18 @@
     }
     else {
         [self.gotoInitPageButton setBackgroundImage:[UIImage imageNamed:@"go_back"] forState:UIControlStateNormal];
+    }
+}
+
+- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
+    
+    NSLog(@"%@",request.URL);
+    
+    if ([request.URL.description hasPrefix:@"http://"] || [request.URL.description hasPrefix:@"https://"]) {
+        return YES;
+    }
+    else {
+        return NO;
     }
 }
 
