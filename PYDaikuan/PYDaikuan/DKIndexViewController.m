@@ -26,7 +26,9 @@ extern bool onlineSetting;
     
     self.navigationItem.title = @"一键贷款";
     
-    self.dataSource = @[@{@"image":@"daikuan_rong360",@"url":@"https://m.rong360.com/express?from=sem21&utm_source=dl&utm_medium=cpa&utm_campaign=sem21"},@{@"image":@"daikuan_haodai",@"url":@"https://openapi.haodai.com/h5tuiguang/aff?ref=hd_11014405"},@{@"image":@"daikuan_yiren",@"url":@"https://openapi.haodai.com/h5tuiguang/aff?ref=hd_11014405"},@{@"image":@"daikuan_feidai",@"url":@"http://a2429.oadz.com/link/C/2429/375050/4J2vGhSAg0xRQn4jSo4n4eY12Qg_/a/0/http://xchannel.feidai.com/FeiDaiWebSite/feidai/down/sourcecount?code=87302"},@{@"image":@"daikuan_paipai",@"url":@"http://m.ppdai.com/landingcpsnew.html?regsourceid=xiaoedaikuanwx01"},@{@"image":@"daikuan_shanyin",@"url":@"http://ios.wecash.net/wep/simple_h5.html?version=h5&channelId=327&channelCode=70227a"}];
+    self.dataSource = @[@{@"image":@"daikuan_rong360",@"url":@"https://m.rong360.com/express?from=sem21&utm_source=huile&utm_medium=cpa&utm_campaign=sem21_1"},@{@"image":@"daikuan_yiren",@"url":@"http://wap.yirendai.com/new/?siteId=2829&source=1"},@{@"image":@"daikuan_shoujidai",@"url":@"http://sjd-m.mobanker.com/?channel=xedkw-llcs"},@{@"image":@"daikuan_haodai",@"url":@"https://loan.rongba.com/H5tuiguang/kff?ref=hd_11016474"},@{@"image":@"daikuan_haodaixinyongka",@"url":@"http://8.yun.haodai.com/?ref=hd_11016474"},@{@"image":@"daikuan_xianjinbaika",@"url":@"http://api.51ygdai.com/act/light-loan?source_tag=H5-yjdk3"}];
+    
+    
     
     self.tableview.delegate = self;
     self.tableview.dataSource = self;
