@@ -514,7 +514,7 @@
 				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = PYDaikuan/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.piang.PYDaikuan;
+				PRODUCT_BUNDLE_IDENTIFIER = com.piang.envelopLoan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "9634812f-6e59-4d9f-996a-aae3e2a29684";
 			};
@@ -528,7 +528,7 @@
 				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = PYDaikuan/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.piang.PYDaikuan;
+				PRODUCT_BUNDLE_IDENTIFIER = com.piang.envelopLoan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "9634812f-6e59-4d9f-996a-aae3e2a29684";
 			};
