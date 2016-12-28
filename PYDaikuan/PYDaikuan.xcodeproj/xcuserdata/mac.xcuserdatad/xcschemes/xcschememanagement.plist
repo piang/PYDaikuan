@@ -7,11 +7,21 @@
 		<key>PYDaikuan.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>0</integer>
+			<integer>1</integer>
+		</dict>
+		<key>imessageApp.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>04350C541E129E9E002D8F7A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>E81B37E91D5F23410018105A</key>
 		<dict>
 			<key>primary</key>
