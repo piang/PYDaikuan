@@ -59,24 +59,24 @@ bool onlineSetting = false;
 }
 
 - (void)setupViewController {
-    DKIndexViewController *indexViewController = [[DKIndexViewController alloc] init];
-    DKNavigationController *indextNC = [[DKNavigationController alloc] initWithRootViewController:indexViewController];
-    indextNC.title = @"一键贷款";
-    indextNC.tabBarItem.image = [UIImage imageNamed:@"loan"];
+
+    
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     
     DKNewsViewController *newsViewController = [[DKNewsViewController alloc] init];
     DKNavigationController *newsNC = [[DKNavigationController alloc] initWithRootViewController:newsViewController];
     newsNC.title = @"贷款资讯";
     newsNC.tabBarItem.image = [UIImage imageNamed:@"remendaikuanhui"];
     
-    DKWebViewController *toolViewController = [[DKWebViewController alloc] initWithUrl:@"http://51daikuan.org/index.php?s=/Mobile/calculator"];
-    DKNavigationController *toolNC = [[DKNavigationController alloc] initWithRootViewController:toolViewController];
-    toolNC.title = @"贷款工具";
-    toolNC.tabBarItem.image = [UIImage imageNamed:@"jisuanqihui"];
-    
-    UITabBarController *mainTabBarController = [[UITabBarController alloc] init];
-    
     if (onlineSetting) {
+        
+        UITabBarController *mainTabBarController = [[UITabBarController alloc] init];
+        
+        DKIndexViewController *indexViewController = [[DKIndexViewController alloc] init];
+        DKNavigationController *indextNC = [[DKNavigationController alloc] initWithRootViewController:indexViewController];
+        indextNC.title = @"一键贷款";
+        indextNC.tabBarItem.image = [UIImage imageNamed:@"loan"];
+        
         DKWebViewController *creditCardVC = [[DKWebViewController alloc] initWithUrl:@"http://8.yun.haodai.com/Mobile/creditcard?ref=hd_11014405"];
         UINavigationController *creditCardNC = [[UINavigationController alloc] initWithRootViewController:creditCardVC];
         creditCardNC.title = @"信用卡";
@@ -87,14 +87,18 @@ bool onlineSetting = false;
         recommandNC.title = @"贷款推荐";
         recommandNC.tabBarItem.image = [UIImage imageNamed:@"iconmarka"];
         
+        DKWebViewController *toolViewController = [[DKWebViewController alloc] initWithUrl:@"http://51daikuan.org/index.php?s=/Mobile/calculator"];
+        DKNavigationController *toolNC = [[DKNavigationController alloc] initWithRootViewController:toolViewController];
+        toolNC.title = @"贷款工具";
+        toolNC.tabBarItem.image = [UIImage imageNamed:@"jisuanqihui"];
+        
         [mainTabBarController setViewControllers:@[indextNC,creditCardNC,recommandNC,newsNC,toolNC]];
+        self.window.rootViewController = mainTabBarController;
     }
     else {
-        [mainTabBarController setViewControllers:@[indextNC,newsNC,toolNC]];
+        self.window.rootViewController = newsNC;
     }
     
-    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    self.window.rootViewController = mainTabBarController;
     [self.window makeKeyAndVisible];
 
 }
