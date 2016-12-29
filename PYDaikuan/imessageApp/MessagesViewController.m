@@ -89,7 +89,17 @@
 // 选中某item
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    
+    [self requestPresentationStyle:MSMessagesAppPresentationStyleCompact];
+    MSMessageTemplateLayout *layout = [[MSMessageTemplateLayout alloc] init];
+    layout.image = [UIImage imageNamed:self.dataSource[indexPath.row][@"image"]];
+    MSMessage *message = [[MSMessage alloc] init];
+    message.layout =layout;
+    message.URL = [NSURL URLWithString:self.dataSource[indexPath.row][@"url"]];
+    [self.activeConversation insertMessage:message completionHandler:^(NSError * _Nullable error) {
+        if (error) {
+            NSLog(@"%@",error);
+        }
+    }];
 }
 
 - (void)didReceiveMemoryWarning {

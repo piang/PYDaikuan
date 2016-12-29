@@ -332,7 +332,8 @@
 				TargetAttributes = {
 					04350C541E129E9E002D8F7A = {
 						CreatedOnToolsVersion = 8.2.1;
-						ProvisioningStyle = Automatic;
+						DevelopmentTeam = XWD5V2T79F;
+						ProvisioningStyle = Manual;
 					};
 					E81B37E91D5F23410018105A = {
 						CreatedOnToolsVersion = 7.3;
@@ -539,11 +540,16 @@
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: YANG PEI (5F2TQYLPLU)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: YANG PEI (5F2TQYLPLU)";
+				DEVELOPMENT_TEAM = XWD5V2T79F;
 				INFOPLIST_FILE = imessageApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.piang.PYDaikuan.imessageApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "a3a57748-f313-424c-908e-e55f6d9ca363";
+				PROVISIONING_PROFILE_SPECIFIER = piangDevProfile;
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
@@ -555,11 +561,16 @@
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: YANG PEI (5F2TQYLPLU)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = XWD5V2T79F;
 				INFOPLIST_FILE = imessageApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.piang.PYDaikuan.imessageApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "a3a57748-f313-424c-908e-e55f6d9ca363";
+				PROVISIONING_PROFILE_SPECIFIER = piangDevProfile;
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
@@ -653,12 +664,14 @@
 			baseConfigurationReference = 67751C3975009EB697E2D97A /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: YANG PEI (5F2TQYLPLU)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: YANG PEI (5F2TQYLPLU)";
 				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = PYDaikuan/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.piang.PYDaikuan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "9634812f-6e59-4d9f-996a-aae3e2a29684";
+				PROVISIONING_PROFILE = "a3a57748-f313-424c-908e-e55f6d9ca363";
 			};
 			name = Debug;
 		};
@@ -667,12 +680,14 @@
 			baseConfigurationReference = 6A8F058EA74A0DC1BC7DBA46 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: YANG PEI (5F2TQYLPLU)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: YANG PEI (5F2TQYLPLU)";
 				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = PYDaikuan/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.piang.PYDaikuan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "9634812f-6e59-4d9f-996a-aae3e2a29684";
+				PROVISIONING_PROFILE = "a3a57748-f313-424c-908e-e55f6d9ca363";
 			};
 			name = Release;
 		};
@@ -732,6 +747,7 @@
 				04350C661E129EA1002D8F7A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E81B37E51D5F23410018105A /* Build configuration list for PBXProject "PYDaikuan" */ = {
 			isa = XCConfigurationList;
