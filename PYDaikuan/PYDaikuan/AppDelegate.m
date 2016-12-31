@@ -11,6 +11,7 @@
 #import "DKNavigationController.h"
 #import "DKNewsViewController.h"
 #import "DKWebViewController.h"
+#import "DKCaculateViewController.h"
 #import <AVOSCloud/AVOSCloud.h>
 
 @interface AppDelegate ()
@@ -63,14 +64,20 @@ bool onlineSetting = false;
     
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     
+    UITabBarController *mainTabBarController = [[UITabBarController alloc] init];
+    
     DKNewsViewController *newsViewController = [[DKNewsViewController alloc] init];
     DKNavigationController *newsNC = [[DKNavigationController alloc] initWithRootViewController:newsViewController];
     newsNC.title = @"贷款资讯";
     newsNC.tabBarItem.image = [UIImage imageNamed:@"remendaikuanhui"];
     
+    DKCaculateViewController *toolViewController = [[DKCaculateViewController alloc] init];
+    DKNavigationController *toolNC = [[DKNavigationController alloc] initWithRootViewController:toolViewController];
+    toolNC.title = @"贷款计算器";
+    toolNC.tabBarItem.image = [UIImage imageNamed:@"jisuanqihui"];
+    
+    
     if (onlineSetting) {
-        
-        UITabBarController *mainTabBarController = [[UITabBarController alloc] init];
         
         DKIndexViewController *indexViewController = [[DKIndexViewController alloc] init];
         DKNavigationController *indextNC = [[DKNavigationController alloc] initWithRootViewController:indexViewController];
@@ -87,17 +94,14 @@ bool onlineSetting = false;
         recommandNC.title = @"贷款推荐";
         recommandNC.tabBarItem.image = [UIImage imageNamed:@"iconmarka"];
         
-        DKWebViewController *toolViewController = [[DKWebViewController alloc] initWithUrl:@"http://51daikuan.org/index.php?s=/Mobile/calculator"];
-        DKNavigationController *toolNC = [[DKNavigationController alloc] initWithRootViewController:toolViewController];
-        toolNC.title = @"贷款工具";
-        toolNC.tabBarItem.image = [UIImage imageNamed:@"jisuanqihui"];
-        
         [mainTabBarController setViewControllers:@[indextNC,creditCardNC,recommandNC,newsNC,toolNC]];
-        self.window.rootViewController = mainTabBarController;
     }
     else {
         self.window.rootViewController = newsNC;
+        [mainTabBarController setViewControllers:@[newsNC,toolNC]];
     }
+    
+    self.window.rootViewController = mainTabBarController;
     
     [self.window makeKeyAndVisible];
 
