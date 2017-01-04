@@ -265,6 +265,7 @@
 				TargetAttributes = {
 					E81B37E91D5F23410018105A = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = 6P9JMUZ9Q3;
 					};
 					E81B38021D5F23410018105A = {
 						CreatedOnToolsVersion = 7.3;
@@ -521,12 +522,16 @@
 			baseConfigurationReference = 67751C3975009EB697E2D97A /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: pei yang (6P9JMUZ9Q3)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: pei yang (6P9JMUZ9Q3)";
+				DEVELOPMENT_TEAM = 6P9JMUZ9Q3;
 				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = PYDaikuan/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.piang.PYDaikuan;
+				PRODUCT_BUNDLE_IDENTIFIER = com.piang.moneybay;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "9634812f-6e59-4d9f-996a-aae3e2a29684";
+				PROVISIONING_PROFILE = "a854c705-64d2-42ed-b881-29713863863f";
+				PROVISIONING_PROFILE_SPECIFIER = moneybagDistribution;
 			};
 			name = Debug;
 		};
@@ -535,12 +540,16 @@
 			baseConfigurationReference = 6A8F058EA74A0DC1BC7DBA46 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: pei yang (6P9JMUZ9Q3)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: pei yang (6P9JMUZ9Q3)";
+				DEVELOPMENT_TEAM = 6P9JMUZ9Q3;
 				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = PYDaikuan/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.piang.PYDaikuan;
+				PRODUCT_BUNDLE_IDENTIFIER = com.piang.moneybay;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "9634812f-6e59-4d9f-996a-aae3e2a29684";
+				PROVISIONING_PROFILE = "a854c705-64d2-42ed-b881-29713863863f";
+				PROVISIONING_PROFILE_SPECIFIER = moneybagDistribution;
 			};
 			name = Release;
 		};
