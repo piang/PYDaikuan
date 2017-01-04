@@ -530,10 +530,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.piang.envelopLoan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "bf523874-cd72-4a08-98b5-f6a5e1cce2bc";
-<<<<<<< HEAD
 				PROVISIONING_PROFILE_SPECIFIER = envelopLoanDistributionProfile;
-=======
->>>>>>> origin/envelop
 			};
 			name = Debug;
 		};
@@ -550,10 +547,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.piang.envelopLoan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "bf523874-cd72-4a08-98b5-f6a5e1cce2bc";
-<<<<<<< HEAD
 				PROVISIONING_PROFILE_SPECIFIER = envelopLoanDistributionProfile;
-=======
->>>>>>> origin/envelop
 			};
 			name = Release;
 		};
