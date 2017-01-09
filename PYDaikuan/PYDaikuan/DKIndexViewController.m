@@ -8,6 +8,7 @@
 
 #import "DKIndexViewController.h"
 #import "DKWebViewController.h"
+#import "UMMobClick/MobClick.h"
 
 @interface DKIndexViewController ()<UITableViewDelegate, UITableViewDataSource>
 
@@ -26,7 +27,7 @@ extern bool onlineSetting;
     
     self.navigationItem.title = @"一键贷款";
     
-    self.dataSource = @[@{@"image":@"daikuan_rong360",@"url":@"https://m.rong360.com/express?from=sem21&utm_source=huile&utm_medium=cpa&utm_campaign=sem21_1"},@{@"image":@"daikuan_yiren",@"url":@"http://wap.yirendai.com/new/?siteId=2829&source=1"},@{@"image":@"daikuan_shoujidai",@"url":@"http://sjd-m.mobanker.com/?channel=xedkw-llcs"},@{@"image":@"daikuan_haodai",@"url":@"https://loan.rongba.com/H5tuiguang/kff?ref=hd_11016474"},@{@"image":@"daikuan_haodaixinyongka",@"url":@"http://8.yun.haodai.com/?ref=hd_11016474"},@{@"image":@"daikuan_xianjinbaika",@"url":@"http://api.51ygdai.com/act/light-loan?source_tag=H5-yjdk3"}];
+    self.dataSource = @[@{@"image":@"daikuan_rong360",@"url":@"https://m.rong360.com/express?from=sem21&utm_source=huile&utm_medium=cpa&utm_campaign=sem21_1",@"event_id":@"touch_rong360"},@{@"image":@"daikuan_yiren",@"url":@"http://wap.yirendai.com/new/?siteId=2829&source=1",@"event_id":@"touch_yiren"},@{@"image":@"daikuan_shoujidai",@"url":@"http://sjd-m.mobanker.com/?channel=xedkw-llcs",@"event_id":@"touch_shoujidai"},@{@"image":@"daikuan_haodai",@"url":@"https://loan.rongba.com/H5tuiguang/kff?ref=hd_11016474",@"event_id":@"touch_haodai"},@{@"image":@"daikuan_haodaixinyongka",@"url":@"http://8.yun.haodai.com/?ref=hd_11016474",@"event_id":@"touch_haodaixinyongka"},@{@"image":@"daikuan_xianjinbaika",@"url":@"http://api.51ygdai.com/act/light-loan?source_tag=H5-yjdk3",@"event_id":@"touch_xianjinbaika"}];
     
     
     
@@ -71,6 +72,7 @@ extern bool onlineSetting;
 #pragma mark - UITableViewDelegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [MobClick event:self.dataSource[indexPath.row][@"event_id"]];
     if (onlineSetting) {
         DKWebViewController *webVC = [[DKWebViewController alloc] initWithUrl:self.dataSource[indexPath.row][@"url"]];
         [self.navigationController pushViewController:webVC animated:YES];
