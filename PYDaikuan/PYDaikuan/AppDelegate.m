@@ -78,7 +78,7 @@ bool onlineSetting = false;
     toolNC.tabBarItem.image = [UIImage imageNamed:@"jisuanqihui"];
     
     
-    if (!onlineSetting) {
+    if (onlineSetting) {
         
         DKIndexViewController *indexViewController = [[DKIndexViewController alloc] init];
         DKNavigationController *indextNC = [[DKNavigationController alloc] initWithRootViewController:indexViewController];
