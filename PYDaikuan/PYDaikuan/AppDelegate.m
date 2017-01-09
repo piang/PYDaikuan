@@ -12,6 +12,7 @@
 #import "DKNewsViewController.h"
 #import "DKWebViewController.h"
 #import "DKCaculateViewController.h"
+#import "DKPersonalTaxViewController.h"
 #import <AVOSCloud/AVOSCloud.h>
 
 @interface AppDelegate ()
@@ -97,8 +98,12 @@ bool onlineSetting = false;
         [mainTabBarController setViewControllers:@[indextNC,creditCardNC,recommandNC,newsNC,toolNC]];
     }
     else {
-        self.window.rootViewController = newsNC;
-        [mainTabBarController setViewControllers:@[newsNC,toolNC]];
+        
+        DKPersonalTaxViewController *personalTaxViewController = [[DKPersonalTaxViewController alloc] init];
+        DKNavigationController *personalNC = [[DKNavigationController alloc] initWithRootViewController:personalTaxViewController];
+        personalNC.title = @"个人所得税计算器";
+        personalNC.tabBarItem.image = [UIImage imageNamed:@"loan"];
+        [mainTabBarController setViewControllers:@[newsNC,toolNC,personalNC]];
     }
     
     self.window.rootViewController = mainTabBarController;
