@@ -23,6 +23,8 @@
 		E81B38131D5F23410018105A /* PYDaikuanUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = E81B38121D5F23410018105A /* PYDaikuanUITests.m */; };
 		E88685571E17D2CA004DF0B1 /* DKCaculateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E88685551E17D2CA004DF0B1 /* DKCaculateViewController.m */; };
 		E88685581E17D2CA004DF0B1 /* DKCaculateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E88685561E17D2CA004DF0B1 /* DKCaculateViewController.xib */; };
+		E8E838071E2332A5005B2483 /* DKPersonalTaxViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8E838051E2332A5005B2483 /* DKPersonalTaxViewController.m */; };
+		E8E838081E2332A5005B2483 /* DKPersonalTaxViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8E838061E2332A5005B2483 /* DKPersonalTaxViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +76,9 @@
 		E88685541E17D2CA004DF0B1 /* DKCaculateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKCaculateViewController.h; sourceTree = "<group>"; };
 		E88685551E17D2CA004DF0B1 /* DKCaculateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKCaculateViewController.m; sourceTree = "<group>"; };
 		E88685561E17D2CA004DF0B1 /* DKCaculateViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DKCaculateViewController.xib; sourceTree = "<group>"; };
+		E8E838041E2332A5005B2483 /* DKPersonalTaxViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKPersonalTaxViewController.h; sourceTree = "<group>"; };
+		E8E838051E2332A5005B2483 /* DKPersonalTaxViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKPersonalTaxViewController.m; sourceTree = "<group>"; };
+		E8E838061E2332A5005B2483 /* DKPersonalTaxViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DKPersonalTaxViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +170,9 @@
 				E88685541E17D2CA004DF0B1 /* DKCaculateViewController.h */,
 				E88685551E17D2CA004DF0B1 /* DKCaculateViewController.m */,
 				E88685561E17D2CA004DF0B1 /* DKCaculateViewController.xib */,
+				E8E838041E2332A5005B2483 /* DKPersonalTaxViewController.h */,
+				E8E838051E2332A5005B2483 /* DKPersonalTaxViewController.m */,
+				E8E838061E2332A5005B2483 /* DKPersonalTaxViewController.xib */,
 			);
 			path = PYDaikuan;
 			sourceTree = "<group>";
@@ -302,6 +310,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				040DB9FA1D60715D002F1B4B /* DKNewsViewController.xib in Resources */,
+				E8E838081E2332A5005B2483 /* DKPersonalTaxViewController.xib in Resources */,
 				E81B37FD1D5F23410018105A /* LaunchScreen.storyboard in Resources */,
 				E81B37FA1D5F23410018105A /* Assets.xcassets in Resources */,
 				E88685581E17D2CA004DF0B1 /* DKCaculateViewController.xib in Resources */,
@@ -385,6 +394,7 @@
 				E81B37F21D5F23410018105A /* AppDelegate.m in Sources */,
 				E88685571E17D2CA004DF0B1 /* DKCaculateViewController.m in Sources */,
 				E81B37EF1D5F23410018105A /* main.m in Sources */,
+				E8E838071E2332A5005B2483 /* DKPersonalTaxViewController.m in Sources */,
 				045435BB1D6052FC00990CCE /* DKWebViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -521,6 +531,7 @@
 			baseConfigurationReference = 67751C3975009EB697E2D97A /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = PYDaikuan/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -535,6 +546,7 @@
 			baseConfigurationReference = 6A8F058EA74A0DC1BC7DBA46 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: YANG PEI (XWD5V2T79F)";
 				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = PYDaikuan/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
