@@ -40,7 +40,7 @@ bool onlineSetting = false;
         AVQuery *query = [AVQuery queryWithClassName:@"channel_switch"];
         
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-            [query getObjectInBackgroundWithId:@"57cce2bca22b9d006ba3c5a0" block:^(AVObject *object, NSError *error) {
+            [query getObjectInBackgroundWithId:@"5874da4c8d6d81006c442122" block:^(AVObject *object, NSError *error) {
                 NSLog(@"object%@",object);
                 if ([object[@"is_open"] boolValue]) {
                     onlineSetting = true;
