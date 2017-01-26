@@ -73,6 +73,7 @@
 		E81B380E1D5F23410018105A /* PYDaikuanUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PYDaikuanUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E81B38121D5F23410018105A /* PYDaikuanUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PYDaikuanUITests.m; sourceTree = "<group>"; };
 		E81B38141D5F23410018105A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E876F37B1E38FCD3004FEE97 /* PYDaikuan.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PYDaikuan.entitlements; sourceTree = "<group>"; };
 		E88685541E17D2CA004DF0B1 /* DKCaculateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKCaculateViewController.h; sourceTree = "<group>"; };
 		E88685551E17D2CA004DF0B1 /* DKCaculateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKCaculateViewController.m; sourceTree = "<group>"; };
 		E88685561E17D2CA004DF0B1 /* DKCaculateViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DKCaculateViewController.xib; sourceTree = "<group>"; };
@@ -149,6 +150,7 @@
 		E81B37EC1D5F23410018105A /* PYDaikuan */ = {
 			isa = PBXGroup;
 			children = (
+				E876F37B1E38FCD3004FEE97 /* PYDaikuan.entitlements */,
 				E81B37F01D5F23410018105A /* AppDelegate.h */,
 				E81B37F11D5F23410018105A /* AppDelegate.m */,
 				E81B37F31D5F23410018105A /* ViewController.h */,
@@ -273,6 +275,12 @@
 				TargetAttributes = {
 					E81B37E91D5F23410018105A = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = 6P9JMUZ9Q3;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					E81B38021D5F23410018105A = {
 						CreatedOnToolsVersion = 7.3;
@@ -531,13 +539,16 @@
 			baseConfigurationReference = C43313ECFFD7D1AC6ADDA151 /* Pods-PYDaikuan.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = PYDaikuan/PYDaikuan.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				DEVELOPMENT_TEAM = 6P9JMUZ9Q3;
 				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = PYDaikuan/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.piang.PYDaikuan;
+				PRODUCT_BUNDLE_IDENTIFIER = com.piang.goldPig;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "9634812f-6e59-4d9f-996a-aae3e2a29684";
+				PROVISIONING_PROFILE = "7431f0eb-d571-4485-97dd-b8ea2acf1382";
+				PROVISIONING_PROFILE_SPECIFIER = goldPigDistributionProfile;
 			};
 			name = Debug;
 		};
@@ -546,13 +557,17 @@
 			baseConfigurationReference = 68FB96051EA03653BF6A915F /* Pods-PYDaikuan.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: YANG PEI (XWD5V2T79F)";
+				CODE_SIGN_ENTITLEMENTS = PYDaikuan/PYDaikuan.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: pei yang (6P9JMUZ9Q3)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: pei yang (6P9JMUZ9Q3)";
+				DEVELOPMENT_TEAM = 6P9JMUZ9Q3;
 				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = PYDaikuan/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.piang.PYDaikuan;
+				PRODUCT_BUNDLE_IDENTIFIER = com.piang.goldPig;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "9634812f-6e59-4d9f-996a-aae3e2a29684";
+				PROVISIONING_PROFILE = "7431f0eb-d571-4485-97dd-b8ea2acf1382";
+				PROVISIONING_PROFILE_SPECIFIER = goldPigDistributionProfile;
 			};
 			name = Release;
 		};

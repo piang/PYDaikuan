@@ -15,8 +15,13 @@
 #import "DKPersonalTaxViewController.h"
 #import <AVOSCloud/AVOSCloud.h>
 #import "UMMobClick/MobClick.h"
+#import "JPUSHService.h"
+// iOS10注册APNs所需头文件
+#ifdef NSFoundationVersionNumber_iOS_9_x_Max
+#import <UserNotifications/UserNotifications.h>
+#endif
 
-@interface AppDelegate ()
+@interface AppDelegate ()<JPUSHRegisterDelegate>
 
 @end
 
@@ -40,7 +45,7 @@ bool onlineSetting = false;
         AVQuery *query = [AVQuery queryWithClassName:@"channel_switch"];
         
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-            [query getObjectInBackgroundWithId:@"57cce2bca22b9d006ba3c5a0" block:^(AVObject *object, NSError *error) {
+            [query getObjectInBackgroundWithId:@"5888c7e22f301e0069b09d3f" block:^(AVObject *object, NSError *error) {
                 NSLog(@"object%@",object);
                 if ([object[@"is_open"] boolValue]) {
                     onlineSetting = true;
@@ -59,8 +64,17 @@ bool onlineSetting = false;
     UMConfigInstance.channelId = @"App Store";
     [MobClick startWithConfigure:UMConfigInstance];//配置以上参数后调用此方法初始化SDK！
     
+    
+    JPUSHRegisterEntity * entity = [[JPUSHRegisterEntity alloc] init];
+    entity.types = JPAuthorizationOptionAlert|JPAuthorizationOptionBadge|JPAuthorizationOptionSound;
+    [JPUSHService registerForRemoteNotificationConfig:entity delegate:self];
+    
+    [JPUSHService setupWithOption:launchOptions appKey:@"4d694f29a1501b6c759c8e28"
+                          channel:@"appstore"
+                 apsForProduction:1
+            advertisingIdentifier:nil];
+    
     [NSThread sleepForTimeInterval:4.0];//设置启动页面时间
-
     
     return YES;
 }
@@ -137,6 +151,13 @@ bool onlineSetting = false;
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+- (void)application:(UIApplication *)application
+didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
+    
+    /// Required - 注册 DeviceToken
+    [JPUSHService registerDeviceToken:deviceToken];
 }
 
 @end
