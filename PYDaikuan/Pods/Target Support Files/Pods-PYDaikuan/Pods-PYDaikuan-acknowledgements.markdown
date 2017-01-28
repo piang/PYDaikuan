@@ -13,6 +13,14 @@ Copyright 2015 LeanCloud, Inc. See https://leancloud.cn/terms.html
 
 Copyright 2015 LeanCloud, Inc. See https://leancloud.cn/terms.html
 
+## JCore
+
+Copyright jpush.cn
+
+## JPush
+
+Copyright jpush.cn
+
 ## UMengAnalytics-NO-IDFA
 
 Copyright 2011 - 2015 UMeng.com. All rights reserved.

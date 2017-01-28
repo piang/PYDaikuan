@@ -4,20 +4,26 @@ PODS:
     - AVOSCloud
   - AVOSCloudIM (3.3.5):
     - AVOSCloud
+  - JCore (1.1.0)
+  - JPush (3.0.1):
+    - JCore (~> 1.1.0)
   - UMengAnalytics-NO-IDFA (4.1.5)
 
 DEPENDENCIES:
   - AVOSCloud
   - AVOSCloudCrashReporting
   - AVOSCloudIM
+  - JPush (~> 3.0.1)
   - UMengAnalytics-NO-IDFA
 
 SPEC CHECKSUMS:
   AVOSCloud: 1fe170768bee7e05bc3ea86e38d5bddb105cb957
   AVOSCloudCrashReporting: 7ad087db785a25d6ef03cb54c2c0b460eb32dabb
   AVOSCloudIM: dc307c48e951fcd861f4ae6db6d807e7b40639c8
+  JCore: 7382f2c62e6fcf08305b735e91f0fb771f448d3d
+  JPush: 427daa60236d0faa9f379cd5bbeb923103162058
   UMengAnalytics-NO-IDFA: f1b08b540eba6ebad044a574cae6d988cf40cfda
 
-PODFILE CHECKSUM: caf7a09925698f51a786b5a1145efc542c24e227
+PODFILE CHECKSUM: e6f7fcdb562c9b9f4d47c25974142ae235f0b7c7
 
 COCOAPODS: 1.0.1
