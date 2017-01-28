@@ -4,4 +4,5 @@ target 'PYDaikuan' do
     pod 'AVOSCloudIM'             # 实时通信模块
     pod 'AVOSCloudCrashReporting' # 错误报告模块
     pod 'UMengAnalytics-NO-IDFA'
+    pod 'JPush', '~> 3.0.1'
 end
