@@ -56,7 +56,7 @@ bool onlineSetting = false;
     }
     
     UMConfigInstance.appKey = @"58731c8fb27b0a2ace001492";
-    UMConfigInstance.channelId = @"App Store";
+    UMConfigInstance.channelId = @"PYDaikuanFirst";
     [MobClick startWithConfigure:UMConfigInstance];//配置以上参数后调用此方法初始化SDK！
     
     [NSThread sleepForTimeInterval:4.0];//设置启动页面时间
