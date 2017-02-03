@@ -4,15 +4,20 @@ PODS:
     - AVOSCloud
   - AVOSCloudIM (3.3.5):
     - AVOSCloud
+  - UMengAnalytics-NO-IDFA (4.1.5)
 
 DEPENDENCIES:
   - AVOSCloud
   - AVOSCloudCrashReporting
   - AVOSCloudIM
+  - UMengAnalytics-NO-IDFA
 
 SPEC CHECKSUMS:
   AVOSCloud: 1fe170768bee7e05bc3ea86e38d5bddb105cb957
   AVOSCloudCrashReporting: 7ad087db785a25d6ef03cb54c2c0b460eb32dabb
   AVOSCloudIM: dc307c48e951fcd861f4ae6db6d807e7b40639c8
+  UMengAnalytics-NO-IDFA: f1b08b540eba6ebad044a574cae6d988cf40cfda
 
-COCOAPODS: 0.39.0
+PODFILE CHECKSUM: caf7a09925698f51a786b5a1145efc542c24e227
+
+COCOAPODS: 1.0.1

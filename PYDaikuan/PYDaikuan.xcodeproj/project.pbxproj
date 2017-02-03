@@ -13,7 +13,6 @@
 		045435B71D604BC200990CCE /* DKIndexViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 045435B51D604BC200990CCE /* DKIndexViewController.xib */; };
 		045435BB1D6052FC00990CCE /* DKWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 045435B91D6052FC00990CCE /* DKWebViewController.m */; };
 		045435C01D605B5A00990CCE /* DKNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 045435BF1D605B5A00990CCE /* DKNavigationController.m */; };
-		A1FFAE521E8808D2E351C10E /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9242ED7F8D43DDF29488B5B4 /* libPods.a */; };
 		E81B37EF1D5F23410018105A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E81B37EE1D5F23410018105A /* main.m */; };
 		E81B37F21D5F23410018105A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E81B37F11D5F23410018105A /* AppDelegate.m */; };
 		E81B37F51D5F23410018105A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E81B37F41D5F23410018105A /* ViewController.m */; };
@@ -23,6 +22,9 @@
 		E81B38131D5F23410018105A /* PYDaikuanUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = E81B38121D5F23410018105A /* PYDaikuanUITests.m */; };
 		E88685571E17D2CA004DF0B1 /* DKCaculateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E88685551E17D2CA004DF0B1 /* DKCaculateViewController.m */; };
 		E88685581E17D2CA004DF0B1 /* DKCaculateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E88685561E17D2CA004DF0B1 /* DKCaculateViewController.xib */; };
+		E8E838071E2332A5005B2483 /* DKPersonalTaxViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8E838051E2332A5005B2483 /* DKPersonalTaxViewController.m */; };
+		E8E838081E2332A5005B2483 /* DKPersonalTaxViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8E838061E2332A5005B2483 /* DKPersonalTaxViewController.xib */; };
+		F7B5A8A723E263B1DD443446 /* libPods-PYDaikuan.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C9CEC01C8C4EE85303CC7C82 /* libPods-PYDaikuan.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,9 +55,9 @@
 		045435B91D6052FC00990CCE /* DKWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKWebViewController.m; sourceTree = "<group>"; };
 		045435BE1D605B5A00990CCE /* DKNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKNavigationController.h; sourceTree = "<group>"; };
 		045435BF1D605B5A00990CCE /* DKNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKNavigationController.m; sourceTree = "<group>"; };
-		67751C3975009EB697E2D97A /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
-		6A8F058EA74A0DC1BC7DBA46 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
-		9242ED7F8D43DDF29488B5B4 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		68FB96051EA03653BF6A915F /* Pods-PYDaikuan.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PYDaikuan.release.xcconfig"; path = "Pods/Target Support Files/Pods-PYDaikuan/Pods-PYDaikuan.release.xcconfig"; sourceTree = "<group>"; };
+		C43313ECFFD7D1AC6ADDA151 /* Pods-PYDaikuan.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PYDaikuan.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PYDaikuan/Pods-PYDaikuan.debug.xcconfig"; sourceTree = "<group>"; };
+		C9CEC01C8C4EE85303CC7C82 /* libPods-PYDaikuan.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PYDaikuan.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E81B37EA1D5F23410018105A /* PYDaikuan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PYDaikuan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E81B37EE1D5F23410018105A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E81B37F01D5F23410018105A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -74,6 +76,9 @@
 		E88685541E17D2CA004DF0B1 /* DKCaculateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKCaculateViewController.h; sourceTree = "<group>"; };
 		E88685551E17D2CA004DF0B1 /* DKCaculateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKCaculateViewController.m; sourceTree = "<group>"; };
 		E88685561E17D2CA004DF0B1 /* DKCaculateViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DKCaculateViewController.xib; sourceTree = "<group>"; };
+		E8E838041E2332A5005B2483 /* DKPersonalTaxViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKPersonalTaxViewController.h; sourceTree = "<group>"; };
+		E8E838051E2332A5005B2483 /* DKPersonalTaxViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKPersonalTaxViewController.m; sourceTree = "<group>"; };
+		E8E838061E2332A5005B2483 /* DKPersonalTaxViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DKPersonalTaxViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,7 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A1FFAE521E8808D2E351C10E /* libPods.a in Frameworks */,
+				F7B5A8A723E263B1DD443446 /* libPods-PYDaikuan.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -102,19 +107,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2EEE3D966E5575EC894C279D /* Pods */ = {
+		0601B26FEFD48718140EFF32 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				67751C3975009EB697E2D97A /* Pods.debug.xcconfig */,
-				6A8F058EA74A0DC1BC7DBA46 /* Pods.release.xcconfig */,
+				C43313ECFFD7D1AC6ADDA151 /* Pods-PYDaikuan.debug.xcconfig */,
+				68FB96051EA03653BF6A915F /* Pods-PYDaikuan.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		568DF8B1430B03176A60739D /* Frameworks */ = {
+		4563EC819146B9987E82CF5F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				9242ED7F8D43DDF29488B5B4 /* libPods.a */,
+				C9CEC01C8C4EE85303CC7C82 /* libPods-PYDaikuan.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -126,8 +131,8 @@
 				E81B38061D5F23410018105A /* PYDaikuanTests */,
 				E81B38111D5F23410018105A /* PYDaikuanUITests */,
 				E81B37EB1D5F23410018105A /* Products */,
-				2EEE3D966E5575EC894C279D /* Pods */,
-				568DF8B1430B03176A60739D /* Frameworks */,
+				0601B26FEFD48718140EFF32 /* Pods */,
+				4563EC819146B9987E82CF5F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -165,6 +170,9 @@
 				E88685541E17D2CA004DF0B1 /* DKCaculateViewController.h */,
 				E88685551E17D2CA004DF0B1 /* DKCaculateViewController.m */,
 				E88685561E17D2CA004DF0B1 /* DKCaculateViewController.xib */,
+				E8E838041E2332A5005B2483 /* DKPersonalTaxViewController.h */,
+				E8E838051E2332A5005B2483 /* DKPersonalTaxViewController.m */,
+				E8E838061E2332A5005B2483 /* DKPersonalTaxViewController.xib */,
 			);
 			path = PYDaikuan;
 			sourceTree = "<group>";
@@ -202,12 +210,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E81B38171D5F23410018105A /* Build configuration list for PBXNativeTarget "PYDaikuan" */;
 			buildPhases = (
-				04A30D78170803D96575982D /* Check Pods Manifest.lock */,
+				19401D3C4C14BA05B225C5CC /* [CP] Check Pods Manifest.lock */,
 				E81B37E61D5F23410018105A /* Sources */,
 				E81B37E71D5F23410018105A /* Frameworks */,
 				E81B37E81D5F23410018105A /* Resources */,
-				0C316CC7D95865C29A361054 /* Embed Pods Frameworks */,
-				B3178B37EB1EA2D5C30E10BF /* Copy Pods Resources */,
+				B551BD8C4F4898E6B27FD957 /* [CP] Embed Pods Frameworks */,
+				641B6FF6C9D83454FDA7DF3A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -303,6 +311,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				040DB9FA1D60715D002F1B4B /* DKNewsViewController.xib in Resources */,
+				E8E838081E2332A5005B2483 /* DKPersonalTaxViewController.xib in Resources */,
 				E81B37FD1D5F23410018105A /* LaunchScreen.storyboard in Resources */,
 				E81B37FA1D5F23410018105A /* Assets.xcassets in Resources */,
 				E88685581E17D2CA004DF0B1 /* DKCaculateViewController.xib in Resources */,
@@ -327,14 +336,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		04A30D78170803D96575982D /* Check Pods Manifest.lock */ = {
+		19401D3C4C14BA05B225C5CC /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -342,34 +351,34 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		0C316CC7D95865C29A361054 /* Embed Pods Frameworks */ = {
+		641B6FF6C9D83454FDA7DF3A /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PYDaikuan/Pods-PYDaikuan-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		B3178B37EB1EA2D5C30E10BF /* Copy Pods Resources */ = {
+		B551BD8C4F4898E6B27FD957 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PYDaikuan/Pods-PYDaikuan-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -386,6 +395,7 @@
 				E81B37F21D5F23410018105A /* AppDelegate.m in Sources */,
 				E88685571E17D2CA004DF0B1 /* DKCaculateViewController.m in Sources */,
 				E81B37EF1D5F23410018105A /* main.m in Sources */,
+				E8E838071E2332A5005B2483 /* DKPersonalTaxViewController.m in Sources */,
 				045435BB1D6052FC00990CCE /* DKWebViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -519,7 +529,7 @@
 		};
 		E81B38181D5F23410018105A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 67751C3975009EB697E2D97A /* Pods.debug.xcconfig */;
+			baseConfigurationReference = C43313ECFFD7D1AC6ADDA151 /* Pods-PYDaikuan.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: pei yang (6P9JMUZ9Q3)";
@@ -537,7 +547,7 @@
 		};
 		E81B38191D5F23410018105A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6A8F058EA74A0DC1BC7DBA46 /* Pods.release.xcconfig */;
+			baseConfigurationReference = 68FB96051EA03653BF6A915F /* Pods-PYDaikuan.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: pei yang (6P9JMUZ9Q3)";
