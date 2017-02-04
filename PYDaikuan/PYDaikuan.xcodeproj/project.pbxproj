@@ -275,7 +275,7 @@
 				TargetAttributes = {
 					E81B37E91D5F23410018105A = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = XWD5V2T79F;
+						DevelopmentTeam = 6P9JMUZ9Q3;
 						SystemCapabilities = {
 							com.apple.Push = {
 								enabled = 1;
@@ -540,15 +540,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = PYDaikuan/PYDaikuan.entitlements;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: YANG PEI (XWD5V2T79F)";
-				DEVELOPMENT_TEAM = XWD5V2T79F;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: pei yang (6P9JMUZ9Q3)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: pei yang (6P9JMUZ9Q3)";
+				DEVELOPMENT_TEAM = 6P9JMUZ9Q3;
 				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = PYDaikuan/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.piang.PYPin;
+				PRODUCT_BUNDLE_IDENTIFIER = com.piang.pin;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "379c7d11-09ff-4a5e-b543-f3f5d0de2bad";
-				PROVISIONING_PROFILE_SPECIFIER = PYPinDistributionProfile;
+				PROVISIONING_PROFILE = "624df7cb-4e6e-46fd-a846-f02b308c8d05";
+				PROVISIONING_PROFILE_SPECIFIER = piangPinDistributionProfile;
 			};
 			name = Debug;
 		};
@@ -558,16 +559,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = PYDaikuan/PYDaikuan.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: YANG PEI (XWD5V2T79F)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: YANG PEI (XWD5V2T79F)";
-				DEVELOPMENT_TEAM = XWD5V2T79F;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: pei yang (6P9JMUZ9Q3)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: pei yang (6P9JMUZ9Q3)";
+				DEVELOPMENT_TEAM = 6P9JMUZ9Q3;
 				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = PYDaikuan/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.piang.PYPin;
+				PRODUCT_BUNDLE_IDENTIFIER = com.piang.pin;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "379c7d11-09ff-4a5e-b543-f3f5d0de2bad";
-				PROVISIONING_PROFILE_SPECIFIER = PYPinDistributionProfile;
+				PROVISIONING_PROFILE = "624df7cb-4e6e-46fd-a846-f02b308c8d05";
+				PROVISIONING_PROFILE_SPECIFIER = piangPinDistributionProfile;
 			};
 			name = Release;
 		};
