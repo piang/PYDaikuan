@@ -70,7 +70,7 @@ bool onlineSetting = false;
     [JPUSHService registerForRemoteNotificationConfig:entity delegate:self];
     
     [JPUSHService setupWithOption:launchOptions appKey:@"4d694f29a1501b6c759c8e28"
-                          channel:@"appstore"
+                          channel:@"piangGlass"
                  apsForProduction:1
             advertisingIdentifier:nil];
     
