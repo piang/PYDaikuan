@@ -61,7 +61,7 @@ bool onlineSetting = false;
     }
     
     UMConfigInstance.appKey = @"58731c8fb27b0a2ace001492";
-    UMConfigInstance.channelId = @"App Store";
+    UMConfigInstance.channelId = @"piangGlass";
     [MobClick startWithConfigure:UMConfigInstance];//配置以上参数后调用此方法初始化SDK！
     
     
@@ -70,7 +70,7 @@ bool onlineSetting = false;
     [JPUSHService registerForRemoteNotificationConfig:entity delegate:self];
     
     [JPUSHService setupWithOption:launchOptions appKey:@"4d694f29a1501b6c759c8e28"
-                          channel:@"piangGlass"
+                          channel:@"appstore"
                  apsForProduction:1
             advertisingIdentifier:nil];
     
