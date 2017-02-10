@@ -73,6 +73,7 @@
 		E81B380E1D5F23410018105A /* PYDaikuanUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PYDaikuanUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E81B38121D5F23410018105A /* PYDaikuanUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PYDaikuanUITests.m; sourceTree = "<group>"; };
 		E81B38141D5F23410018105A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E876F37B1E38FCD3004FEE97 /* PYDaikuan.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PYDaikuan.entitlements; sourceTree = "<group>"; };
 		E88685541E17D2CA004DF0B1 /* DKCaculateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKCaculateViewController.h; sourceTree = "<group>"; };
 		E88685551E17D2CA004DF0B1 /* DKCaculateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKCaculateViewController.m; sourceTree = "<group>"; };
 		E88685561E17D2CA004DF0B1 /* DKCaculateViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DKCaculateViewController.xib; sourceTree = "<group>"; };
@@ -149,6 +150,7 @@
 		E81B37EC1D5F23410018105A /* PYDaikuan */ = {
 			isa = PBXGroup;
 			children = (
+				E876F37B1E38FCD3004FEE97 /* PYDaikuan.entitlements */,
 				E81B37F01D5F23410018105A /* AppDelegate.h */,
 				E81B37F11D5F23410018105A /* AppDelegate.m */,
 				E81B37F31D5F23410018105A /* ViewController.h */,
@@ -156,6 +158,7 @@
 				E81B37F91D5F23410018105A /* Assets.xcassets */,
 				E81B37FB1D5F23410018105A /* LaunchScreen.storyboard */,
 				E81B37FE1D5F23410018105A /* Info.plist */,
+				040DB9F71D60715D002F1B4B /* DKNewsViewController.m */,
 				E81B37ED1D5F23410018105A /* Supporting Files */,
 				045435B31D604BC200990CCE /* DKIndexViewController.h */,
 				045435B41D604BC200990CCE /* DKIndexViewController.m */,
@@ -165,7 +168,6 @@
 				045435BE1D605B5A00990CCE /* DKNavigationController.h */,
 				045435BF1D605B5A00990CCE /* DKNavigationController.m */,
 				040DB9F61D60715D002F1B4B /* DKNewsViewController.h */,
-				040DB9F71D60715D002F1B4B /* DKNewsViewController.m */,
 				040DB9F81D60715D002F1B4B /* DKNewsViewController.xib */,
 				E88685541E17D2CA004DF0B1 /* DKCaculateViewController.h */,
 				E88685551E17D2CA004DF0B1 /* DKCaculateViewController.m */,
@@ -273,6 +275,12 @@
 				TargetAttributes = {
 					E81B37E91D5F23410018105A = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = W55A786LR3;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					E81B38021D5F23410018105A = {
 						CreatedOnToolsVersion = 7.3;
@@ -531,15 +539,17 @@
 			baseConfigurationReference = C43313ECFFD7D1AC6ADDA151 /* Pods-PYDaikuan.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: pei yang (6P9JMUZ9Q3)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: pei yang (6P9JMUZ9Q3)";
+				CODE_SIGN_ENTITLEMENTS = PYDaikuan/PYDaikuan.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: dai kuan (W55A786LR3)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: dai kuan (W55A786LR3)";
+				DEVELOPMENT_TEAM = W55A786LR3;
 				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = PYDaikuan/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.piang.thinkMoney;
+				PRODUCT_BUNDLE_IDENTIFIER = com.daikuan.thinkMoney;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "4e74b664-7b9c-4567-ad35-964393bc3987";
-				PROVISIONING_PROFILE_SPECIFIER = thinkMoneyDistributionProfile;
+				PROVISIONING_PROFILE = "7a7ea2a6-1d87-45e8-af09-ed13e7a4b74f";
+				PROVISIONING_PROFILE_SPECIFIER = DaikuanThinkMoneyDistributionProfile;
 			};
 			name = Debug;
 		};
@@ -548,15 +558,17 @@
 			baseConfigurationReference = 68FB96051EA03653BF6A915F /* Pods-PYDaikuan.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: pei yang (6P9JMUZ9Q3)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: pei yang (6P9JMUZ9Q3)";
+				CODE_SIGN_ENTITLEMENTS = PYDaikuan/PYDaikuan.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: dai kuan (W55A786LR3)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: dai kuan (W55A786LR3)";
+				DEVELOPMENT_TEAM = W55A786LR3;
 				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = PYDaikuan/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.piang.thinkMoney;
+				PRODUCT_BUNDLE_IDENTIFIER = com.daikuan.thinkMoney;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "4e74b664-7b9c-4567-ad35-964393bc3987";
-				PROVISIONING_PROFILE_SPECIFIER = thinkMoneyDistributionProfile;
+				PROVISIONING_PROFILE = "c2134b55-b5de-4f37-ba52-7c8f75bef306";
+				PROVISIONING_PROFILE_SPECIFIER = DaikuanThinkMoneyDistributionProfile;
 			};
 			name = Release;
 		};
