@@ -275,7 +275,7 @@
 				TargetAttributes = {
 					E81B37E91D5F23410018105A = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = W55A786LR3;
+						DevelopmentTeam = XWD5V2T79F;
 						SystemCapabilities = {
 							com.apple.Push = {
 								enabled = 1;
@@ -540,16 +540,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = PYDaikuan/PYDaikuan.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: dai kuan (W55A786LR3)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: dai kuan (W55A786LR3)";
-				DEVELOPMENT_TEAM = W55A786LR3;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: YANG PEI (XWD5V2T79F)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: YANG PEI (XWD5V2T79F)";
+				DEVELOPMENT_TEAM = XWD5V2T79F;
 				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = PYDaikuan/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.daikuan.thinkMoney;
+				PRODUCT_BUNDLE_IDENTIFIER = com.piang.PYWallet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "7a7ea2a6-1d87-45e8-af09-ed13e7a4b74f";
-				PROVISIONING_PROFILE_SPECIFIER = DaikuanThinkMoneyDistributionProfile;
+				PROVISIONING_PROFILE = "399fdfae-f8be-439e-8e28-097aaa9c5ae5";
+				PROVISIONING_PROFILE_SPECIFIER = PYWalletDistributionProfile;
 			};
 			name = Debug;
 		};
@@ -559,16 +559,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = PYDaikuan/PYDaikuan.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: dai kuan (W55A786LR3)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: dai kuan (W55A786LR3)";
-				DEVELOPMENT_TEAM = W55A786LR3;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: YANG PEI (XWD5V2T79F)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: YANG PEI (XWD5V2T79F)";
+				DEVELOPMENT_TEAM = XWD5V2T79F;
 				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = PYDaikuan/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.daikuan.thinkMoney;
+				PRODUCT_BUNDLE_IDENTIFIER = com.piang.PYWallet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "c2134b55-b5de-4f37-ba52-7c8f75bef306";
-				PROVISIONING_PROFILE_SPECIFIER = DaikuanThinkMoneyDistributionProfile;
+				PROVISIONING_PROFILE = "399fdfae-f8be-439e-8e28-097aaa9c5ae5";
+				PROVISIONING_PROFILE_SPECIFIER = PYWalletDistributionProfile;
 			};
 			name = Release;
 		};
