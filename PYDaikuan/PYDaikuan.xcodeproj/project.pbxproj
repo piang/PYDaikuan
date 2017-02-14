@@ -275,7 +275,7 @@
 				TargetAttributes = {
 					E81B37E91D5F23410018105A = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = 6P9JMUZ9Q3;
+						DevelopmentTeam = W55A786LR3;
 						SystemCapabilities = {
 							com.apple.Push = {
 								enabled = 1;
@@ -540,15 +540,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = PYDaikuan/PYDaikuan.entitlements;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: pei yang (6P9JMUZ9Q3)";
-				DEVELOPMENT_TEAM = 6P9JMUZ9Q3;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: dai kuan (W55A786LR3)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: dai kuan (W55A786LR3)";
+				DEVELOPMENT_TEAM = W55A786LR3;
 				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = PYDaikuan/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.piang.flag2;
+				PRODUCT_BUNDLE_IDENTIFIER = com.daikuan.flag2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "26d5e750-cc48-4162-951d-9400effeea0d";
-				PROVISIONING_PROFILE_SPECIFIER = piangFlag2DistributionProfile;
+				PROVISIONING_PROFILE = "7adbc6eb-f789-4030-946b-b988e0064fc2";
+				PROVISIONING_PROFILE_SPECIFIER = daikuanFlag2DistributionProfile;
 			};
 			name = Debug;
 		};
@@ -558,16 +559,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = PYDaikuan/PYDaikuan.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: pei yang (6P9JMUZ9Q3)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: pei yang (6P9JMUZ9Q3)";
-				DEVELOPMENT_TEAM = 6P9JMUZ9Q3;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: dai kuan (W55A786LR3)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: dai kuan (W55A786LR3)";
+				DEVELOPMENT_TEAM = W55A786LR3;
 				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = PYDaikuan/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.piang.flag2;
+				PRODUCT_BUNDLE_IDENTIFIER = com.daikuan.flag2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "26d5e750-cc48-4162-951d-9400effeea0d";
-				PROVISIONING_PROFILE_SPECIFIER = piangFlag2DistributionProfile;
+				PROVISIONING_PROFILE = "7adbc6eb-f789-4030-946b-b988e0064fc2";
+				PROVISIONING_PROFILE_SPECIFIER = daikuanFlag2DistributionProfile;
 			};
 			name = Release;
 		};
