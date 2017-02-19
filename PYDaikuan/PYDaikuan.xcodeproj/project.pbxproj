@@ -275,7 +275,7 @@
 				TargetAttributes = {
 					E81B37E91D5F23410018105A = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = 6P9JMUZ9Q3;
+						DevelopmentTeam = XWD5V2T79F;
 						SystemCapabilities = {
 							com.apple.Push = {
 								enabled = 1;
@@ -540,16 +540,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = PYDaikuan/PYDaikuan.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: pei yang (6P9JMUZ9Q3)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: pei yang (6P9JMUZ9Q3)";
-				DEVELOPMENT_TEAM = 6P9JMUZ9Q3;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: YANG PEI (XWD5V2T79F)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: YANG PEI (XWD5V2T79F)";
+				DEVELOPMENT_TEAM = XWD5V2T79F;
 				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = PYDaikuan/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.piang.thinkMoney2;
+				PRODUCT_BUNDLE_IDENTIFIER = com.piang.PYThinkMoney;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "f4d7ad37-dda6-4726-8dac-40cd19e63cca";
-				PROVISIONING_PROFILE_SPECIFIER = piangThinkMoney2DistributionProfile;
+				PROVISIONING_PROFILE = "9c5c609e-d33d-4636-872a-68095a810181";
+				PROVISIONING_PROFILE_SPECIFIER = PYThinkMoneyDistributionProfile;
 			};
 			name = Debug;
 		};
@@ -559,16 +559,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = PYDaikuan/PYDaikuan.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: pei yang (6P9JMUZ9Q3)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: pei yang (6P9JMUZ9Q3)";
-				DEVELOPMENT_TEAM = 6P9JMUZ9Q3;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: YANG PEI (XWD5V2T79F)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: YANG PEI (XWD5V2T79F)";
+				DEVELOPMENT_TEAM = XWD5V2T79F;
 				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = PYDaikuan/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.piang.thinkMoney2;
+				PRODUCT_BUNDLE_IDENTIFIER = com.piang.PYThinkMoney;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "f4d7ad37-dda6-4726-8dac-40cd19e63cca";
-				PROVISIONING_PROFILE_SPECIFIER = piangThinkMoney2DistributionProfile;
+				PROVISIONING_PROFILE = "9c5c609e-d33d-4636-872a-68095a810181";
+				PROVISIONING_PROFILE_SPECIFIER = PYThinkMoneyDistributionProfile;
 			};
 			name = Release;
 		};

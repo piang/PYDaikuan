@@ -61,7 +61,7 @@ bool onlineSetting = false;
     }
     
     UMConfigInstance.appKey = @"58731c8fb27b0a2ace001492";
-    UMConfigInstance.channelId = @"piangThinkMoney";
+    UMConfigInstance.channelId = @"PYThinkMoney";
     [MobClick startWithConfigure:UMConfigInstance];//配置以上参数后调用此方法初始化SDK！
     
     
