@@ -9,6 +9,7 @@
 #import "DKIndexViewController.h"
 #import "DKWebViewController.h"
 #import "UMMobClick/MobClick.h"
+#import "AppDelegate.h"
 
 @interface DKIndexViewController ()<UITableViewDelegate, UITableViewDataSource>
 
@@ -73,13 +74,13 @@ extern bool onlineSetting;
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [MobClick event:self.dataSource[indexPath.row][@"event_id"]];
-    if (onlineSetting) {
+    //if (onlineSetting) {
         DKWebViewController *webVC = [[DKWebViewController alloc] initWithUrl:self.dataSource[indexPath.row][@"url"]];
         [self.navigationController pushViewController:webVC animated:YES];
-    }
-    else {
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:self.dataSource[indexPath.row][@"url"]]];
-    }
+    //}
+    //else {
+        //[[UIApplication sharedApplication] openURL:[NSURL URLWithString:self.dataSource[indexPath.row][@"url"]]];
+    //}
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {

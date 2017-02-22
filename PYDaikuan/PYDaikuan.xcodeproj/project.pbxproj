@@ -275,7 +275,7 @@
 				TargetAttributes = {
 					E81B37E91D5F23410018105A = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = W55A786LR3;
+						DevelopmentTeam = XWD5V2T79F;
 						SystemCapabilities = {
 							com.apple.Push = {
 								enabled = 1;
@@ -541,14 +541,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = PYDaikuan/PYDaikuan.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				DEVELOPMENT_TEAM = W55A786LR3;
+				DEVELOPMENT_TEAM = XWD5V2T79F;
 				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = PYDaikuan/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.daikuan.whiteCard;
+				PRODUCT_BUNDLE_IDENTIFIER = com.piang.PYRocket;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "7be8d7b3-abab-47b3-945c-f687c5fa27de";
-				PROVISIONING_PROFILE_SPECIFIER = daikuanWhiteCardDistributionProfile;
+				PROVISIONING_PROFILE = "bdb66c77-9f94-4c0f-b766-6178f8171bbd";
+				PROVISIONING_PROFILE_SPECIFIER = PYRocketDistributionProfile;
 			};
 			name = Debug;
 		};
@@ -558,16 +558,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = PYDaikuan/PYDaikuan.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: pei yang (6P9JMUZ9Q3)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: dai kuan (W55A786LR3)";
-				DEVELOPMENT_TEAM = W55A786LR3;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: YANG PEI (XWD5V2T79F)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: YANG PEI (XWD5V2T79F)";
+				DEVELOPMENT_TEAM = XWD5V2T79F;
 				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = PYDaikuan/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.daikuan.whiteCard;
+				PRODUCT_BUNDLE_IDENTIFIER = com.piang.PYRocket;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "7be8d7b3-abab-47b3-945c-f687c5fa27de";
-				PROVISIONING_PROFILE_SPECIFIER = daikuanWhiteCardDistributionProfile;
+				PROVISIONING_PROFILE = "bdb66c77-9f94-4c0f-b766-6178f8171bbd";
+				PROVISIONING_PROFILE_SPECIFIER = PYRocketDistributionProfile;
 			};
 			name = Release;
 		};
