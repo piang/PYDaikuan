@@ -12,7 +12,7 @@
 
 @interface DKAccountViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (strong, nonatomic) NSArray *dataSource;
+@property (strong, nonatomic) NSArray <NSArray *> *dataSource;
 
 @end
 
@@ -76,8 +76,12 @@
 
 #pragma mark - UITableViewDataSource
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return self.dataSource.count;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return self.dataSource[section].count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -88,48 +92,44 @@
     
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:indexTableViewCellIdentifier];
+        cell.backgroundColor = [UIColor redColor];
     }
     
     return cell;
     
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 40.0f;
+}
+
 - (void)loginAction:(UIButton *)sender {
+    
+    __weak DKAccountViewController *ws = self;
+    
 #ifdef UM_Swift
-    [UMSocialSwiftInterface authWithPlattype:authInfo.platform viewController:nil completion:^(id result, NSError * error) {
+    [UMSocialSwiftInterface getUserInfoWithPlattype:ws.authInfo.platform viewController:self completion:^(id result, NSError * error) {
 #else
-        [[UMSocialManager defaultManager] authWithPlatform:sender.tag currentViewController:nil completion:^(id result, NSError *error) {
+        [[UMSocialManager defaultManager] getUserInfoWithPlatform:sender.tag currentViewController:self completion:^(id result, NSError *error) {
 #endif
             
             NSString *message = nil;
             
             if (error) {
-                message = @"Get info fail";
+                message = [NSString stringWithFormat:@"Get info fail:\n%@", error];
                 UMSocialLogInfo(@"Get info fail with error %@",error);
-            } else {
-                
-                if ([result isKindOfClass:[UMSocialAuthResponse class]]) {
-                    UMSocialAuthResponse * resp = result;
+            }else{
+                if ([result isKindOfClass:[UMSocialUserInfoResponse class]]) {
                     
-                    UMSocialUserInfoResponse *userInfoResp = [[UMSocialUserInfoResponse alloc] init];
-                    userInfoResp.uid = resp.uid;
-                    userInfoResp.openid = resp.openid;
-                    userInfoResp.accessToken = resp.accessToken;
-                    userInfoResp.refreshToken = resp.refreshToken;
-                    userInfoResp.expiration = resp.expiration;
+                    UMSocialUserInfoResponse *resp = result;
+                    
+                    ws.dataSource = @[@[@{@"iconurl":resp.iconurl},@{@"name":resp.name},@{@"gender":resp.gender}]];
+                    
+                    [ws.tableView reloadData];
                     
                 }else{
                     message = @"Get info fail";
-                    UMSocialLogInfo(@"Get info fail with  unknow error");
                 }
-            }
-            if (message) {
-                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Auth info"
-                                                                message:message
-                                                               delegate:nil
-                                                      cancelButtonTitle:NSLocalizedString(@"sure", @"确定")
-                                                      otherButtonTitles:nil];
-                [alert show];
             }
         }];
         
