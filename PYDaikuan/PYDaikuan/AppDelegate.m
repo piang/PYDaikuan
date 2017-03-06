@@ -45,7 +45,7 @@ bool onlineSetting = false;
         AVQuery *query = [AVQuery queryWithClassName:@"channel_switch"];
         
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-            [query getObjectInBackgroundWithId:@"5888c7e22f301e0069b09d3f" block:^(AVObject *object, NSError *error) {
+            [query getObjectInBackgroundWithId:@"58bcfd64570c350059adb82c" block:^(AVObject *object, NSError *error) {
                 NSLog(@"object%@",object);
                 if ([object[@"is_open"] boolValue]) {
                     onlineSetting = true;
@@ -61,7 +61,7 @@ bool onlineSetting = false;
     }
     
     UMConfigInstance.appKey = @"58731c8fb27b0a2ace001492";
-    UMConfigInstance.channelId = @"App Store";
+    UMConfigInstance.channelId = @"piangGoldPig";
     [MobClick startWithConfigure:UMConfigInstance];//配置以上参数后调用此方法初始化SDK！
     
     
