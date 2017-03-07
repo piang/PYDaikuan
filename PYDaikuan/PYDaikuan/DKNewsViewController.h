@@ -10,4 +10,6 @@
 
 @interface DKNewsViewController : ViewController
 
+- (instancetype)initWithType:(int)type;
+
 @end

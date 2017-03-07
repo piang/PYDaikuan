@@ -16,6 +16,8 @@
 
 @property (nonatomic, strong) UIButton *gotoInitPageButton;
 
+@property (nonatomic, strong) UIAlertController *alertController;
+
 @end
 
 @implementation DKWebViewController
@@ -41,6 +43,40 @@
     [self.gotoInitPageButton setBackgroundImage:[UIImage imageNamed:@"go_home"] forState:UIControlStateNormal];
     [self.gotoInitPageButton addTarget:self action:@selector(webviewGoback) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:self.gotoInitPageButton];
+    
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(rightItemAction:)];
+    
+    self.alertController = [UIAlertController alertControllerWithTitle:@"" message:@"选择操作" preferredStyle:UIAlertControllerStyleActionSheet];
+    
+    UIAlertAction *shareAction = [UIAlertAction actionWithTitle:@"分享" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+    }];
+    
+    UIAlertAction *collectAction = [UIAlertAction actionWithTitle:@"收藏" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        NSMutableArray *dataSource = [[NSUserDefaults standardUserDefaults] objectForKey:@"colletArticles"];
+        
+        if (dataSource == nil) {
+            dataSource = [[NSMutableArray alloc] initWithCapacity:5];
+        }
+        
+        NSDate *date = [NSDate date];
+        
+        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+        
+        [formatter setDateFormat:@"YYYY-MM-dd hh:mm:ss"];
+        NSString *DateTime = [formatter stringFromDate:date];
+        
+        [dataSource addObject:@{@"title":[self.webview stringByEvaluatingJavaScriptFromString:@"document.title"],@"url":_url,@"CTIME":DateTime}];
+        [[NSUserDefaults standardUserDefaults] setObject:dataSource forKey:@"colletArticles"];
+
+    }];
+    
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+        
+    }];
+    
+    [self.alertController addAction:shareAction];
+    [self.alertController addAction:collectAction];
+    [self.alertController addAction:cancelAction];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -86,6 +122,12 @@
     else {
         return NO;
     }
+}
+
+- (void)rightItemAction:(UIButton *)sender {
+    [self presentViewController:self.alertController animated:YES completion:^{
+        
+    }];
 }
 
 /*

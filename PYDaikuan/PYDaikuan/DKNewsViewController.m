@@ -18,6 +18,37 @@
 
 @implementation DKNewsViewController
 
+- (instancetype)initWithType:(int)type {
+    if (self = [super init]) {
+        if (type == 0) {
+            NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://api.loan.app887.com/api/Articles.action?keyword=&opc=20&type=%E8%B4%B7%E6%AC%BE%E8%B5%84%E8%AE%AF&uid=658549&npc=0"]];
+            request.timeoutInterval = 15.0;
+            request.HTTPMethod = @"POST";
+            
+            NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
+            NSURLSession *session = [NSURLSession sessionWithConfiguration:configuration delegate:self delegateQueue:nil];
+            
+            NSURLSessionDataTask *postDataTask = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+                NSDictionary *responseDic = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+                
+                NSLog(@"%@",responseDic);
+                
+                _dataSource = responseDic[@"root"][@"list"];
+                
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [_tableview reloadData];
+                });
+            }];
+            
+            [postDataTask resume];
+        }
+        else {
+            _dataSource = [[NSUserDefaults standardUserDefaults] objectForKey:@"colletArticles"];
+        }
+    }
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
@@ -25,27 +56,6 @@
     
     self.tableview.delegate = self;
     self.tableview.dataSource = self;
-    
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://api.loan.app887.com/api/Articles.action?keyword=&opc=20&type=%E8%B4%B7%E6%AC%BE%E8%B5%84%E8%AE%AF&uid=658549&npc=0"]];
-    request.timeoutInterval = 15.0;
-    request.HTTPMethod = @"POST";
-    
-    NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
-    NSURLSession *session = [NSURLSession sessionWithConfiguration:configuration delegate:self delegateQueue:nil];
-    
-    NSURLSessionDataTask *postDataTask = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-        NSDictionary *responseDic = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
-        
-        NSLog(@"%@",responseDic);
-        
-        _dataSource = responseDic[@"root"][@"list"];
-        
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [_tableview reloadData];
-        });
-    }];
-    
-    [postDataTask resume];
     
 }
 

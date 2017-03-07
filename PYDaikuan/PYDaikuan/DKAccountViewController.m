@@ -9,6 +9,7 @@
 #import "DKAccountViewController.h"
 #import <UMSocialCore/UMSocialCore.h>
 #import <UShareUI/UMSocialUIUtility.h>
+#import "DKNewsViewController.h"
 
 @interface DKAccountViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -67,6 +68,10 @@
         
         self.tableView.tableFooterView = footerView;
     }
+    else {
+        self.dataSource = [[NSUserDefaults standardUserDefaults] objectForKey:@"userInfo"];
+        self.tableView.tableFooterView = [[UIView alloc] init];
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -80,19 +85,56 @@
     return self.dataSource.count;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return 10;//section头部高度
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.dataSource[section].count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    static NSString *indexTableViewCellIdentifier = @"indexTableViewCell";
+    static NSString *indexTableViewCellIdentifier = @"accountTableViewCell";
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:indexTableViewCellIdentifier];
     
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:indexTableViewCellIdentifier];
-        cell.backgroundColor = [UIColor redColor];
+        if (indexPath.section == 0) {
+            
+            if (indexPath.row == 0) {
+                UIImageView *iconImageView = [[UIImageView alloc] initWithImage:[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:_dataSource[indexPath.section][indexPath.row][@"iconurl"]]]]];
+                iconImageView.frame = CGRectMake(0, 0, 50, 50);
+                
+                cell.accessoryView = iconImageView;
+                
+                cell.textLabel.text = @"头像";
+            }
+            else if (indexPath.row == 1) {
+                cell.textLabel.text = @"名字";
+                UILabel *rightLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.frame)/2, 15)];
+                rightLabel.font = [UIFont systemFontOfSize:15];
+                rightLabel.textAlignment = NSTextAlignmentRight;
+                rightLabel.text = _dataSource[indexPath.section][indexPath.row][@"name"];
+                cell.accessoryView = rightLabel;
+            }
+            else if (indexPath.row == 2) {
+                cell.textLabel.text = @"性别";
+                UILabel *rightLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.frame)/2, 15)];
+                rightLabel.font = [UIFont systemFontOfSize:15];
+                rightLabel.textAlignment = NSTextAlignmentRight;
+                rightLabel.text = _dataSource[indexPath.section][indexPath.row][@"gender"];
+                cell.accessoryView = rightLabel;
+            }
+        }
+        
+        else {
+            cell.textLabel.text = _dataSource[indexPath.section][indexPath.row][@"title"];
+            cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+
+        }
     }
     
     return cell;
@@ -100,7 +142,18 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 40.0f;
+    
+    if (indexPath.row == 0 && indexPath.section == 0) {
+        return 80.0f;
+    }
+    
+    return 45.0f;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.row == 0 && indexPath.section == 1) {
+        [self.navigationController pushViewController:[[DKNewsViewController alloc] initWithType:1] animated:YES];
+    }
 }
 
 - (void)loginAction:(UIButton *)sender {
@@ -123,7 +176,10 @@
                     
                     UMSocialUserInfoResponse *resp = result;
                     
-                    ws.dataSource = @[@[@{@"iconurl":resp.iconurl},@{@"name":resp.name},@{@"gender":resp.gender}]];
+                    ws.dataSource = @[@[@{@"iconurl":resp.iconurl},@{@"name":resp.name},@{@"gender":resp.gender}],@[@{@"title":@"收藏"}]];
+                    [[NSUserDefaults standardUserDefaults] setObject:ws.dataSource forKey:@"userInfo"];
+                    
+                    ws.tableView.tableFooterView = [[UIView alloc] init];
                     
                     [ws.tableView reloadData];
                     

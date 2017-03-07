@@ -97,7 +97,7 @@ bool onlineSetting = false;
     
     UITabBarController *mainTabBarController = [[UITabBarController alloc] init];
     
-    DKNewsViewController *newsViewController = [[DKNewsViewController alloc] init];
+    DKNewsViewController *newsViewController = [[DKNewsViewController alloc] initWithType:0];
     DKNavigationController *newsNC = [[DKNavigationController alloc] initWithRootViewController:newsViewController];
     newsNC.title = @"贷款资讯";
     newsNC.tabBarItem.image = [UIImage imageNamed:@"remendaikuanhui"];
