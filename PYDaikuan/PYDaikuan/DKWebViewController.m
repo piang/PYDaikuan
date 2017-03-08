@@ -48,8 +48,8 @@
     
     self.alertController = [UIAlertController alertControllerWithTitle:@"" message:@"选择操作" preferredStyle:UIAlertControllerStyleActionSheet];
     
-    UIAlertAction *shareAction = [UIAlertAction actionWithTitle:@"分享" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-    }];
+//    UIAlertAction *shareAction = [UIAlertAction actionWithTitle:@"分享" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+//    }];
     
     UIAlertAction *collectAction = [UIAlertAction actionWithTitle:@"收藏" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         NSMutableArray *dataSource = [[NSUserDefaults standardUserDefaults] objectForKey:@"colletArticles"];
@@ -74,7 +74,7 @@
         
     }];
     
-    [self.alertController addAction:shareAction];
+    //[self.alertController addAction:shareAction];
     [self.alertController addAction:collectAction];
     [self.alertController addAction:cancelAction];
 }
