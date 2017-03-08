@@ -29,20 +29,20 @@
                                     <constraint firstAttribute="height" constant="200" id="So5-yu-35Y"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="飞鼠贷" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q7m-HR-xpC">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="急用钱现金卡" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q7m-HR-xpC">
                                 <rect key="frame" x="20" y="370" width="560" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" red="0.46747511625289917" green="0.72015482187271118" blue="0.086839176714420319" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="最棒最全贷款咨询" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pqV-V0-Uzt">
                                 <rect key="frame" x="20" y="411" width="560" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" red="0.41354981064796448" green="0.72820603847503662" blue="0.080260850489139557" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.96286648511886597" green="0.86980956792831421" blue="0.89386540651321411" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Q7m-HR-xpC" firstAttribute="top" secondItem="vYT-gy-qvs" secondAttribute="bottom" constant="20" id="1T1-kS-Qmj"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Q7m-HR-xpC" secondAttribute="trailing" id="G0N-ob-03t"/>
@@ -63,6 +63,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="launchIcon" width="100" height="100"/>
+        <image name="launchIcon" width="200" height="200"/>
     </resources>
 </document>
