@@ -49,7 +49,7 @@ bool onlineSetting = false;
         AVQuery *query = [AVQuery queryWithClassName:@"channel_switch"];
         
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-            [query getObjectInBackgroundWithId:@"58ae4ef22f301e006cf1b3a2" block:^(AVObject *object, NSError *error) {
+            [query getObjectInBackgroundWithId:@"5874da4c8d6d81006c442122" block:^(AVObject *object, NSError *error) {
                 NSLog(@"object%@",object);
                 if ([object[@"is_open"] boolValue]) {
                     onlineSetting = true;
@@ -65,7 +65,7 @@ bool onlineSetting = false;
     }
     
     UMConfigInstance.appKey = @"58731c8fb27b0a2ace001492";
-    UMConfigInstance.channelId = @"PYSignal";
+    UMConfigInstance.channelId = @"piangWhiteCard";
     [MobClick startWithConfigure:UMConfigInstance];//配置以上参数后调用此方法初始化SDK！
     
     [[UMSocialManager defaultManager] openLog:YES];
