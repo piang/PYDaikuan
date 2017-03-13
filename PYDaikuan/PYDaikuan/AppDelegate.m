@@ -11,8 +11,8 @@
 #import "DKNavigationController.h"
 #import "DKNewsViewController.h"
 #import "DKWebViewController.h"
-#import "DKCaculateViewController.h"
-#import "DKPersonalTaxViewController.h"
+#import "DKAllCaculateViewController.h"
+#import "DKBankTelViewController.h"
 #import "DKAccountViewController.h"
 #import <AVOSCloud/AVOSCloud.h>
 #import "UMMobClick/MobClick.h"
@@ -49,7 +49,7 @@ bool onlineSetting = false;
         AVQuery *query = [AVQuery queryWithClassName:@"channel_switch"];
         
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-            [query getObjectInBackgroundWithId:@"58ad3a1eac502e0069823b64" block:^(AVObject *object, NSError *error) {
+            [query getObjectInBackgroundWithId:@"58c6a7d22f301e006bcb2df4" block:^(AVObject *object, NSError *error) {
                 NSLog(@"object%@",object);
                 if ([object[@"is_open"] boolValue]) {
                     onlineSetting = true;
@@ -65,7 +65,7 @@ bool onlineSetting = false;
     }
     
     UMConfigInstance.appKey = @"58731c8fb27b0a2ace001492";
-    UMConfigInstance.channelId = @"daikuanRocket";
+    UMConfigInstance.channelId = @"PYMoneyRoad";
     [MobClick startWithConfigure:UMConfigInstance];//配置以上参数后调用此方法初始化SDK！
     
     [[UMSocialManager defaultManager] openLog:YES];
@@ -102,9 +102,9 @@ bool onlineSetting = false;
     newsNC.title = @"贷款资讯";
     newsNC.tabBarItem.image = [UIImage imageNamed:@"remendaikuanhui"];
     
-    DKCaculateViewController *toolViewController = [[DKCaculateViewController alloc] init];
+    DKAllCaculateViewController *toolViewController = [[DKAllCaculateViewController alloc] init];
     DKNavigationController *toolNC = [[DKNavigationController alloc] initWithRootViewController:toolViewController];
-    toolNC.title = @"贷款计算器";
+    toolNC.title = @"计算器";
     toolNC.tabBarItem.image = [UIImage imageNamed:@"jisuanqihui"];
     
     
@@ -129,17 +129,17 @@ bool onlineSetting = false;
     }
     else {
         
-        DKPersonalTaxViewController *personalTaxViewController = [[DKPersonalTaxViewController alloc] init];
-        DKNavigationController *personalNC = [[DKNavigationController alloc] initWithRootViewController:personalTaxViewController];
-        personalNC.title = @"个人所得税计算器";
-        personalNC.tabBarItem.image = [UIImage imageNamed:@"loan"];
+        DKBankTelViewController *bankTelViewController = [[DKBankTelViewController alloc] init];
+        DKNavigationController *bankNC = [[DKNavigationController alloc] initWithRootViewController:bankTelViewController];
+        bankNC.title = @"银行客服";
+        bankNC.tabBarItem.image = [UIImage imageNamed:@"bank"];
         
         DKAccountViewController *accountViewController = [[DKAccountViewController alloc] init];
         DKNavigationController *accountNC = [[DKNavigationController alloc] initWithRootViewController:accountViewController];
         accountNC.title = @"个人信息";
-        accountNC.tabBarItem.image = [UIImage imageNamed:@"bank"];
+        accountNC.tabBarItem.image = [UIImage imageNamed:@"loan"];
         
-        [mainTabBarController setViewControllers:@[newsNC,toolNC,personalNC,accountNC]];
+        [mainTabBarController setViewControllers:@[newsNC,toolNC,bankNC,accountNC]];
     }
     
     self.window.rootViewController = mainTabBarController;

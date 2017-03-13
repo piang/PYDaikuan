@@ -24,6 +24,10 @@
 		E841B42D1E6D4343001FC7A2 /* DKAccountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E841B42B1E6D4343001FC7A2 /* DKAccountViewController.xib */; };
 		E88685571E17D2CA004DF0B1 /* DKCaculateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E88685551E17D2CA004DF0B1 /* DKCaculateViewController.m */; };
 		E88685581E17D2CA004DF0B1 /* DKCaculateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E88685561E17D2CA004DF0B1 /* DKCaculateViewController.xib */; };
+		E8E65C001E76E2A40006B749 /* DKAllCaculateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8E65BFE1E76E2A40006B749 /* DKAllCaculateViewController.m */; };
+		E8E65C011E76E2A40006B749 /* DKAllCaculateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8E65BFF1E76E2A40006B749 /* DKAllCaculateViewController.xib */; };
+		E8E65C051E76E8F80006B749 /* DKBankTelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8E65C031E76E8F80006B749 /* DKBankTelViewController.m */; };
+		E8E65C061E76E8F80006B749 /* DKBankTelViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8E65C041E76E8F80006B749 /* DKBankTelViewController.xib */; };
 		E8E838071E2332A5005B2483 /* DKPersonalTaxViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8E838051E2332A5005B2483 /* DKPersonalTaxViewController.m */; };
 		E8E838081E2332A5005B2483 /* DKPersonalTaxViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8E838061E2332A5005B2483 /* DKPersonalTaxViewController.xib */; };
 		F7B5A8A723E263B1DD443446 /* libPods-PYDaikuan.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C9CEC01C8C4EE85303CC7C82 /* libPods-PYDaikuan.a */; };
@@ -82,6 +86,12 @@
 		E88685541E17D2CA004DF0B1 /* DKCaculateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKCaculateViewController.h; sourceTree = "<group>"; };
 		E88685551E17D2CA004DF0B1 /* DKCaculateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKCaculateViewController.m; sourceTree = "<group>"; };
 		E88685561E17D2CA004DF0B1 /* DKCaculateViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DKCaculateViewController.xib; sourceTree = "<group>"; };
+		E8E65BFD1E76E2A40006B749 /* DKAllCaculateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKAllCaculateViewController.h; sourceTree = "<group>"; };
+		E8E65BFE1E76E2A40006B749 /* DKAllCaculateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKAllCaculateViewController.m; sourceTree = "<group>"; };
+		E8E65BFF1E76E2A40006B749 /* DKAllCaculateViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DKAllCaculateViewController.xib; sourceTree = "<group>"; };
+		E8E65C021E76E8F80006B749 /* DKBankTelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKBankTelViewController.h; sourceTree = "<group>"; };
+		E8E65C031E76E8F80006B749 /* DKBankTelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKBankTelViewController.m; sourceTree = "<group>"; };
+		E8E65C041E76E8F80006B749 /* DKBankTelViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DKBankTelViewController.xib; sourceTree = "<group>"; };
 		E8E838041E2332A5005B2483 /* DKPersonalTaxViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKPersonalTaxViewController.h; sourceTree = "<group>"; };
 		E8E838051E2332A5005B2483 /* DKPersonalTaxViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKPersonalTaxViewController.m; sourceTree = "<group>"; };
 		E8E838061E2332A5005B2483 /* DKPersonalTaxViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DKPersonalTaxViewController.xib; sourceTree = "<group>"; };
@@ -183,6 +193,12 @@
 				E841B4291E6D4343001FC7A2 /* DKAccountViewController.h */,
 				E841B42A1E6D4343001FC7A2 /* DKAccountViewController.m */,
 				E841B42B1E6D4343001FC7A2 /* DKAccountViewController.xib */,
+				E8E65BFD1E76E2A40006B749 /* DKAllCaculateViewController.h */,
+				E8E65BFE1E76E2A40006B749 /* DKAllCaculateViewController.m */,
+				E8E65BFF1E76E2A40006B749 /* DKAllCaculateViewController.xib */,
+				E8E65C021E76E8F80006B749 /* DKBankTelViewController.h */,
+				E8E65C031E76E8F80006B749 /* DKBankTelViewController.m */,
+				E8E65C041E76E8F80006B749 /* DKBankTelViewController.xib */,
 			);
 			path = PYDaikuan;
 			sourceTree = "<group>";
@@ -283,7 +299,7 @@
 				TargetAttributes = {
 					E81B37E91D5F23410018105A = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = W55A786LR3;
+						DevelopmentTeam = XWD5V2T79F;
 						SystemCapabilities = {
 							com.apple.Push = {
 								enabled = 1;
@@ -326,12 +342,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				040DB9FA1D60715D002F1B4B /* DKNewsViewController.xib in Resources */,
+				E8E65C011E76E2A40006B749 /* DKAllCaculateViewController.xib in Resources */,
 				E8E838081E2332A5005B2483 /* DKPersonalTaxViewController.xib in Resources */,
 				E81B37FD1D5F23410018105A /* LaunchScreen.storyboard in Resources */,
 				E841B42D1E6D4343001FC7A2 /* DKAccountViewController.xib in Resources */,
 				E81B37FA1D5F23410018105A /* Assets.xcassets in Resources */,
 				E88685581E17D2CA004DF0B1 /* DKCaculateViewController.xib in Resources */,
 				045435B71D604BC200990CCE /* DKIndexViewController.xib in Resources */,
+				E8E65C061E76E8F80006B749 /* DKBankTelViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -407,10 +425,12 @@
 				045435C01D605B5A00990CCE /* DKNavigationController.m in Sources */,
 				E841B42C1E6D4343001FC7A2 /* DKAccountViewController.m in Sources */,
 				045435B61D604BC200990CCE /* DKIndexViewController.m in Sources */,
+				E8E65C051E76E8F80006B749 /* DKBankTelViewController.m in Sources */,
 				E81B37F51D5F23410018105A /* ViewController.m in Sources */,
 				040DB9F91D60715D002F1B4B /* DKNewsViewController.m in Sources */,
 				E81B37F21D5F23410018105A /* AppDelegate.m in Sources */,
 				E88685571E17D2CA004DF0B1 /* DKCaculateViewController.m in Sources */,
+				E8E65C001E76E2A40006B749 /* DKAllCaculateViewController.m in Sources */,
 				E81B37EF1D5F23410018105A /* main.m in Sources */,
 				E8E838071E2332A5005B2483 /* DKPersonalTaxViewController.m in Sources */,
 				045435BB1D6052FC00990CCE /* DKWebViewController.m in Sources */,
@@ -551,14 +571,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = PYDaikuan/PYDaikuan.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				DEVELOPMENT_TEAM = W55A786LR3;
+				DEVELOPMENT_TEAM = XWD5V2T79F;
 				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = PYDaikuan/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.daikuan.rocket;
+				PRODUCT_BUNDLE_IDENTIFIER = com.piang.PYMoneyRoad;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "907f587f-aabd-4d9f-9a55-e4d52ce31b53";
-				PROVISIONING_PROFILE_SPECIFIER = DaikuanRocketDistributionProfile;
+				PROVISIONING_PROFILE = "d4ad3ba0-93f1-48a5-8f59-615d7073f434";
+				PROVISIONING_PROFILE_SPECIFIER = PYMoneyRoadDistributionProfile;
 			};
 			name = Debug;
 		};
@@ -568,16 +588,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = PYDaikuan/PYDaikuan.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: dai kuan (W55A786LR3)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: dai kuan (W55A786LR3)";
-				DEVELOPMENT_TEAM = W55A786LR3;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: YANG PEI (XWD5V2T79F)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: YANG PEI (XWD5V2T79F)";
+				DEVELOPMENT_TEAM = XWD5V2T79F;
 				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = PYDaikuan/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.daikuan.rocket;
+				PRODUCT_BUNDLE_IDENTIFIER = com.piang.PYMoneyRoad;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "907f587f-aabd-4d9f-9a55-e4d52ce31b53";
-				PROVISIONING_PROFILE_SPECIFIER = DaikuanRocketDistributionProfile;
+				PROVISIONING_PROFILE = "d4ad3ba0-93f1-48a5-8f59-615d7073f434";
+				PROVISIONING_PROFILE_SPECIFIER = PYMoneyRoadDistributionProfile;
 			};
 			name = Release;
 		};
