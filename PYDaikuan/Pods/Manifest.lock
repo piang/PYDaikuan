@@ -8,6 +8,17 @@ PODS:
   - JPush (3.0.1):
     - JCore (~> 1.1.0)
   - UMengAnalytics-NO-IDFA (4.1.5)
+  - UMengUShare/Core (6.3.0):
+    - UMengUShare/Network
+  - UMengUShare/Network (6.3.0)
+  - UMengUShare/Social/QQ (6.3.0):
+    - UMengUShare/Core
+  - UMengUShare/Social/Sina (6.3.0):
+    - UMengUShare/Core
+  - UMengUShare/Social/WeChat (6.3.0):
+    - UMengUShare/Core
+  - UMengUShare/UI (6.3.0):
+    - UMengUShare/Core
 
 DEPENDENCIES:
   - AVOSCloud
@@ -15,6 +26,10 @@ DEPENDENCIES:
   - AVOSCloudIM
   - JPush (~> 3.0.1)
   - UMengAnalytics-NO-IDFA
+  - UMengUShare/Social/QQ
+  - UMengUShare/Social/Sina
+  - UMengUShare/Social/WeChat
+  - UMengUShare/UI
 
 SPEC CHECKSUMS:
   AVOSCloud: 1fe170768bee7e05bc3ea86e38d5bddb105cb957
@@ -23,7 +38,8 @@ SPEC CHECKSUMS:
   JCore: 7382f2c62e6fcf08305b735e91f0fb771f448d3d
   JPush: 427daa60236d0faa9f379cd5bbeb923103162058
   UMengAnalytics-NO-IDFA: f1b08b540eba6ebad044a574cae6d988cf40cfda
+  UMengUShare: b208ac3bcf1f63d11a100b359990e9d77a0f2085
 
-PODFILE CHECKSUM: e6f7fcdb562c9b9f4d47c25974142ae235f0b7c7
+PODFILE CHECKSUM: 02ffd698805d970de3f7a2174b72b4de8960352b
 
-COCOAPODS: 1.0.1
+COCOAPODS: 1.2.0
