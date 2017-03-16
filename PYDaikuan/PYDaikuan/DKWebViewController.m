@@ -36,7 +36,7 @@
     self.webview = [[UIWebView alloc] initWithFrame:CGRectMake(0, -40, CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame) + 40)];
     self.webview.delegate = self;
     [self.view addSubview:self.webview];
-    [self.webview loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:_url]]];
+    [self.webview loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:_url] cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:15]];
     
     self.gotoInitPageButton = [UIButton buttonWithType:UIButtonTypeCustom];
     self.gotoInitPageButton.frame = CGRectMake(CGRectGetWidth(self.view.frame) - 54 - 15, CGRectGetHeight(self.view.frame) - 54 - 49 - 15, 54, 54);
@@ -70,12 +70,17 @@
 
     }];
     
+    UIAlertAction *refreshAction = [UIAlertAction actionWithTitle:@"刷新" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        [self.webview reload];
+    }];
+    
     UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
         
     }];
     
     //[self.alertController addAction:shareAction];
     [self.alertController addAction:collectAction];
+    [self.alertController addAction:refreshAction];
     [self.alertController addAction:cancelAction];
 }
 
@@ -110,6 +115,10 @@
     else {
         [self.gotoInitPageButton setBackgroundImage:[UIImage imageNamed:@"go_back"] forState:UIControlStateNormal];
     }
+}
+
+- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
+    [SVProgressHUD showErrorWithStatus:[NSString stringWithFormat:@"%@\n点击右上角按钮刷新",error.userInfo[@"NSLocalizedDescription"]]];
 }
 
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
