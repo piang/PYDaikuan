@@ -139,7 +139,7 @@ bool onlineSetting = false;
         accountNC.title = @"个人信息";
         accountNC.tabBarItem.image = [UIImage imageNamed:@"loan"];
         
-        [mainTabBarController setViewControllers:@[newsNC,toolNC,bankNC,accountNC]];
+        [mainTabBarController setViewControllers:@[bankNC,toolNC,newsNC,accountNC]];
     }
     
     self.window.rootViewController = mainTabBarController;
