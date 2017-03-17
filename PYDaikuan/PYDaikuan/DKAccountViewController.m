@@ -42,25 +42,25 @@
         NSString *platformName = nil;
         NSString *iconName = nil;
         
-        [UMSocialUIUtility configWithPlatformType:UMSocialPlatformType_WechatSession withImageName:&iconName withPlatformName:&platformName];
-        UIButton *weChatButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        weChatButton.frame = CGRectMake(28, 53, 56, 56);
-        [footerView addSubview:weChatButton];
-        [weChatButton setBackgroundImage:[UMSocialUIUtility imageNamed:iconName] forState:UIControlStateNormal];
-        weChatButton.tag = UMSocialPlatformType_WechatSession;
-        [weChatButton addTarget:self action:@selector(loginAction:) forControlEvents:UIControlEventTouchUpInside];
-        
-        [UMSocialUIUtility configWithPlatformType:UMSocialPlatformType_Sina withImageName:&iconName withPlatformName:&platformName];
-        UIButton *sinaButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        sinaButton.frame = CGRectMake(CGRectGetWidth(self.view.frame)/2 - 28, 53, 56, 56);
-        [footerView addSubview:sinaButton];
-        [sinaButton setBackgroundImage:[UMSocialUIUtility imageNamed:iconName] forState:UIControlStateNormal];
-        sinaButton.tag = UMSocialPlatformType_Sina;
-        [sinaButton addTarget:self action:@selector(loginAction:) forControlEvents:UIControlEventTouchUpInside];
+//        [UMSocialUIUtility configWithPlatformType:UMSocialPlatformType_WechatSession withImageName:&iconName withPlatformName:&platformName];
+//        UIButton *weChatButton = [UIButton buttonWithType:UIButtonTypeCustom];
+//        weChatButton.frame = CGRectMake(28, 53, 56, 56);
+//        [footerView addSubview:weChatButton];
+//        [weChatButton setBackgroundImage:[UMSocialUIUtility imageNamed:iconName] forState:UIControlStateNormal];
+//        weChatButton.tag = UMSocialPlatformType_WechatSession;
+//        [weChatButton addTarget:self action:@selector(loginAction:) forControlEvents:UIControlEventTouchUpInside];
+//        
+//        [UMSocialUIUtility configWithPlatformType:UMSocialPlatformType_Sina withImageName:&iconName withPlatformName:&platformName];
+//        UIButton *sinaButton = [UIButton buttonWithType:UIButtonTypeCustom];
+//        sinaButton.frame = CGRectMake(CGRectGetWidth(self.view.frame)/2 - 28, 53, 56, 56);
+//        [footerView addSubview:sinaButton];
+//        [sinaButton setBackgroundImage:[UMSocialUIUtility imageNamed:iconName] forState:UIControlStateNormal];
+//        sinaButton.tag = UMSocialPlatformType_Sina;
+//        [sinaButton addTarget:self action:@selector(loginAction:) forControlEvents:UIControlEventTouchUpInside];
         
         [UMSocialUIUtility configWithPlatformType:UMSocialPlatformType_QQ withImageName:&iconName withPlatformName:&platformName];
         UIButton *qqButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        qqButton.frame = CGRectMake(CGRectGetWidth(self.view.frame) - 84, 53, 56, 56);
+        qqButton.frame = CGRectMake(CGRectGetWidth(self.view.frame)/2 - 28, 53, 56, 56);
         [footerView addSubview:qqButton];
         [qqButton setBackgroundImage:[UMSocialUIUtility imageNamed:iconName] forState:UIControlStateNormal];
         qqButton.tag = UMSocialPlatformType_QQ;

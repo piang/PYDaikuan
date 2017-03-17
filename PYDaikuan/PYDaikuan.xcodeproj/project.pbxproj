@@ -20,6 +20,8 @@
 		E81B37FD1D5F23410018105A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E81B37FB1D5F23410018105A /* LaunchScreen.storyboard */; };
 		E81B38081D5F23410018105A /* PYDaikuanTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E81B38071D5F23410018105A /* PYDaikuanTests.m */; };
 		E81B38131D5F23410018105A /* PYDaikuanUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = E81B38121D5F23410018105A /* PYDaikuanUITests.m */; };
+		E840650F1E7BC73D006EF9C1 /* DKBankRateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E840650D1E7BC73D006EF9C1 /* DKBankRateViewController.m */; };
+		E84065101E7BC73D006EF9C1 /* DKBankRateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E840650E1E7BC73D006EF9C1 /* DKBankRateViewController.xib */; };
 		E841B42C1E6D4343001FC7A2 /* DKAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E841B42A1E6D4343001FC7A2 /* DKAccountViewController.m */; };
 		E841B42D1E6D4343001FC7A2 /* DKAccountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E841B42B1E6D4343001FC7A2 /* DKAccountViewController.xib */; };
 		E88685571E17D2CA004DF0B1 /* DKCaculateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E88685551E17D2CA004DF0B1 /* DKCaculateViewController.m */; };
@@ -79,6 +81,9 @@
 		E81B380E1D5F23410018105A /* PYDaikuanUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PYDaikuanUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E81B38121D5F23410018105A /* PYDaikuanUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PYDaikuanUITests.m; sourceTree = "<group>"; };
 		E81B38141D5F23410018105A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E840650C1E7BC73D006EF9C1 /* DKBankRateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKBankRateViewController.h; sourceTree = "<group>"; };
+		E840650D1E7BC73D006EF9C1 /* DKBankRateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKBankRateViewController.m; sourceTree = "<group>"; };
+		E840650E1E7BC73D006EF9C1 /* DKBankRateViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DKBankRateViewController.xib; sourceTree = "<group>"; };
 		E841B4291E6D4343001FC7A2 /* DKAccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKAccountViewController.h; sourceTree = "<group>"; };
 		E841B42A1E6D4343001FC7A2 /* DKAccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKAccountViewController.m; sourceTree = "<group>"; };
 		E841B42B1E6D4343001FC7A2 /* DKAccountViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DKAccountViewController.xib; sourceTree = "<group>"; };
@@ -199,6 +204,9 @@
 				E8E65C021E76E8F80006B749 /* DKBankTelViewController.h */,
 				E8E65C031E76E8F80006B749 /* DKBankTelViewController.m */,
 				E8E65C041E76E8F80006B749 /* DKBankTelViewController.xib */,
+				E840650C1E7BC73D006EF9C1 /* DKBankRateViewController.h */,
+				E840650D1E7BC73D006EF9C1 /* DKBankRateViewController.m */,
+				E840650E1E7BC73D006EF9C1 /* DKBankRateViewController.xib */,
 			);
 			path = PYDaikuan;
 			sourceTree = "<group>";
@@ -299,7 +307,7 @@
 				TargetAttributes = {
 					E81B37E91D5F23410018105A = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = XWD5V2T79F;
+						DevelopmentTeam = W55A786LR3;
 						SystemCapabilities = {
 							com.apple.Push = {
 								enabled = 1;
@@ -348,6 +356,7 @@
 				E841B42D1E6D4343001FC7A2 /* DKAccountViewController.xib in Resources */,
 				E81B37FA1D5F23410018105A /* Assets.xcassets in Resources */,
 				E88685581E17D2CA004DF0B1 /* DKCaculateViewController.xib in Resources */,
+				E84065101E7BC73D006EF9C1 /* DKBankRateViewController.xib in Resources */,
 				045435B71D604BC200990CCE /* DKIndexViewController.xib in Resources */,
 				E8E65C061E76E8F80006B749 /* DKBankTelViewController.xib in Resources */,
 			);
@@ -423,6 +432,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				045435C01D605B5A00990CCE /* DKNavigationController.m in Sources */,
+				E840650F1E7BC73D006EF9C1 /* DKBankRateViewController.m in Sources */,
 				E841B42C1E6D4343001FC7A2 /* DKAccountViewController.m in Sources */,
 				045435B61D604BC200990CCE /* DKIndexViewController.m in Sources */,
 				E8E65C051E76E8F80006B749 /* DKBankTelViewController.m in Sources */,
@@ -571,14 +581,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = PYDaikuan/PYDaikuan.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				DEVELOPMENT_TEAM = XWD5V2T79F;
+				DEVELOPMENT_TEAM = W55A786LR3;
 				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = PYDaikuan/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.piang.PYMoneyRoad;
+				PRODUCT_BUNDLE_IDENTIFIER = com.daikuan.signal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "d4ad3ba0-93f1-48a5-8f59-615d7073f434";
-				PROVISIONING_PROFILE_SPECIFIER = PYMoneyRoadDistributionProfile;
+				PROVISIONING_PROFILE = "8a072675-735c-45ab-a174-2f8217972505";
+				PROVISIONING_PROFILE_SPECIFIER = daikuanSignalDistributionProfile;
 			};
 			name = Debug;
 		};
@@ -588,16 +598,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = PYDaikuan/PYDaikuan.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: YANG PEI (XWD5V2T79F)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: YANG PEI (XWD5V2T79F)";
-				DEVELOPMENT_TEAM = XWD5V2T79F;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: dai kuan (W55A786LR3)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: dai kuan (W55A786LR3)";
+				DEVELOPMENT_TEAM = W55A786LR3;
 				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = PYDaikuan/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.piang.PYMoneyRoad;
+				PRODUCT_BUNDLE_IDENTIFIER = com.daikuan.signal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "d4ad3ba0-93f1-48a5-8f59-615d7073f434";
-				PROVISIONING_PROFILE_SPECIFIER = PYMoneyRoadDistributionProfile;
+				PROVISIONING_PROFILE = "8a072675-735c-45ab-a174-2f8217972505";
+				PROVISIONING_PROFILE_SPECIFIER = daikuanSignalDistributionProfile;
 			};
 			name = Release;
 		};
