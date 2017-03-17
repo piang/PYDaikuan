@@ -16,4 +16,7 @@ target 'PYDaikuan' do
     
     # 集成QQ
     pod 'UMengUShare/Social/QQ'
+    
+    pod 'SVProgressHUD','~>2.0.4'
+    
 end
