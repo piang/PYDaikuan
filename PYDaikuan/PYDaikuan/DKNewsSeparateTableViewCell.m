@@ -8,6 +8,13 @@
 
 #import "DKNewsSeparateTableViewCell.h"
 
+@interface DKNewsSeparateTableViewCell()
+
+@property (nonatomic, strong) UILabel *titleLabel;
+@property (nonatomic, strong) UIImageView *adImageView;
+
+@end
+
 @implementation DKNewsSeparateTableViewCell
 
 + (instancetype)cellWithTableView:(UITableView *)tableView {
@@ -16,7 +23,7 @@
     DKNewsSeparateTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:newsTableViewCellIdentifier];
     
     if (cell == nil) {
-        cell = [[DKNewsSeparateTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:newsTableViewCellIdentifier];
+        cell = [[DKNewsSeparateTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:newsTableViewCellIdentifier];
     }
     
     return cell;
@@ -24,22 +31,25 @@
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
-        self.textLabel.numberOfLines = 0;
-        self.textLabel.lineBreakMode = NSLineBreakByWordWrapping;
-        self.detailTextLabel.textColor = [UIColor lightGrayColor];
+        
+        UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(15, 30, CGRectGetWidth([UIScreen mainScreen].bounds) - 30, 10)];
+        self.titleLabel = titleLabel;
+        [self.contentView addSubview:titleLabel];
+        
+        UIImageView *adImageView = [[UIImageView alloc] initWithFrame:CGRectMake(15, CGRectGetMaxY(self.titleLabel.frame) + 15, CGRectGetWidth([UIScreen mainScreen].bounds) - 30, 170 - CGRectGetMaxY(self.titleLabel.frame))];
+        self.adImageView = adImageView;
+        
+        [self.contentView addSubview:adImageView];
+        
     }
     return self;
 }
 
 - (void)setData:(NSDictionary *)data {
     _data = data;
-    self.textLabel.text = _data[@"title"];
-    self.detailTextLabel.text = _data[@"CTIME"];
-    
+    self.titleLabel.text = _data[@"title"];
     UIImage *pic = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:_data[@"imglink"]]]];
-    UIImageView *recommandIV = [[UIImageView alloc] initWithFrame:CGRectMake(CGRectGetMaxX(self.frame) - 112, 0, 112, 63)];
-    recommandIV.image = pic;
-    self.accessoryView = recommandIV;
+    self.adImageView.image = pic;
 }
 
 - (void)awakeFromNib {
