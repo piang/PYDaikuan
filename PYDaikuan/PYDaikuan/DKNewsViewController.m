@@ -8,11 +8,16 @@
 
 #import "DKNewsViewController.h"
 #import "DKWebViewController.h"
+#import <SDCycleScrollView/SDCycleScrollView.h>
+#import "DKNewsTableViewCell.h"
+#import "DKNewsSeparateTableViewCell.h"
 
 @interface DKNewsViewController ()<UITableViewDelegate, UITableViewDataSource,NSURLSessionDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableview;
 @property (strong, nonatomic) NSArray *dataSource;
+@property (assign, nonatomic) int pageNo;
+@property (strong, nonatomic) NSArray *bannerDataSource;
 
 @end
 
@@ -21,7 +26,7 @@
 - (instancetype)initWithType:(int)type {
     if (self = [super init]) {
         if (type == 0) {
-            NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://api.loan.app887.com/api/Articles.action?keyword=&opc=20&type=%E8%B4%B7%E6%AC%BE%E8%B5%84%E8%AE%AF&uid=658549&npc=0"]];
+            NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://api.loan.app887.com/api/Articles.action?keyword=&opc=10&type=%E8%B4%B7%E6%AC%BE%E8%B5%84%E8%AE%AF&uid=658549&npc=0"]];
             request.timeoutInterval = 15.0;
             request.HTTPMethod = @"POST";
             
@@ -34,6 +39,18 @@
                 NSLog(@"%@",responseDic);
                 
                 _dataSource = responseDic[@"root"][@"list"];
+                
+                _bannerDataSource = @[responseDic[@"root"][@"list"][0][@"imglink"],responseDic[@"root"][@"list"][1][@"imglink"],responseDic[@"root"][@"list"][2][@"imglink"]];
+                
+                SDCycleScrollView *cycleScrollView = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.frame), 150) imageURLStringsGroup:_bannerDataSource];
+                cycleScrollView.titlesGroup = @[responseDic[@"root"][@"list"][0][@"title"],responseDic[@"root"][@"list"][1][@"title"],responseDic[@"root"][@"list"][2][@"title"]];
+                cycleScrollView.bannerImageViewContentMode = UIViewContentModeScaleAspectFill;
+                cycleScrollView.clickItemOperationBlock = ^(NSInteger index){
+                    DKWebViewController *webVC = [[DKWebViewController alloc] initWithUrl:_dataSource[index][@"url"]];
+                    [self.navigationController pushViewController:webVC animated:YES];
+                };
+                
+                _tableview.tableHeaderView = cycleScrollView;
                 
                 dispatch_async(dispatch_get_main_queue(), ^{
                     [_tableview reloadData];
@@ -56,7 +73,6 @@
     
     self.tableview.delegate = self;
     self.tableview.dataSource = self;
-    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -73,26 +89,16 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    static NSString *newsTableViewCellIdentifier = @"newsTableViewCellIdentifier";
-    
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:newsTableViewCellIdentifier];
-    
-    if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:newsTableViewCellIdentifier];
+    if (indexPath.row % 3 == 0) {
+        DKNewsSeparateTableViewCell *cell = [DKNewsSeparateTableViewCell cellWithTableView:tableView];
+        cell.data = _dataSource[indexPath.row];
+        return cell;
     }
-    cell.textLabel.text = _dataSource[indexPath.row][@"title"];
-    cell.textLabel.numberOfLines = 0;
-    cell.textLabel.lineBreakMode = NSLineBreakByWordWrapping;
-    cell.detailTextLabel.text = _dataSource[indexPath.row][@"CTIME"];
-    cell.detailTextLabel.textColor = [UIColor lightGrayColor];
-    
-    UIImage *pic = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:_dataSource[indexPath.row][@"imglink"]]]];
-    
-    UIImageView *recommandIV = [[UIImageView alloc] initWithFrame:CGRectMake(CGRectGetMaxX(cell.frame) - 112, 0, 112, 63)];
-    recommandIV.image = pic;
-    cell.accessoryView = recommandIV;
-    
-    return cell;
+    else {
+        DKNewsTableViewCell *cell = [DKNewsTableViewCell cellWithTableView:tableView];
+        cell.data = _dataSource[indexPath.row];
+        return cell;
+    }
     
 }
 
@@ -106,6 +112,8 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return 100;
 }
+
+
 
 /*
 #pragma mark - Navigation

@@ -16,6 +16,9 @@
 #import <AVOSCloud/AVOSCloud.h>
 #import "UMMobClick/MobClick.h"
 #import "JPUSHService.h"
+#import "DKAccountViewController.h"
+#import "DKBankTelViewController.h"
+#import "DKAllCaculateViewController.h"
 // iOS10注册APNs所需头文件
 #ifdef NSFoundationVersionNumber_iOS_9_x_Max
 #import <UserNotifications/UserNotifications.h>
@@ -61,7 +64,7 @@ bool onlineSetting = false;
     }
     
     UMConfigInstance.appKey = @"58731c8fb27b0a2ace001492";
-    UMConfigInstance.channelId = @"App Store";
+    UMConfigInstance.channelId = @"PYEnvelop";
     [MobClick startWithConfigure:UMConfigInstance];//配置以上参数后调用此方法初始化SDK！
     
     
@@ -86,14 +89,14 @@ bool onlineSetting = false;
     
     UITabBarController *mainTabBarController = [[UITabBarController alloc] init];
     
-    DKNewsViewController *newsViewController = [[DKNewsViewController alloc] init];
+    DKNewsViewController *newsViewController = [[DKNewsViewController alloc] initWithType:0];
     DKNavigationController *newsNC = [[DKNavigationController alloc] initWithRootViewController:newsViewController];
     newsNC.title = @"贷款资讯";
     newsNC.tabBarItem.image = [UIImage imageNamed:@"remendaikuanhui"];
     
-    DKCaculateViewController *toolViewController = [[DKCaculateViewController alloc] init];
+    DKAllCaculateViewController *toolViewController = [[DKAllCaculateViewController alloc] init];
     DKNavigationController *toolNC = [[DKNavigationController alloc] initWithRootViewController:toolViewController];
-    toolNC.title = @"贷款计算器";
+    toolNC.title = @"计算器";
     toolNC.tabBarItem.image = [UIImage imageNamed:@"jisuanqihui"];
     
     
@@ -118,11 +121,17 @@ bool onlineSetting = false;
     }
     else {
         
-        DKPersonalTaxViewController *personalTaxViewController = [[DKPersonalTaxViewController alloc] init];
-        DKNavigationController *personalNC = [[DKNavigationController alloc] initWithRootViewController:personalTaxViewController];
-        personalNC.title = @"个人所得税计算器";
-        personalNC.tabBarItem.image = [UIImage imageNamed:@"loan"];
-        [mainTabBarController setViewControllers:@[newsNC,toolNC,personalNC]];
+        DKBankTelViewController *bankTelViewController = [[DKBankTelViewController alloc] init];
+        DKNavigationController *bankNC = [[DKNavigationController alloc] initWithRootViewController:bankTelViewController];
+        bankNC.title = @"银行客服";
+        bankNC.tabBarItem.image = [UIImage imageNamed:@"bank"];
+        
+        DKAccountViewController *accountViewController = [[DKAccountViewController alloc] init];
+        DKNavigationController *accountNC = [[DKNavigationController alloc] initWithRootViewController:accountViewController];
+        accountNC.title = @"个人信息";
+        accountNC.tabBarItem.image = [UIImage imageNamed:@"loan"];
+        
+        [mainTabBarController setViewControllers:@[newsNC,toolNC,bankNC,accountNC]];
     }
     
     self.window.rootViewController = mainTabBarController;

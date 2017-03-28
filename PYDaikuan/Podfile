@@ -16,4 +16,10 @@ target 'PYDaikuan' do
     
     # 集成QQ
     pod 'UMengUShare/Social/QQ'
+    
+    # 集成上拉下拉刷新
+    pod 'MJRefresh', '~> 3.1.12'
+    
+    # 集成轮播图
+    pod 'SDCycleScrollView', '~> 1.65'
 end
