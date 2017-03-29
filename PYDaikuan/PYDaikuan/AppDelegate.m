@@ -48,7 +48,7 @@ bool onlineSetting = false;
         AVQuery *query = [AVQuery queryWithClassName:@"channel_switch"];
         
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-            [query getObjectInBackgroundWithId:@"57b59a8c8ac2470064451a85" block:^(AVObject *object, NSError *error) {
+            [query getObjectInBackgroundWithId:@"587383a38d6d81006c3b531b" block:^(AVObject *object, NSError *error) {
                 NSLog(@"object%@",object);
                 if ([object[@"is_open"] boolValue]) {
                     onlineSetting = true;
@@ -64,7 +64,7 @@ bool onlineSetting = false;
     }
     
     UMConfigInstance.appKey = @"58731c8fb27b0a2ace001492";
-    UMConfigInstance.channelId = @"PYEnvelop";
+    UMConfigInstance.channelId = @"piangThinkMoney";
     [MobClick startWithConfigure:UMConfigInstance];//配置以上参数后调用此方法初始化SDK！
     
     
@@ -99,13 +99,13 @@ bool onlineSetting = false;
     toolNC.title = @"计算器";
     toolNC.tabBarItem.image = [UIImage imageNamed:@"jisuanqihui"];
     
+    DKIndexViewController *indexViewController = [[DKIndexViewController alloc] init];
+    DKNavigationController *indextNC = [[DKNavigationController alloc] initWithRootViewController:indexViewController];
+    indextNC.title = @"一键贷款";
+    indextNC.tabBarItem.image = [UIImage imageNamed:@"loan"];
+    
     
     if (onlineSetting) {
-        
-        DKIndexViewController *indexViewController = [[DKIndexViewController alloc] init];
-        DKNavigationController *indextNC = [[DKNavigationController alloc] initWithRootViewController:indexViewController];
-        indextNC.title = @"一键贷款";
-        indextNC.tabBarItem.image = [UIImage imageNamed:@"loan"];
         
         DKWebViewController *creditCardVC = [[DKWebViewController alloc] initWithUrl:@"http://8.yun.haodai.com/Mobile/creditcard?ref=hd_11014405"];
         UINavigationController *creditCardNC = [[UINavigationController alloc] initWithRootViewController:creditCardVC];
@@ -131,7 +131,7 @@ bool onlineSetting = false;
         accountNC.title = @"个人信息";
         accountNC.tabBarItem.image = [UIImage imageNamed:@"loan"];
         
-        [mainTabBarController setViewControllers:@[newsNC,toolNC,bankNC,accountNC]];
+        [mainTabBarController setViewControllers:@[indextNC,newsNC,toolNC,bankNC,accountNC]];
     }
     
     self.window.rootViewController = mainTabBarController;
