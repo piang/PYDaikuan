@@ -28,6 +28,7 @@
     self.navigationItem.title = @"贷款计算器";
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+    self.tableView.backgroundColor = [UIColor whiteColor];
     
     self.dataSource = @[@[@{@"title":@"贷款类型:",@"placeholder":@"商业贷款"},@{@"title":@"贷款金额(万元):",@"placeholder":@"0到9999万之间"},@{@"title":@"贷款期限(年):",@"placeholder":@"1到30年之间"},@{@"title":@"贷款利率(%):",@"placeholder":@"点击输入100以内"},@{@"title":@"还款方式:",@"placeholder":@"等额本息"}],@[@{@"title":@"累计支付利息(元):"},@{@"title":@"贷累计还款总额(元):"},@{@"title":@"每月还款(元):"}]];
     

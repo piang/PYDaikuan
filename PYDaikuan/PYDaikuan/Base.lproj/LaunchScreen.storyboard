@@ -29,7 +29,7 @@
                                     <constraint firstAttribute="height" constant="200" id="So5-yu-35Y"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="快钱钱包" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q7m-HR-xpC">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="信用钱包" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q7m-HR-xpC">
                                 <rect key="frame" x="20" y="370" width="560" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.076377294957637787" green="0.090710587799549103" blue="0.2952536940574646" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -42,7 +42,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.68655812740325928" green="0.92224949598312378" blue="0.93184983730316162" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.82033342123031616" green="0.98869377374649048" blue="0.017693778499960899" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Q7m-HR-xpC" firstAttribute="top" secondItem="vYT-gy-qvs" secondAttribute="bottom" constant="20" id="1T1-kS-Qmj"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Q7m-HR-xpC" secondAttribute="trailing" id="G0N-ob-03t"/>
