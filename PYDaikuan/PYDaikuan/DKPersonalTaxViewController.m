@@ -29,6 +29,7 @@
     self.navigationItem.title = @"个人所得税计算器";
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+    self.tableView.backgroundColor = [UIColor whiteColor];
     
     UIView *footerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.frame), 80)];
     
@@ -36,7 +37,7 @@
     
     UIButton *startCaculateButton = [UIButton buttonWithType:UIButtonTypeSystem];
     [startCaculateButton setTitle:@"开始计算" forState:UIControlStateNormal];
-    startCaculateButton.frame = CGRectMake(0, 20, CGRectGetWidth(self.view.frame), 40);
+    startCaculateButton.frame = CGRectMake(0, 20, CGRectGetWidth([UIScreen mainScreen].bounds), 40);
     startCaculateButton.backgroundColor = [UIColor whiteColor];
     [startCaculateButton addTarget:self action:@selector(startCaculateAction:) forControlEvents:UIControlEventTouchUpInside];
     [footerView addSubview:startCaculateButton];

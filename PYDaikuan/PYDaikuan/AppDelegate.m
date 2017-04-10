@@ -16,6 +16,12 @@
 #import <AVOSCloud/AVOSCloud.h>
 #import "UMMobClick/MobClick.h"
 #import "JPUSHService.h"
+#import "DKAccountViewController.h"
+#import "DKBankTelViewController.h"
+#import "DKAllCaculateViewController.h"
+#import <UMSocialCore/UMSocialCore.h>
+
+#define USHARE_DEMO_APPKEY @"5861e5daf5ade41326001eab"
 // iOS10注册APNs所需头文件
 #ifdef NSFoundationVersionNumber_iOS_9_x_Max
 #import <UserNotifications/UserNotifications.h>
@@ -61,9 +67,11 @@ bool onlineSetting = false;
     }
     
     UMConfigInstance.appKey = @"58731c8fb27b0a2ace001492";
-    UMConfigInstance.channelId = @"daikuanFlag";
+    UMConfigInstance.channelId = @"PYFlag";
     [MobClick startWithConfigure:UMConfigInstance];//配置以上参数后调用此方法初始化SDK！
     
+    [[UMSocialManager defaultManager] setUmSocialAppkey:USHARE_DEMO_APPKEY];
+    [self configUSharePlatforms];
     
     JPUSHRegisterEntity * entity = [[JPUSHRegisterEntity alloc] init];
     entity.types = JPAuthorizationOptionAlert|JPAuthorizationOptionBadge|JPAuthorizationOptionSound;
@@ -86,23 +94,23 @@ bool onlineSetting = false;
     
     UITabBarController *mainTabBarController = [[UITabBarController alloc] init];
     
-    DKNewsViewController *newsViewController = [[DKNewsViewController alloc] init];
+    DKNewsViewController *newsViewController = [[DKNewsViewController alloc] initWithType:0];
     DKNavigationController *newsNC = [[DKNavigationController alloc] initWithRootViewController:newsViewController];
     newsNC.title = @"贷款资讯";
     newsNC.tabBarItem.image = [UIImage imageNamed:@"remendaikuanhui"];
     
-    DKCaculateViewController *toolViewController = [[DKCaculateViewController alloc] init];
+    DKAllCaculateViewController *toolViewController = [[DKAllCaculateViewController alloc] init];
     DKNavigationController *toolNC = [[DKNavigationController alloc] initWithRootViewController:toolViewController];
-    toolNC.title = @"贷款计算器";
+    toolNC.title = @"计算器";
     toolNC.tabBarItem.image = [UIImage imageNamed:@"jisuanqihui"];
+    
+    DKIndexViewController *indexViewController = [[DKIndexViewController alloc] init];
+    DKNavigationController *indextNC = [[DKNavigationController alloc] initWithRootViewController:indexViewController];
+    indextNC.title = @"一键贷款";
+    indextNC.tabBarItem.image = [UIImage imageNamed:@"loan"];
     
     
     if (onlineSetting) {
-        
-        DKIndexViewController *indexViewController = [[DKIndexViewController alloc] init];
-        DKNavigationController *indextNC = [[DKNavigationController alloc] initWithRootViewController:indexViewController];
-        indextNC.title = @"一键贷款";
-        indextNC.tabBarItem.image = [UIImage imageNamed:@"loan"];
         
         DKWebViewController *creditCardVC = [[DKWebViewController alloc] initWithUrl:@"http://8.yun.haodai.com/Mobile/creditcard?ref=hd_11014405"];
         UINavigationController *creditCardNC = [[UINavigationController alloc] initWithRootViewController:creditCardVC];
@@ -118,11 +126,17 @@ bool onlineSetting = false;
     }
     else {
         
-        DKPersonalTaxViewController *personalTaxViewController = [[DKPersonalTaxViewController alloc] init];
-        DKNavigationController *personalNC = [[DKNavigationController alloc] initWithRootViewController:personalTaxViewController];
-        personalNC.title = @"个人所得税计算器";
-        personalNC.tabBarItem.image = [UIImage imageNamed:@"loan"];
-        [mainTabBarController setViewControllers:@[newsNC,toolNC,personalNC]];
+        DKBankTelViewController *bankTelViewController = [[DKBankTelViewController alloc] init];
+        DKNavigationController *bankNC = [[DKNavigationController alloc] initWithRootViewController:bankTelViewController];
+        bankNC.title = @"银行客服";
+        bankNC.tabBarItem.image = [UIImage imageNamed:@"bank"];
+        
+        DKAccountViewController *accountViewController = [[DKAccountViewController alloc] init];
+        DKNavigationController *accountNC = [[DKNavigationController alloc] initWithRootViewController:accountViewController];
+        accountNC.title = @"个人信息";
+        accountNC.tabBarItem.image = [UIImage imageNamed:@"loan"];
+        
+        [mainTabBarController setViewControllers:@[indextNC,newsNC,toolNC,bankNC,accountNC]];
     }
     
     self.window.rootViewController = mainTabBarController;
@@ -158,6 +172,10 @@ didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
     
     /// Required - 注册 DeviceToken
     [JPUSHService registerDeviceToken:deviceToken];
+}
+
+- (void)configUSharePlatforms{
+    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_QQ appKey:@"1105821097"/*设置QQ平台的appID*/  appSecret:nil redirectURL:@"http://mobile.umeng.com/social"];
 }
 
 @end

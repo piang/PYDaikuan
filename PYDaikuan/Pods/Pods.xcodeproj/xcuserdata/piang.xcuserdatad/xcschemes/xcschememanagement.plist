@@ -4,7 +4,22 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>MJRefresh.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-PYDaikuan.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>SDCycleScrollView.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>SDWebImage.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -12,6 +27,31 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>04CF549EBEEE7BC87AEAE35397184D94</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>1598B799055AD8107EEA05F180274E2E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>1BC2DFB20B887067DE43C6AF1E944FC3</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B397DF7029B8E680B47AA8AE0F7D2FF5</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>DA266353F297185B3E39450BA47FD44F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>FF04EA7ADFB6C8CFC09475E224AC6D7C</key>
 		<dict>
 			<key>primary</key>
