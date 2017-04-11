@@ -25,7 +25,7 @@
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     
-    self.dataSource = @[@{@"title":@"中国建设银行客服电话",@"tel":@"telprompt:95533",@"image":@"constructionBank"},@{@"title":@"中国工商银行客服电话",@"tel":@"telprompt:95588",@"image":@"icbc"},@{@"title":@"中国平安保险(集团)股份有限公司客服电话",@"tel":@"telprompt:95511",@"image":@"pingan"},@{@"title":@"中国农业银行客服电话",@"tel":@"telprompt:95599",@"image":@"argiculturalBank"},@{@"title":@"交通银行客服电话",@"tel":@"telprompt:95559",@"image":@"communicationsBank"},@{@"title":@"中国银行客服电话",@"tel":@"telprompt:95566",@"image":@"chinaBank"},@{@"title":@"中国招商银行客服电话",@"tel":@"telprompt:95555",@"image":@"merchantsBank"},@{@"title":@"浙江网商银行客服电话",@"tel":@"telprompt:95188",@"image":@"MYBank"},@{@"title":@"中国邮政储蓄银行客服电话",@"tel":@"telprompt:95580",@"image":@"postalSavingsBank"},@{@"title":@"广发银行客服电话",@"tel":@"telprompt:400-830-8003",@"image":@"guangfaBank"}];
+    self.dataSource = @[@{@"title":@"中国工商银行客服电话",@"tel":@"telprompt:95588",@"image":@"icbc"},@{@"title":@"中国农业银行客服电话",@"tel":@"telprompt:95599",@"image":@"argiculturalBank"},@{@"title":@"中国银行客服电话",@"tel":@"telprompt:95566",@"image":@"chinaBank"},@{@"title":@"中国建设银行客服电话",@"tel":@"telprompt:95533",@"image":@"constructionBank"},@{@"title":@"中国邮政储蓄银行客服电话",@"tel":@"telprompt:95580",@"image":@"postalSavingsBank"},@{@"title":@"中国招商银行客服电话",@"tel":@"telprompt:95555",@"image":@"merchantsBank"},@{@"title":@"交通银行客服电话",@"tel":@"telprompt:95559",@"image":@"communicationsBank"},@{@"title":@"广发银行客服电话",@"tel":@"telprompt:400-830-8003",@"image":@"guangfaBank"},@{@"title":@"中国平安保险(集团)股份有限公司客服电话",@"tel":@"telprompt:95511",@"image":@"pingan"}];
     
     self.tableView.tableFooterView = [[UIView alloc] init];
 }
@@ -59,7 +59,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 140.0f;
+    return 70.0f;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
