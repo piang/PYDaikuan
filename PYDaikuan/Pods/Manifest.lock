@@ -20,6 +20,8 @@ PODS:
   - UMengUShare/Network (6.3.0)
   - UMengUShare/Social/QQ (6.3.0):
     - UMengUShare/Core
+  - UMengUShare/Social/Renren (6.3.0):
+    - UMengUShare/Core
   - UMengUShare/Social/Sina (6.3.0):
     - UMengUShare/Core
   - UMengUShare/Social/WeChat (6.3.0):
@@ -37,6 +39,7 @@ DEPENDENCIES:
   - SVProgressHUD (~> 2.0.4)
   - UMengAnalytics-NO-IDFA
   - UMengUShare/Social/QQ
+  - UMengUShare/Social/Renren
   - UMengUShare/Social/Sina
   - UMengUShare/Social/WeChat
   - UMengUShare/UI
@@ -54,6 +57,6 @@ SPEC CHECKSUMS:
   UMengAnalytics-NO-IDFA: f1b08b540eba6ebad044a574cae6d988cf40cfda
   UMengUShare: b208ac3bcf1f63d11a100b359990e9d77a0f2085
 
-PODFILE CHECKSUM: 96197d05f4190a6c1e4ab3ee5f87e86f657614f4
+PODFILE CHECKSUM: 233c218c75312470ef33299e2a4eddb641bbbc44
 
 COCOAPODS: 1.2.0

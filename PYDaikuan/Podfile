@@ -24,4 +24,7 @@ target 'PYDaikuan' do
     
     # 集成轮播图
     pod 'SDCycleScrollView', '~> 1.65'
+    
+    # 集成人人
+    pod ‘UMengUShare/Social/Renren'
 end

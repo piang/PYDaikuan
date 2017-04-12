@@ -42,9 +42,17 @@
         NSString *platformName = nil;
         NSString *iconName = nil;
         
+        [UMSocialUIUtility configWithPlatformType:UMSocialPlatformType_Renren withImageName:&iconName withPlatformName:&platformName];
+        UIButton *renrenButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        renrenButton.frame = CGRectMake((CGRectGetWidth(self.view.frame) - 112)/3 , 53, 56, 56);
+        [footerView addSubview:renrenButton];
+        [renrenButton setBackgroundImage:[UMSocialUIUtility imageNamed:iconName] forState:UIControlStateNormal];
+        renrenButton.tag = UMSocialPlatformType_Renren;
+        [renrenButton addTarget:self action:@selector(loginAction:) forControlEvents:UIControlEventTouchUpInside];
+        
         [UMSocialUIUtility configWithPlatformType:UMSocialPlatformType_QQ withImageName:&iconName withPlatformName:&platformName];
         UIButton *qqButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        qqButton.frame = CGRectMake(CGRectGetWidth(self.view.frame)/2 - 28, 53, 56, 56);
+        qqButton.frame = CGRectMake(CGRectGetWidth(self.view.frame) - (CGRectGetWidth(self.view.frame) - 112)/3 - 56, 53, 56, 56);
         [footerView addSubview:qqButton];
         [qqButton setBackgroundImage:[UMSocialUIUtility imageNamed:iconName] forState:UIControlStateNormal];
         qqButton.tag = UMSocialPlatformType_QQ;
