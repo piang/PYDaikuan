@@ -10,9 +10,11 @@
 #import "DKCaculateViewController.h"
 #import "DKPersonalTaxViewController.h"
 
-@interface DKAllCaculateViewController ()<UITableViewDelegate,UITableViewDataSource>
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@interface DKAllCaculateViewController ()
+
 @property (strong, nonatomic) NSArray *dataSource;
+@property (strong, nonatomic) UIView *caculateView;
+@property (strong, nonatomic) UIView *personalTaxView;
 
 @end
 
@@ -23,12 +25,25 @@
     // Do any additional setup after loading the view from its nib.
     self.navigationItem.title = @"计算器";
     
-    self.tableView.delegate = self;
-    self.tableView.dataSource = self;
+    self.dataSource = @[@"贷款计算器",@"个税计算器"];
     
-    self.dataSource = @[@{@"title":@"贷款计算器"},@{@"title":@"个税计算器"}];
+    UISegmentedControl *segment = [[UISegmentedControl alloc] initWithItems:self.dataSource];
+    segment.frame = CGRectMake(15, 15 + CGRectGetHeight(self.navigationController.navigationBar.frame) + CGRectGetHeight([[UIApplication sharedApplication] statusBarFrame]), CGRectGetWidth(self.view.frame) - 30, 30);
+    [segment addTarget:self action:@selector(segmentChange:) forControlEvents:UIControlEventValueChanged];
+    [self.view addSubview:segment];
     
-    self.tableView.tableFooterView = [[UIView alloc] init];
+    DKCaculateViewController *caculateVC = [[DKCaculateViewController alloc] init];
+    [self addChildViewController:caculateVC];
+    self.caculateView = caculateVC.view;
+    self.caculateView.frame = CGRectMake(0, CGRectGetMaxY(segment.frame), CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame));
+    
+    DKPersonalTaxViewController *personalTaxVC = [[DKPersonalTaxViewController alloc] init];
+    [self addChildViewController:personalTaxVC];
+    self.personalTaxView = personalTaxVC.view;
+    self.personalTaxView.frame = CGRectMake(0, CGRectGetMaxY(segment.frame), CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame));
+    
+    [segment setSelectedSegmentIndex:0];
+    [self.view addSubview:self.caculateView];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -36,36 +51,14 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.dataSource.count;
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    static NSString *indexTableViewCellIdentifier = @"caculateTableViewCell";
-    
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:indexTableViewCellIdentifier];
-    
-    if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:indexTableViewCellIdentifier];
-        cell.textLabel.text = _dataSource[indexPath.row][@"title"];
-        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+- (void)segmentChange:(UISegmentedControl *)sender {
+    if (sender.selectedSegmentIndex == 0) {
+        [self.personalTaxView removeFromSuperview];
+        [self.view addSubview:self.caculateView];
     }
-    
-    return cell;
-    
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 45.0f;
-}
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.row == 0) {
-        [self.navigationController pushViewController:[[DKCaculateViewController alloc] init] animated:YES];
-    }
-    else if (indexPath.row == 1) {
-        [self.navigationController pushViewController:[[DKPersonalTaxViewController alloc] init] animated:YES];
+    else if (sender.selectedSegmentIndex == 1) {
+        [self.caculateView removeFromSuperview];
+        [self.view addSubview:self.personalTaxView];
     }
 }
 

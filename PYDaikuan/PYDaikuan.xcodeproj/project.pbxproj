@@ -20,16 +20,21 @@
 		E81B37FD1D5F23410018105A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E81B37FB1D5F23410018105A /* LaunchScreen.storyboard */; };
 		E81B38081D5F23410018105A /* PYDaikuanTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E81B38071D5F23410018105A /* PYDaikuanTests.m */; };
 		E81B38131D5F23410018105A /* PYDaikuanUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = E81B38121D5F23410018105A /* PYDaikuanUITests.m */; };
-		E840650F1E7BC73D006EF9C1 /* DKBankRateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E840650D1E7BC73D006EF9C1 /* DKBankRateViewController.m */; };
-		E84065101E7BC73D006EF9C1 /* DKBankRateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E840650E1E7BC73D006EF9C1 /* DKBankRateViewController.xib */; };
-		E841B42C1E6D4343001FC7A2 /* DKAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E841B42A1E6D4343001FC7A2 /* DKAccountViewController.m */; };
-		E841B42D1E6D4343001FC7A2 /* DKAccountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E841B42B1E6D4343001FC7A2 /* DKAccountViewController.xib */; };
+		E851291E1E8B7E1900A5B03B /* DKIndexDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E851291C1E8B7E1900A5B03B /* DKIndexDetailViewController.m */; };
+		E851291F1E8B7E1900A5B03B /* DKIndexDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E851291D1E8B7E1900A5B03B /* DKIndexDetailViewController.xib */; };
+		E87D59141E8A6236004CF6EC /* DKIndexTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E87D59131E8A6236004CF6EC /* DKIndexTableViewCell.m */; };
+		E87D59191E8A648A004CF6EC /* DKNewsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E87D59181E8A648A004CF6EC /* DKNewsTableViewCell.m */; };
+		E87D591C1E8A6C72004CF6EC /* DKNewsSeparateTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E87D591B1E8A6C72004CF6EC /* DKNewsSeparateTableViewCell.m */; };
 		E88685571E17D2CA004DF0B1 /* DKCaculateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E88685551E17D2CA004DF0B1 /* DKCaculateViewController.m */; };
 		E88685581E17D2CA004DF0B1 /* DKCaculateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E88685561E17D2CA004DF0B1 /* DKCaculateViewController.xib */; };
-		E8E65C001E76E2A40006B749 /* DKAllCaculateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8E65BFE1E76E2A40006B749 /* DKAllCaculateViewController.m */; };
-		E8E65C011E76E2A40006B749 /* DKAllCaculateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8E65BFF1E76E2A40006B749 /* DKAllCaculateViewController.xib */; };
-		E8E65C051E76E8F80006B749 /* DKBankTelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8E65C031E76E8F80006B749 /* DKBankTelViewController.m */; };
-		E8E65C061E76E8F80006B749 /* DKBankTelViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8E65C041E76E8F80006B749 /* DKBankTelViewController.xib */; };
+		E8A2B8571E9DD8D700262C3B /* DKBankTelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8A2B8551E9DD8D700262C3B /* DKBankTelViewController.m */; };
+		E8A2B8581E9DD8D700262C3B /* DKBankTelViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8A2B8561E9DD8D700262C3B /* DKBankTelViewController.xib */; };
+		E8A2B8671E9DD9E900262C3B /* DKAllCaculateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8A2B8651E9DD9E900262C3B /* DKAllCaculateViewController.m */; };
+		E8A2B8681E9DD9E900262C3B /* DKAllCaculateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8A2B8661E9DD9E900262C3B /* DKAllCaculateViewController.xib */; };
+		E8A2B86C1E9DDA4300262C3B /* DKBankRateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8A2B86A1E9DDA4300262C3B /* DKBankRateViewController.m */; };
+		E8A2B86D1E9DDA4300262C3B /* DKBankRateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8A2B86B1E9DDA4300262C3B /* DKBankRateViewController.xib */; };
+		E8A2B8761E9DDA9800262C3B /* DKAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8A2B8741E9DDA9800262C3B /* DKAccountViewController.m */; };
+		E8A2B8771E9DDA9800262C3B /* DKAccountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8A2B8751E9DDA9800262C3B /* DKAccountViewController.xib */; };
 		E8E838071E2332A5005B2483 /* DKPersonalTaxViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8E838051E2332A5005B2483 /* DKPersonalTaxViewController.m */; };
 		E8E838081E2332A5005B2483 /* DKPersonalTaxViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8E838061E2332A5005B2483 /* DKPersonalTaxViewController.xib */; };
 		F7B5A8A723E263B1DD443446 /* libPods-PYDaikuan.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C9CEC01C8C4EE85303CC7C82 /* libPods-PYDaikuan.a */; };
@@ -81,22 +86,31 @@
 		E81B380E1D5F23410018105A /* PYDaikuanUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PYDaikuanUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E81B38121D5F23410018105A /* PYDaikuanUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PYDaikuanUITests.m; sourceTree = "<group>"; };
 		E81B38141D5F23410018105A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E840650C1E7BC73D006EF9C1 /* DKBankRateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKBankRateViewController.h; sourceTree = "<group>"; };
-		E840650D1E7BC73D006EF9C1 /* DKBankRateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKBankRateViewController.m; sourceTree = "<group>"; };
-		E840650E1E7BC73D006EF9C1 /* DKBankRateViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DKBankRateViewController.xib; sourceTree = "<group>"; };
-		E841B4291E6D4343001FC7A2 /* DKAccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKAccountViewController.h; sourceTree = "<group>"; };
-		E841B42A1E6D4343001FC7A2 /* DKAccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKAccountViewController.m; sourceTree = "<group>"; };
-		E841B42B1E6D4343001FC7A2 /* DKAccountViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DKAccountViewController.xib; sourceTree = "<group>"; };
+		E851291B1E8B7E1900A5B03B /* DKIndexDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKIndexDetailViewController.h; sourceTree = "<group>"; };
+		E851291C1E8B7E1900A5B03B /* DKIndexDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKIndexDetailViewController.m; sourceTree = "<group>"; };
+		E851291D1E8B7E1900A5B03B /* DKIndexDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DKIndexDetailViewController.xib; sourceTree = "<group>"; };
 		E876F37B1E38FCD3004FEE97 /* PYDaikuan.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PYDaikuan.entitlements; sourceTree = "<group>"; };
+		E87D59121E8A6236004CF6EC /* DKIndexTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKIndexTableViewCell.h; sourceTree = "<group>"; };
+		E87D59131E8A6236004CF6EC /* DKIndexTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKIndexTableViewCell.m; sourceTree = "<group>"; };
+		E87D59171E8A648A004CF6EC /* DKNewsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKNewsTableViewCell.h; sourceTree = "<group>"; };
+		E87D59181E8A648A004CF6EC /* DKNewsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKNewsTableViewCell.m; sourceTree = "<group>"; };
+		E87D591A1E8A6C72004CF6EC /* DKNewsSeparateTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKNewsSeparateTableViewCell.h; sourceTree = "<group>"; };
+		E87D591B1E8A6C72004CF6EC /* DKNewsSeparateTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKNewsSeparateTableViewCell.m; sourceTree = "<group>"; };
 		E88685541E17D2CA004DF0B1 /* DKCaculateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKCaculateViewController.h; sourceTree = "<group>"; };
 		E88685551E17D2CA004DF0B1 /* DKCaculateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKCaculateViewController.m; sourceTree = "<group>"; };
 		E88685561E17D2CA004DF0B1 /* DKCaculateViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DKCaculateViewController.xib; sourceTree = "<group>"; };
-		E8E65BFD1E76E2A40006B749 /* DKAllCaculateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKAllCaculateViewController.h; sourceTree = "<group>"; };
-		E8E65BFE1E76E2A40006B749 /* DKAllCaculateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKAllCaculateViewController.m; sourceTree = "<group>"; };
-		E8E65BFF1E76E2A40006B749 /* DKAllCaculateViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DKAllCaculateViewController.xib; sourceTree = "<group>"; };
-		E8E65C021E76E8F80006B749 /* DKBankTelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKBankTelViewController.h; sourceTree = "<group>"; };
-		E8E65C031E76E8F80006B749 /* DKBankTelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKBankTelViewController.m; sourceTree = "<group>"; };
-		E8E65C041E76E8F80006B749 /* DKBankTelViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DKBankTelViewController.xib; sourceTree = "<group>"; };
+		E8A2B8541E9DD8D700262C3B /* DKBankTelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKBankTelViewController.h; sourceTree = "<group>"; };
+		E8A2B8551E9DD8D700262C3B /* DKBankTelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKBankTelViewController.m; sourceTree = "<group>"; };
+		E8A2B8561E9DD8D700262C3B /* DKBankTelViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DKBankTelViewController.xib; sourceTree = "<group>"; };
+		E8A2B8641E9DD9E900262C3B /* DKAllCaculateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKAllCaculateViewController.h; sourceTree = "<group>"; };
+		E8A2B8651E9DD9E900262C3B /* DKAllCaculateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKAllCaculateViewController.m; sourceTree = "<group>"; };
+		E8A2B8661E9DD9E900262C3B /* DKAllCaculateViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DKAllCaculateViewController.xib; sourceTree = "<group>"; };
+		E8A2B8691E9DDA4300262C3B /* DKBankRateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKBankRateViewController.h; sourceTree = "<group>"; };
+		E8A2B86A1E9DDA4300262C3B /* DKBankRateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKBankRateViewController.m; sourceTree = "<group>"; };
+		E8A2B86B1E9DDA4300262C3B /* DKBankRateViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DKBankRateViewController.xib; sourceTree = "<group>"; };
+		E8A2B8731E9DDA9800262C3B /* DKAccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKAccountViewController.h; sourceTree = "<group>"; };
+		E8A2B8741E9DDA9800262C3B /* DKAccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKAccountViewController.m; sourceTree = "<group>"; };
+		E8A2B8751E9DDA9800262C3B /* DKAccountViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DKAccountViewController.xib; sourceTree = "<group>"; };
 		E8E838041E2332A5005B2483 /* DKPersonalTaxViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKPersonalTaxViewController.h; sourceTree = "<group>"; };
 		E8E838051E2332A5005B2483 /* DKPersonalTaxViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKPersonalTaxViewController.m; sourceTree = "<group>"; };
 		E8E838061E2332A5005B2483 /* DKPersonalTaxViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DKPersonalTaxViewController.xib; sourceTree = "<group>"; };
@@ -170,6 +184,8 @@
 		E81B37EC1D5F23410018105A /* PYDaikuan */ = {
 			isa = PBXGroup;
 			children = (
+				E87D59151E8A6453004CF6EC /* DKNews */,
+				E87D59101E8A61F2004CF6EC /* DKIndex */,
 				E876F37B1E38FCD3004FEE97 /* PYDaikuan.entitlements */,
 				E81B37F01D5F23410018105A /* AppDelegate.h */,
 				E81B37F11D5F23410018105A /* AppDelegate.m */,
@@ -178,35 +194,29 @@
 				E81B37F91D5F23410018105A /* Assets.xcassets */,
 				E81B37FB1D5F23410018105A /* LaunchScreen.storyboard */,
 				E81B37FE1D5F23410018105A /* Info.plist */,
-				040DB9F71D60715D002F1B4B /* DKNewsViewController.m */,
 				E81B37ED1D5F23410018105A /* Supporting Files */,
-				045435B31D604BC200990CCE /* DKIndexViewController.h */,
-				045435B41D604BC200990CCE /* DKIndexViewController.m */,
-				045435B51D604BC200990CCE /* DKIndexViewController.xib */,
 				045435B81D6052FC00990CCE /* DKWebViewController.h */,
 				045435B91D6052FC00990CCE /* DKWebViewController.m */,
 				045435BE1D605B5A00990CCE /* DKNavigationController.h */,
 				045435BF1D605B5A00990CCE /* DKNavigationController.m */,
-				040DB9F61D60715D002F1B4B /* DKNewsViewController.h */,
-				040DB9F81D60715D002F1B4B /* DKNewsViewController.xib */,
+				E8A2B8731E9DDA9800262C3B /* DKAccountViewController.h */,
+				E8A2B8741E9DDA9800262C3B /* DKAccountViewController.m */,
+				E8A2B8751E9DDA9800262C3B /* DKAccountViewController.xib */,
 				E88685541E17D2CA004DF0B1 /* DKCaculateViewController.h */,
 				E88685551E17D2CA004DF0B1 /* DKCaculateViewController.m */,
 				E88685561E17D2CA004DF0B1 /* DKCaculateViewController.xib */,
 				E8E838041E2332A5005B2483 /* DKPersonalTaxViewController.h */,
 				E8E838051E2332A5005B2483 /* DKPersonalTaxViewController.m */,
 				E8E838061E2332A5005B2483 /* DKPersonalTaxViewController.xib */,
-				E841B4291E6D4343001FC7A2 /* DKAccountViewController.h */,
-				E841B42A1E6D4343001FC7A2 /* DKAccountViewController.m */,
-				E841B42B1E6D4343001FC7A2 /* DKAccountViewController.xib */,
-				E8E65BFD1E76E2A40006B749 /* DKAllCaculateViewController.h */,
-				E8E65BFE1E76E2A40006B749 /* DKAllCaculateViewController.m */,
-				E8E65BFF1E76E2A40006B749 /* DKAllCaculateViewController.xib */,
-				E8E65C021E76E8F80006B749 /* DKBankTelViewController.h */,
-				E8E65C031E76E8F80006B749 /* DKBankTelViewController.m */,
-				E8E65C041E76E8F80006B749 /* DKBankTelViewController.xib */,
-				E840650C1E7BC73D006EF9C1 /* DKBankRateViewController.h */,
-				E840650D1E7BC73D006EF9C1 /* DKBankRateViewController.m */,
-				E840650E1E7BC73D006EF9C1 /* DKBankRateViewController.xib */,
+				E8A2B8541E9DD8D700262C3B /* DKBankTelViewController.h */,
+				E8A2B8551E9DD8D700262C3B /* DKBankTelViewController.m */,
+				E8A2B8561E9DD8D700262C3B /* DKBankTelViewController.xib */,
+				E8A2B8691E9DDA4300262C3B /* DKBankRateViewController.h */,
+				E8A2B86A1E9DDA4300262C3B /* DKBankRateViewController.m */,
+				E8A2B86B1E9DDA4300262C3B /* DKBankRateViewController.xib */,
+				E8A2B8641E9DD9E900262C3B /* DKAllCaculateViewController.h */,
+				E8A2B8651E9DD9E900262C3B /* DKAllCaculateViewController.m */,
+				E8A2B8661E9DD9E900262C3B /* DKAllCaculateViewController.xib */,
 			);
 			path = PYDaikuan;
 			sourceTree = "<group>";
@@ -235,6 +245,51 @@
 				E81B38141D5F23410018105A /* Info.plist */,
 			);
 			path = PYDaikuanUITests;
+			sourceTree = "<group>";
+		};
+		E87D59101E8A61F2004CF6EC /* DKIndex */ = {
+			isa = PBXGroup;
+			children = (
+				E87D59111E8A620F004CF6EC /* TableViewCell */,
+				045435B31D604BC200990CCE /* DKIndexViewController.h */,
+				045435B41D604BC200990CCE /* DKIndexViewController.m */,
+				045435B51D604BC200990CCE /* DKIndexViewController.xib */,
+				E851291B1E8B7E1900A5B03B /* DKIndexDetailViewController.h */,
+				E851291C1E8B7E1900A5B03B /* DKIndexDetailViewController.m */,
+				E851291D1E8B7E1900A5B03B /* DKIndexDetailViewController.xib */,
+			);
+			name = DKIndex;
+			sourceTree = "<group>";
+		};
+		E87D59111E8A620F004CF6EC /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				E87D59121E8A6236004CF6EC /* DKIndexTableViewCell.h */,
+				E87D59131E8A6236004CF6EC /* DKIndexTableViewCell.m */,
+			);
+			name = TableViewCell;
+			sourceTree = "<group>";
+		};
+		E87D59151E8A6453004CF6EC /* DKNews */ = {
+			isa = PBXGroup;
+			children = (
+				E87D59161E8A646E004CF6EC /* TableViewCell */,
+				040DB9F61D60715D002F1B4B /* DKNewsViewController.h */,
+				040DB9F71D60715D002F1B4B /* DKNewsViewController.m */,
+				040DB9F81D60715D002F1B4B /* DKNewsViewController.xib */,
+			);
+			name = DKNews;
+			sourceTree = "<group>";
+		};
+		E87D59161E8A646E004CF6EC /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				E87D59171E8A648A004CF6EC /* DKNewsTableViewCell.h */,
+				E87D59181E8A648A004CF6EC /* DKNewsTableViewCell.m */,
+				E87D591A1E8A6C72004CF6EC /* DKNewsSeparateTableViewCell.h */,
+				E87D591B1E8A6C72004CF6EC /* DKNewsSeparateTableViewCell.m */,
+			);
+			name = TableViewCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -349,16 +404,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E8A2B8581E9DD8D700262C3B /* DKBankTelViewController.xib in Resources */,
 				040DB9FA1D60715D002F1B4B /* DKNewsViewController.xib in Resources */,
-				E8E65C011E76E2A40006B749 /* DKAllCaculateViewController.xib in Resources */,
 				E8E838081E2332A5005B2483 /* DKPersonalTaxViewController.xib in Resources */,
 				E81B37FD1D5F23410018105A /* LaunchScreen.storyboard in Resources */,
-				E841B42D1E6D4343001FC7A2 /* DKAccountViewController.xib in Resources */,
+				E8A2B8681E9DD9E900262C3B /* DKAllCaculateViewController.xib in Resources */,
+				E8A2B8771E9DDA9800262C3B /* DKAccountViewController.xib in Resources */,
 				E81B37FA1D5F23410018105A /* Assets.xcassets in Resources */,
+				E8A2B86D1E9DDA4300262C3B /* DKBankRateViewController.xib in Resources */,
 				E88685581E17D2CA004DF0B1 /* DKCaculateViewController.xib in Resources */,
-				E84065101E7BC73D006EF9C1 /* DKBankRateViewController.xib in Resources */,
 				045435B71D604BC200990CCE /* DKIndexViewController.xib in Resources */,
-				E8E65C061E76E8F80006B749 /* DKBankTelViewController.xib in Resources */,
+				E851291F1E8B7E1900A5B03B /* DKIndexDetailViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -432,15 +488,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				045435C01D605B5A00990CCE /* DKNavigationController.m in Sources */,
-				E840650F1E7BC73D006EF9C1 /* DKBankRateViewController.m in Sources */,
-				E841B42C1E6D4343001FC7A2 /* DKAccountViewController.m in Sources */,
+				E8A2B8671E9DD9E900262C3B /* DKAllCaculateViewController.m in Sources */,
+				E8A2B86C1E9DDA4300262C3B /* DKBankRateViewController.m in Sources */,
 				045435B61D604BC200990CCE /* DKIndexViewController.m in Sources */,
-				E8E65C051E76E8F80006B749 /* DKBankTelViewController.m in Sources */,
+				E8A2B8571E9DD8D700262C3B /* DKBankTelViewController.m in Sources */,
+				E87D59141E8A6236004CF6EC /* DKIndexTableViewCell.m in Sources */,
 				E81B37F51D5F23410018105A /* ViewController.m in Sources */,
+				E87D59191E8A648A004CF6EC /* DKNewsTableViewCell.m in Sources */,
+				E8A2B8761E9DDA9800262C3B /* DKAccountViewController.m in Sources */,
 				040DB9F91D60715D002F1B4B /* DKNewsViewController.m in Sources */,
 				E81B37F21D5F23410018105A /* AppDelegate.m in Sources */,
+				E851291E1E8B7E1900A5B03B /* DKIndexDetailViewController.m in Sources */,
 				E88685571E17D2CA004DF0B1 /* DKCaculateViewController.m in Sources */,
-				E8E65C001E76E2A40006B749 /* DKAllCaculateViewController.m in Sources */,
+				E87D591C1E8A6C72004CF6EC /* DKNewsSeparateTableViewCell.m in Sources */,
 				E81B37EF1D5F23410018105A /* main.m in Sources */,
 				E8E838071E2332A5005B2483 /* DKPersonalTaxViewController.m in Sources */,
 				045435BB1D6052FC00990CCE /* DKWebViewController.m in Sources */,

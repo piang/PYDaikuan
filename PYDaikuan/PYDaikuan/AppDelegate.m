@@ -11,19 +11,21 @@
 #import "DKNavigationController.h"
 #import "DKNewsViewController.h"
 #import "DKWebViewController.h"
-#import "DKAllCaculateViewController.h"
-#import "DKBankTelViewController.h"
-#import "DKAccountViewController.h"
+#import "DKCaculateViewController.h"
+#import "DKPersonalTaxViewController.h"
 #import <AVOSCloud/AVOSCloud.h>
 #import "UMMobClick/MobClick.h"
 #import "JPUSHService.h"
+#import "DKAccountViewController.h"
+#import "DKBankTelViewController.h"
+#import "DKAllCaculateViewController.h"
+#import <UMSocialCore/UMSocialCore.h>
+
+#define USHARE_DEMO_APPKEY @"5861e5daf5ade41326001eab"
 // iOS10注册APNs所需头文件
 #ifdef NSFoundationVersionNumber_iOS_9_x_Max
 #import <UserNotifications/UserNotifications.h>
-#import <UMSocialCore/UMSocialCore.h>
 #endif
-
-#define USHARE_DEMO_APPKEY @"5861e5daf5ade41326001eab"
 
 @interface AppDelegate ()<JPUSHRegisterDelegate>
 
@@ -68,13 +70,8 @@ bool onlineSetting = false;
     UMConfigInstance.channelId = @"daikuanSignal";
     [MobClick startWithConfigure:UMConfigInstance];//配置以上参数后调用此方法初始化SDK！
     
-    [[UMSocialManager defaultManager] openLog:YES];
-    
-    /* 设置友盟appkey */
     [[UMSocialManager defaultManager] setUmSocialAppkey:USHARE_DEMO_APPKEY];
-    
     [self configUSharePlatforms];
-    
     
     JPUSHRegisterEntity * entity = [[JPUSHRegisterEntity alloc] init];
     entity.types = JPAuthorizationOptionAlert|JPAuthorizationOptionBadge|JPAuthorizationOptionSound;
@@ -107,13 +104,13 @@ bool onlineSetting = false;
     toolNC.title = @"计算器";
     toolNC.tabBarItem.image = [UIImage imageNamed:@"jisuanqihui"];
     
+    DKIndexViewController *indexViewController = [[DKIndexViewController alloc] init];
+    DKNavigationController *indextNC = [[DKNavigationController alloc] initWithRootViewController:indexViewController];
+    indextNC.title = @"一键贷款";
+    indextNC.tabBarItem.image = [UIImage imageNamed:@"loan"];
+    
     
     if (onlineSetting) {
-        
-        DKIndexViewController *indexViewController = [[DKIndexViewController alloc] init];
-        DKNavigationController *indextNC = [[DKNavigationController alloc] initWithRootViewController:indexViewController];
-        indextNC.title = @"一键贷款";
-        indextNC.tabBarItem.image = [UIImage imageNamed:@"loan"];
         
         DKWebViewController *creditCardVC = [[DKWebViewController alloc] initWithUrl:@"http://8.yun.haodai.com/Mobile/creditcard?ref=hd_11014405"];
         UINavigationController *creditCardNC = [[UINavigationController alloc] initWithRootViewController:creditCardVC];
@@ -139,7 +136,7 @@ bool onlineSetting = false;
         accountNC.title = @"个人信息";
         accountNC.tabBarItem.image = [UIImage imageNamed:@"loan"];
         
-        [mainTabBarController setViewControllers:@[bankNC,toolNC,newsNC,accountNC]];
+        [mainTabBarController setViewControllers:@[indextNC,newsNC,toolNC,bankNC,accountNC]];
     }
     
     self.window.rootViewController = mainTabBarController;
@@ -177,32 +174,8 @@ didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
     [JPUSHService registerDeviceToken:deviceToken];
 }
 
-- (void)configUSharePlatforms
-{
-    /* 设置微信的appKey和appSecret */
-    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_WechatSession appKey:@"wxdc1e388c3822c80b" appSecret:@"3baf1193c85774b3fd9d18447d76cab0" redirectURL:@"http://mobile.umeng.com/social"];
-    /*
-     * 移除相应平台的分享，如微信收藏
-     */
-    //[[UMSocialManager defaultManager] removePlatformProviderWithPlatformTypes:@[@(UMSocialPlatformType_WechatFavorite)]];
-    
-    /* 设置分享到QQ互联的appID
-     * U-Share SDK为了兼容大部分平台命名，统一用appKey和appSecret进行参数设置，而QQ平台仅需将appID作为U-Share的appKey参数传进即可。
-     */
+- (void)configUSharePlatforms{
     [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_QQ appKey:@"1105821097"/*设置QQ平台的appID*/  appSecret:nil redirectURL:@"http://mobile.umeng.com/social"];
-    
-    /* 设置新浪的appKey和appSecret */
-    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_Sina appKey:@"3921700954"  appSecret:@"04b48b094faeb16683c32669824ebdad" redirectURL:@"https://sns.whalecloud.com/sina2/callback"];
-}
-
-- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
-{
-    //6.3的新的API调用，是为了兼容国外平台(例如:新版facebookSDK,VK等)的调用[如果用6.2的api调用会没有回调],对国内平台没有影响
-    BOOL result = [[UMSocialManager defaultManager] handleOpenURL:url sourceApplication:sourceApplication annotation:annotation];
-    if (!result) {
-        // 其他如支付等SDK的回调
-    }
-    return result;
 }
 
 @end
