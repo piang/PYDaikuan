@@ -51,7 +51,7 @@ bool onlineSetting = false;
         AVQuery *query = [AVQuery queryWithClassName:@"channel_switch"];
         
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-            [query getObjectInBackgroundWithId:@"58c6a7d22f301e006bcb2df4" block:^(AVObject *object, NSError *error) {
+            [query getObjectInBackgroundWithId:@"57b59a8c8ac2470064451a85" block:^(AVObject *object, NSError *error) {
                 NSLog(@"object%@",object);
                 if ([object[@"is_open"] boolValue]) {
                     onlineSetting = true;
@@ -67,7 +67,7 @@ bool onlineSetting = false;
     }
     
     UMConfigInstance.appKey = @"58731c8fb27b0a2ace001492";
-    UMConfigInstance.channelId = @"PYMoneyRoad";
+    UMConfigInstance.channelId = @"piangEnvelop";
     [MobClick startWithConfigure:UMConfigInstance];//配置以上参数后调用此方法初始化SDK！
     
     [[UMSocialManager defaultManager] setUmSocialAppkey:USHARE_DEMO_APPKEY];

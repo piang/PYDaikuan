@@ -12,10 +12,13 @@
 #import "AppDelegate.h"
 #import "DKIndexDetailViewController.h"
 
-@interface DKIndexViewController ()<UITableViewDelegate, UITableViewDataSource>
+@interface DKIndexViewController ()<UITableViewDelegate, UITableViewDataSource,UISearchBarDelegate,UISearchResultsUpdating>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableview;
 @property (strong, nonatomic) NSArray *dataSource;
+@property (nonatomic, strong) UISearchController *searchController;
+//存放搜索列表中显示数据的数组
+@property (strong,nonatomic) NSMutableArray  *searchList;
 
 @end
 
@@ -45,8 +48,20 @@
         tableHeaderHeader.textColor = [UIColor grayColor];
         tableHeaderHeader.textAlignment = NSTextAlignmentCenter;
         tableHeaderHeader.adjustsFontSizeToFitWidth = YES;
-        self.tableview.tableHeaderView = tableHeaderHeader;
+        self.tableview.tableFooterView = tableHeaderHeader;
     }
+    
+    _searchController = [[UISearchController alloc] initWithSearchResultsController:nil];
+    //设置代理对象
+    _searchController.searchResultsUpdater = self;
+    //设置搜索时，背景变暗色            _searchController.dimsBackgroundDuringPresentation = NO;
+    //设置搜索时，背景变模糊
+    _searchController.obscuresBackgroundDuringPresentation = NO;
+    //隐藏导航栏                  _searchController.hidesNavigationBarDuringPresentation = NO;
+    //设置搜索框的frame
+    _searchController.searchBar.frame = CGRectMake(self.searchController.searchBar.frame.origin.x, self.searchController.searchBar.frame.origin.y, self.searchController.searchBar.frame.size.width, 44.0);
+    //将搜索框设置为tableView的组头
+    self.tableview.tableHeaderView = self.searchController.searchBar;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -57,7 +72,12 @@
 #pragma mark - UITableViewDataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.dataSource.count;
+    
+    if (self.searchController.active) {
+        return [self.searchList count];
+    }else{
+        return [self.dataSource count];
+    }
 }
 
 
@@ -96,6 +116,21 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return CGRectGetWidth(self.tableview.frame) / 2;
+}
+
+-(void)updateSearchResultsForSearchController:(UISearchController *)searchController {
+    //获取搜索框中用户输入的字符串
+    NSString *searchString = [self.searchController.searchBar text];
+    //指定过滤条件，SELF表示要查询集合中对象，contain[c]表示包含字符串，%@是字符串内容
+    NSPredicate *preicate = [NSPredicate predicateWithFormat:@"SELF[\"content\"] CONTAINS[c] %@", searchString];
+    //如果搜索数组中存在对象，即上次搜索的结果，则清除这些对象
+    if (self.searchList!= nil) {
+        [self.searchList removeAllObjects];
+    }
+    //通过过滤条件过滤数据
+    self.searchList= [NSMutableArray arrayWithArray:[_dataSource filteredArrayUsingPredicate:preicate]];
+    //刷新表格
+    [self.tableview reloadData];
 }
 
 /*

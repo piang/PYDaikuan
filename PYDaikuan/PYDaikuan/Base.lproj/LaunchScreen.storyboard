@@ -29,8 +29,8 @@
                                     <constraint firstAttribute="width" constant="100" id="fmR-if-60b"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="快速现金信用贷款资讯" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pqV-V0-Uzt">
-                                <rect key="frame" x="50" y="599" width="153" height="18"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="大平台安全借" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pqV-V0-Uzt">
+                                <rect key="frame" x="50" y="599" width="92" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" red="0.10866352170705795" green="0.24947735667228699" blue="0.062663659453392029" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -45,14 +45,14 @@
                                             <constraint firstAttribute="height" constant="200" id="eNQ-m0-FSc"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="私人订制 安全可靠" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Df-7P-AOC">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="如此方便 舍我其谁" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Df-7P-AOC">
                                         <rect key="frame" x="0.0" y="364" width="375" height="24"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <color key="textColor" red="0.80000000000000004" green="0.59999999999999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" red="1" green="1" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="1" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="7Df-7P-AOC" firstAttribute="top" secondItem="tXq-Zl-89B" secondAttribute="bottom" constant="30" id="8eW-Jp-4uK"/>
                                     <constraint firstAttribute="trailing" secondItem="7Df-7P-AOC" secondAttribute="trailing" id="SzD-ck-T1t"/>
@@ -61,8 +61,8 @@
                                     <constraint firstItem="tXq-Zl-89B" firstAttribute="centerX" secondItem="a9P-ja-Dzq" secondAttribute="centerX" id="sjD-2c-2nM"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="手机贷借款" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q7m-HR-xpC">
-                                <rect key="frame" x="50" y="523" width="152" height="36"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="借了吗" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q7m-HR-xpC">
+                                <rect key="frame" x="50" y="523" width="91" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <color key="textColor" red="0.099753983318805695" green="0.25742232799530029" blue="0.061930142343044281" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -89,7 +89,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="launchIcon" width="200" height="200"/>
-        <image name="search" width="414" height="415"/>
+        <image name="launchIcon" width="100" height="100"/>
+        <image name="search" width="327" height="264"/>
     </resources>
 </document>
