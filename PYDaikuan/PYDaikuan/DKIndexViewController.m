@@ -86,8 +86,9 @@
         cell = [tableView dequeueReusableCellWithIdentifier:indexRecommendCellIdentifier];
         if (!cell) {
             cell = [[DKIndexRecommendTableViewCell alloc] initWithData:@[_dataSource[indexPath.row*2],_dataSource[indexPath.row*2+1]] withBlock:^(NSDictionary *product) {
-                DKIndexDetailViewController *indexDetailVC = [[DKIndexDetailViewController alloc] initWithData:product];
-                [self.navigationController pushViewController:indexDetailVC animated:YES];
+                [MobClick event:product[@"event_id"]];
+                DKWebViewController *webVC = [[DKWebViewController alloc] initWithUrl:product[@"url"]];
+                [self.navigationController pushViewController:webVC animated:YES];
             }];
         }
     }
