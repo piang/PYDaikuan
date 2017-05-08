@@ -35,6 +35,8 @@
 		E8A2B86D1E9DDA4300262C3B /* DKBankRateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8A2B86B1E9DDA4300262C3B /* DKBankRateViewController.xib */; };
 		E8A2B8761E9DDA9800262C3B /* DKAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8A2B8741E9DDA9800262C3B /* DKAccountViewController.m */; };
 		E8A2B8771E9DDA9800262C3B /* DKAccountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8A2B8751E9DDA9800262C3B /* DKAccountViewController.xib */; };
+		E8BFBDD21EBF089800F5538F /* DKIndexRecommendTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E8BFBDD11EBF089800F5538F /* DKIndexRecommendTableViewCell.m */; };
+		E8BFBDD51EBF0E2400F5538F /* DKIndexRecommendButton.m in Sources */ = {isa = PBXBuildFile; fileRef = E8BFBDD41EBF0E2400F5538F /* DKIndexRecommendButton.m */; };
 		E8E838071E2332A5005B2483 /* DKPersonalTaxViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8E838051E2332A5005B2483 /* DKPersonalTaxViewController.m */; };
 		E8E838081E2332A5005B2483 /* DKPersonalTaxViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8E838061E2332A5005B2483 /* DKPersonalTaxViewController.xib */; };
 		F7B5A8A723E263B1DD443446 /* libPods-PYDaikuan.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C9CEC01C8C4EE85303CC7C82 /* libPods-PYDaikuan.a */; };
@@ -111,6 +113,10 @@
 		E8A2B8731E9DDA9800262C3B /* DKAccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKAccountViewController.h; sourceTree = "<group>"; };
 		E8A2B8741E9DDA9800262C3B /* DKAccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKAccountViewController.m; sourceTree = "<group>"; };
 		E8A2B8751E9DDA9800262C3B /* DKAccountViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DKAccountViewController.xib; sourceTree = "<group>"; };
+		E8BFBDD01EBF089800F5538F /* DKIndexRecommendTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKIndexRecommendTableViewCell.h; sourceTree = "<group>"; };
+		E8BFBDD11EBF089800F5538F /* DKIndexRecommendTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKIndexRecommendTableViewCell.m; sourceTree = "<group>"; };
+		E8BFBDD31EBF0E2400F5538F /* DKIndexRecommendButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKIndexRecommendButton.h; sourceTree = "<group>"; };
+		E8BFBDD41EBF0E2400F5538F /* DKIndexRecommendButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKIndexRecommendButton.m; sourceTree = "<group>"; };
 		E8E838041E2332A5005B2483 /* DKPersonalTaxViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKPersonalTaxViewController.h; sourceTree = "<group>"; };
 		E8E838051E2332A5005B2483 /* DKPersonalTaxViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKPersonalTaxViewController.m; sourceTree = "<group>"; };
 		E8E838061E2332A5005B2483 /* DKPersonalTaxViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DKPersonalTaxViewController.xib; sourceTree = "<group>"; };
@@ -266,6 +272,10 @@
 			children = (
 				E87D59121E8A6236004CF6EC /* DKIndexTableViewCell.h */,
 				E87D59131E8A6236004CF6EC /* DKIndexTableViewCell.m */,
+				E8BFBDD01EBF089800F5538F /* DKIndexRecommendTableViewCell.h */,
+				E8BFBDD11EBF089800F5538F /* DKIndexRecommendTableViewCell.m */,
+				E8BFBDD31EBF0E2400F5538F /* DKIndexRecommendButton.h */,
+				E8BFBDD41EBF0E2400F5538F /* DKIndexRecommendButton.m */,
 			);
 			name = TableViewCell;
 			sourceTree = "<group>";
@@ -487,8 +497,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E8BFBDD21EBF089800F5538F /* DKIndexRecommendTableViewCell.m in Sources */,
 				045435C01D605B5A00990CCE /* DKNavigationController.m in Sources */,
 				E8A2B8671E9DD9E900262C3B /* DKAllCaculateViewController.m in Sources */,
+				E8BFBDD51EBF0E2400F5538F /* DKIndexRecommendButton.m in Sources */,
 				E8A2B86C1E9DDA4300262C3B /* DKBankRateViewController.m in Sources */,
 				045435B61D604BC200990CCE /* DKIndexViewController.m in Sources */,
 				E8A2B8571E9DD8D700262C3B /* DKBankTelViewController.m in Sources */,
@@ -645,7 +657,7 @@
 				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = PYDaikuan/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.piang.envelopLoan;
+				PRODUCT_BUNDLE_IDENTIFIER = com.daikuan.thinkMoney;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "bf523874-cd72-4a08-98b5-f6a5e1cce2bc";
 				PROVISIONING_PROFILE_SPECIFIER = envelopLoanDistributionProfile;
@@ -664,7 +676,7 @@
 				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = PYDaikuan/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.piang.envelopLoan;
+				PRODUCT_BUNDLE_IDENTIFIER = com.daikuan.thinkMoney;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "bf523874-cd72-4a08-98b5-f6a5e1cce2bc";
 				PROVISIONING_PROFILE_SPECIFIER = envelopLoanDistributionProfile;

@@ -10,4 +10,6 @@
 
 @interface DKIndexTableViewCell : UITableViewCell
 
+- (instancetype)initWithData:(NSDictionary *)product;
+
 @end
