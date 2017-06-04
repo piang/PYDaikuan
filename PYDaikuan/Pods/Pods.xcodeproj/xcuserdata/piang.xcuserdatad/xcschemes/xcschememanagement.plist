@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>AVOSCloud.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>MJRefresh.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -37,27 +42,27 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>1B0BCF1C2B6613D569CF502719DE9D3D</key>
+		<key>1BF94D34513CE04E2CDE03DE0321EFAB</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A4B9AF7C60FE07B6C87C255ADAE4EFF7</key>
+		<key>4494459DC4B728D2947480B6E3DE361E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>AB30C04E0CD65A745A77ADF9E87782AB</key>
+		<key>79E31F20663E613D3A91E08D229972A6</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C1F6236B1439B19BA731C7E3BE93B603</key>
+		<key>8AA2A2E69638045D1A99ED40C93E8C4F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>DA266353F297185B3E39450BA47FD44F</key>
+		<key>91C6D1E513FC525F70C4EFAE6C9755C3</key>
 		<dict>
 			<key>primary</key>
 			<true/>

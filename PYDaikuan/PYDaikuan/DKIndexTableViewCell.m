@@ -13,7 +13,8 @@
 - (instancetype)initWithData:(NSDictionary *)product {
     if (self = [super init]) {
         self.selectionStyle = UITableViewCellSelectionStyleNone;
-        UIImageView *iconImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:product[@"image"]]];
+        UIImageView *iconImageView = [[UIImageView alloc] init];
+        [iconImageView sd_setImageWithURL:[NSURL URLWithString:product[@"image"]]];
         iconImageView.frame = CGRectMake(25, (CGRectGetWidth([UIScreen mainScreen].bounds) / 4 - 70) / 2, 70, 70);
         [self.contentView addSubview:iconImageView];
         

@@ -1,8 +1,7 @@
 
 target 'PYDaikuan' do
     pod 'AVOSCloud'               # 数据存储、短信、云引擎调用等基础服务模块
-    pod 'AVOSCloudIM'             # 实时通信模块
-    pod 'AVOSCloudCrashReporting' # 错误报告模块
+
     pod 'UMengAnalytics-NO-IDFA'
     pod 'JPush', '~> 3.0.1'
     # U-Share SDK UI模块（分享面板，建议添加）
@@ -27,4 +26,6 @@ target 'PYDaikuan' do
     
     # 集成人人
     pod ‘UMengUShare/Social/Renren'
+    
+    pod 'SDWebImage', '~> 4.0.0'
 end

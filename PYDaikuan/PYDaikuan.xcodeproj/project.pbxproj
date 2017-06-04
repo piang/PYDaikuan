@@ -113,6 +113,7 @@
 		E8A2B8731E9DDA9800262C3B /* DKAccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKAccountViewController.h; sourceTree = "<group>"; };
 		E8A2B8741E9DDA9800262C3B /* DKAccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKAccountViewController.m; sourceTree = "<group>"; };
 		E8A2B8751E9DDA9800262C3B /* DKAccountViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DKAccountViewController.xib; sourceTree = "<group>"; };
+		E8BB38AA1EE458C20031F2FB /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		E8BFBDD01EBF089800F5538F /* DKIndexRecommendTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKIndexRecommendTableViewCell.h; sourceTree = "<group>"; };
 		E8BFBDD11EBF089800F5538F /* DKIndexRecommendTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKIndexRecommendTableViewCell.m; sourceTree = "<group>"; };
 		E8BFBDD31EBF0E2400F5538F /* DKIndexRecommendButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKIndexRecommendButton.h; sourceTree = "<group>"; };
@@ -231,6 +232,7 @@
 			isa = PBXGroup;
 			children = (
 				E81B37EE1D5F23410018105A /* main.m */,
+				E8BB38AA1EE458C20031F2FB /* PrefixHeader.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -372,7 +374,7 @@
 				TargetAttributes = {
 					E81B37E91D5F23410018105A = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = W55A786LR3;
+						DevelopmentTeam = SF5W9DVEF7;
 						SystemCapabilities = {
 							com.apple.Push = {
 								enabled = 1;
@@ -653,14 +655,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = PYDaikuan/PYDaikuan.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				DEVELOPMENT_TEAM = W55A786LR3;
-				GCC_PREFIX_HEADER = "";
+				DEVELOPMENT_TEAM = SF5W9DVEF7;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = PYDaikuan/PrefixHeader.pch;
 				INFOPLIST_FILE = PYDaikuan/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.daikuan.thinkMoney;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pycompany.thinkmoney;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "f030236d-2014-48b4-b9d1-209c561ef206";
-				PROVISIONING_PROFILE_SPECIFIER = DaikuanThinkMoneyDistributionProfile;
+				PROVISIONING_PROFILE = "1efe1c32-e461-49db-b62e-40a815aa32e9";
+				PROVISIONING_PROFILE_SPECIFIER = PYCompanyThinkmoney;
 			};
 			name = Debug;
 		};
@@ -670,16 +673,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = PYDaikuan/PYDaikuan.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: dai kuan (W55A786LR3)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: dai kuan (W55A786LR3)";
-				DEVELOPMENT_TEAM = W55A786LR3;
-				GCC_PREFIX_HEADER = "";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: XiaMen Jinpenghui Financial Technology Services Co., Ltd. (SF5W9DVEF7)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: XiaMen Jinpenghui Financial Technology Services Co., Ltd. (SF5W9DVEF7)";
+				DEVELOPMENT_TEAM = SF5W9DVEF7;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = PYDaikuan/PrefixHeader.pch;
 				INFOPLIST_FILE = PYDaikuan/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.daikuan.thinkMoney;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pycompany.thinkmoney;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "f030236d-2014-48b4-b9d1-209c561ef206";
-				PROVISIONING_PROFILE_SPECIFIER = DaikuanThinkMoneyDistributionProfile;
+				PROVISIONING_PROFILE = "1efe1c32-e461-49db-b62e-40a815aa32e9";
+				PROVISIONING_PROFILE_SPECIFIER = PYCompanyThinkmoney;
 			};
 			name = Release;
 		};
