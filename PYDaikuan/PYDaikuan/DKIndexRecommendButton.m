@@ -42,7 +42,7 @@
         UIImageView *iconImageView = [[UIImageView alloc] initWithFrame:CGRectMake(CGRectGetWidth([UIScreen mainScreen].bounds) / 2 - 25 - 40, CGRectGetMinY(maxMoneyLabel.frame), 40, 40)];
         iconImageView.layer.cornerRadius = 20;
         iconImageView.layer.masksToBounds = YES;
-        iconImageView.image = [UIImage imageNamed:data[@"image"]];
+        [iconImageView sd_setImageWithURL:[NSURL URLWithString:data[@"image"]]];
         [self addSubview:iconImageView];
         
     }

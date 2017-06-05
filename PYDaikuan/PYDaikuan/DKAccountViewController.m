@@ -10,10 +10,13 @@
 #import <UMSocialCore/UMSocialCore.h>
 #import <UShareUI/UMSocialUIUtility.h>
 #import "DKNewsViewController.h"
+#import "DKLoginViewController.h"
 
 @interface DKAccountViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) NSArray <NSArray *> *dataSource;
+@property (strong, nonatomic) UIView *footerView;
+@property (strong, nonatomic) UIView *headerView;
 
 @end
 
@@ -28,37 +31,10 @@
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     
+    self.tableView.tableHeaderView = self.headerView;
+    
     if ([[NSUserDefaults standardUserDefaults] objectForKey:@"userInfo"] == nil) {
-        
-        UIView *footerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.frame), 161)];
-        
-        UILabel *hintLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 30, CGRectGetWidth(self.view.frame), 15)];
-        hintLabel.textColor = [UIColor grayColor];
-        hintLabel.textAlignment = NSTextAlignmentCenter;
-        hintLabel.font = [UIFont systemFontOfSize:15];
-        hintLabel.text = @"---------   使用第三方账号登录   ---------";
-        [footerView addSubview:hintLabel];
-        
-        NSString *platformName = nil;
-        NSString *iconName = nil;
-        
-        [UMSocialUIUtility configWithPlatformType:UMSocialPlatformType_Renren withImageName:&iconName withPlatformName:&platformName];
-        UIButton *renrenButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        renrenButton.frame = CGRectMake((CGRectGetWidth(self.view.frame) - 112)/3 , 53, 56, 56);
-        [footerView addSubview:renrenButton];
-        [renrenButton setBackgroundImage:[UMSocialUIUtility imageNamed:iconName] forState:UIControlStateNormal];
-        renrenButton.tag = UMSocialPlatformType_Renren;
-        [renrenButton addTarget:self action:@selector(loginAction:) forControlEvents:UIControlEventTouchUpInside];
-        
-        [UMSocialUIUtility configWithPlatformType:UMSocialPlatformType_QQ withImageName:&iconName withPlatformName:&platformName];
-        UIButton *qqButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        qqButton.frame = CGRectMake(CGRectGetWidth(self.view.frame) - (CGRectGetWidth(self.view.frame) - 112)/3 - 56, 53, 56, 56);
-        [footerView addSubview:qqButton];
-        [qqButton setBackgroundImage:[UMSocialUIUtility imageNamed:iconName] forState:UIControlStateNormal];
-        qqButton.tag = UMSocialPlatformType_QQ;
-        [qqButton addTarget:self action:@selector(loginAction:) forControlEvents:UIControlEventTouchUpInside];
-        
-        self.tableView.tableFooterView = footerView;
+        self.tableView.tableFooterView = self.footerView;
     }
     else {
         self.dataSource = [[NSUserDefaults standardUserDefaults] objectForKey:@"userInfo"];
@@ -69,6 +45,61 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (UIView *)headerView {
+    if (!_headerView) {
+        _headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.frame), 125)];
+        _headerView.backgroundColor = [UIColor colorWithRed:153/255.0 green:1 blue:1 alpha:1];
+        
+        UIImageView *iconImageView = [[UIImageView alloc] initWithFrame:CGRectMake(25, 25, 50, 50)];
+        [iconImageView sd_setImageWithURL:[NSURL URLWithString:[[[NSUserDefaults standardUserDefaults] objectForKey:@"userInfo"] objectForKey:@"iconurl"]] placeholderImage:[UIImage imageNamed:@"default_head_icon"]];
+        
+        UIButton *loginButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        [loginButton setTitle:@"立即登录" forState:UIControlStateNormal];
+        [loginButton setTitleColor:[UIColor colorWithRed:25/255.0 green:66/255.0 blue:16/255.0 alpha:1] forState:UIControlStateNormal];
+        loginButton.frame = CGRectMake(CGRectGetMaxX(iconImageView.frame) + 25, 0, 100, 100);
+        [loginButton setContentHorizontalAlignment:UIControlContentHorizontalAlignmentLeft];
+        loginButton.center = CGPointMake(loginButton.center.x, iconImageView.center.y);
+        [loginButton addTarget:self action:@selector(userLoginAction:) forControlEvents:UIControlEventTouchUpInside];
+        
+        [_headerView addSubview:iconImageView];
+        [_headerView addSubview:loginButton];
+    }
+    return _headerView;
+}
+
+- (UIView *)footerView {
+    if (!_footerView) {
+        _footerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.frame), 161)];
+        
+        UILabel *hintLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 30, CGRectGetWidth(self.view.frame), 15)];
+        hintLabel.textColor = [UIColor grayColor];
+        hintLabel.textAlignment = NSTextAlignmentCenter;
+        hintLabel.font = [UIFont systemFontOfSize:15];
+        hintLabel.text = @"---------   使用第三方账号登录   ---------";
+        [_footerView addSubview:hintLabel];
+        
+        NSString *platformName = nil;
+        NSString *iconName = nil;
+        
+        [UMSocialUIUtility configWithPlatformType:UMSocialPlatformType_Renren withImageName:&iconName withPlatformName:&platformName];
+        UIButton *renrenButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        renrenButton.frame = CGRectMake((CGRectGetWidth(self.view.frame) - 112)/3 , 53, 56, 56);
+        [_footerView addSubview:renrenButton];
+        [renrenButton setBackgroundImage:[UMSocialUIUtility imageNamed:iconName] forState:UIControlStateNormal];
+        renrenButton.tag = UMSocialPlatformType_Renren;
+        [renrenButton addTarget:self action:@selector(loginAction:) forControlEvents:UIControlEventTouchUpInside];
+        
+        [UMSocialUIUtility configWithPlatformType:UMSocialPlatformType_QQ withImageName:&iconName withPlatformName:&platformName];
+        UIButton *qqButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        qqButton.frame = CGRectMake(CGRectGetWidth(self.view.frame) - (CGRectGetWidth(self.view.frame) - 112)/3 - 56, 53, 56, 56);
+        [_footerView addSubview:qqButton];
+        [qqButton setBackgroundImage:[UMSocialUIUtility imageNamed:iconName] forState:UIControlStateNormal];
+        qqButton.tag = UMSocialPlatformType_QQ;
+        [qqButton addTarget:self action:@selector(loginAction:) forControlEvents:UIControlEventTouchUpInside];
+    }
+    return _footerView;
 }
 
 #pragma mark - UITableViewDataSource
@@ -125,7 +156,7 @@
         else {
             cell.textLabel.text = _dataSource[indexPath.section][indexPath.row][@"title"];
             cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-
+            
         }
     }
     
@@ -148,6 +179,10 @@
     }
 }
 
+- (void)userLoginAction:(UIButton *)sender {
+    [self.navigationController presentViewController:[[DKLoginViewController alloc] init] animated:YES completion:nil];
+}
+
 - (void)loginAction:(UIButton *)sender {
     
     __weak DKAccountViewController *ws = self;
@@ -168,10 +203,10 @@
                     
                     UMSocialUserInfoResponse *resp = result;
                     
-                    ws.dataSource = @[@[@{@"iconurl":resp.iconurl},@{@"name":resp.name},@{@"gender":resp.gender}],@[@{@"title":@"收藏"}]];
-                    [[NSUserDefaults standardUserDefaults] setObject:ws.dataSource forKey:@"userInfo"];
+                    //ws.dataSource = @[@[@{@"iconurl":resp.iconurl},@{@"name":resp.name},@{@"gender":resp.gender}],@[@{@"title":@"收藏"}]];
+                    [[NSUserDefaults standardUserDefaults] setObject:@{@"iconurl":resp.iconurl,@"name":resp.name,@"gender":resp.gender} forKey:@"userInfo"];
                     
-                    ws.tableView.tableFooterView = [[UIView alloc] init];
+                    //ws.tableView.tableFooterView = [[UIView alloc] init];
                     
                     [ws.tableView reloadData];
                     
@@ -183,14 +218,14 @@
         
     }
      
-    /*
-     #pragma mark - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-     // Get the new view controller using [segue destinationViewController].
-     // Pass the selected object to the new view controller.
-     }
-     */
+     /*
+      #pragma mark - Navigation
+      
+      // In a storyboard-based application, you will often want to do a little preparation before navigation
+      - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+      // Get the new view controller using [segue destinationViewController].
+      // Pass the selected object to the new view controller.
+      }
+      */
      
      @end
