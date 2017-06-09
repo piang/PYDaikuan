@@ -17,6 +17,7 @@
 @property (strong, nonatomic) NSArray <NSArray *> *dataSource;
 @property (strong, nonatomic) UIView *footerView;
 @property (strong, nonatomic) UIView *headerView;
+@property (strong, nonatomic) UIButton *loginButton;
 
 @end
 
@@ -37,7 +38,7 @@
         self.tableView.tableFooterView = self.footerView;
     }
     else {
-        self.dataSource = [[NSUserDefaults standardUserDefaults] objectForKey:@"userInfo"];
+        self.dataSource = @[@[@{@"title":@"收藏"}]];
         self.tableView.tableFooterView = [[UIView alloc] init];
     }
 }
@@ -48,24 +49,31 @@
 }
 
 - (UIView *)headerView {
-    if (!_headerView) {
-        _headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.frame), 125)];
-        _headerView.backgroundColor = [UIColor colorWithRed:153/255.0 green:1 blue:1 alpha:1];
-        
-        UIImageView *iconImageView = [[UIImageView alloc] initWithFrame:CGRectMake(25, 25, 50, 50)];
-        [iconImageView sd_setImageWithURL:[NSURL URLWithString:[[[NSUserDefaults standardUserDefaults] objectForKey:@"userInfo"] objectForKey:@"iconurl"]] placeholderImage:[UIImage imageNamed:@"default_head_icon"]];
-        
-        UIButton *loginButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    _headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.frame), 125)];
+    _headerView.backgroundColor = [UIColor colorWithRed:153/255.0 green:1 blue:1 alpha:1];
+    
+    UIImageView *iconImageView = [[UIImageView alloc] initWithFrame:CGRectMake(25, 25, 50, 50)];
+    [iconImageView sd_setImageWithURL:[NSURL URLWithString:[[[NSUserDefaults standardUserDefaults] objectForKey:@"userInfo"] objectForKey:@"iconurl"]] placeholderImage:[UIImage imageNamed:@"default_head_icon"]];
+    
+    UIButton *loginButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    
+    [loginButton setTitleColor:[UIColor colorWithRed:25/255.0 green:66/255.0 blue:16/255.0 alpha:1] forState:UIControlStateNormal];
+    loginButton.frame = CGRectMake(CGRectGetMaxX(iconImageView.frame) + 25, 0, 100, 100);
+    [loginButton setContentHorizontalAlignment:UIControlContentHorizontalAlignmentLeft];
+    loginButton.center = CGPointMake(loginButton.center.x, iconImageView.center.y);
+    [loginButton addTarget:self action:@selector(userLoginAction:) forControlEvents:UIControlEventTouchUpInside];
+    if ([[NSUserDefaults standardUserDefaults] objectForKey:@"userInfo"] == nil) {
         [loginButton setTitle:@"立即登录" forState:UIControlStateNormal];
-        [loginButton setTitleColor:[UIColor colorWithRed:25/255.0 green:66/255.0 blue:16/255.0 alpha:1] forState:UIControlStateNormal];
-        loginButton.frame = CGRectMake(CGRectGetMaxX(iconImageView.frame) + 25, 0, 100, 100);
-        [loginButton setContentHorizontalAlignment:UIControlContentHorizontalAlignmentLeft];
-        loginButton.center = CGPointMake(loginButton.center.x, iconImageView.center.y);
-        [loginButton addTarget:self action:@selector(userLoginAction:) forControlEvents:UIControlEventTouchUpInside];
-        
-        [_headerView addSubview:iconImageView];
-        [_headerView addSubview:loginButton];
+        loginButton.enabled = YES;
     }
+    else {
+        [loginButton setTitle:[[NSUserDefaults standardUserDefaults] objectForKey:@"userInfo"][@"name"] forState:UIControlStateNormal];
+        loginButton.enabled = NO;
+    }
+    _loginButton = loginButton;
+    
+    [_headerView addSubview:iconImageView];
+    [_headerView addSubview:loginButton];
     return _headerView;
 }
 
@@ -125,39 +133,10 @@
     
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:indexTableViewCellIdentifier];
-        if (indexPath.section == 0) {
-            
-            if (indexPath.row == 0) {
-                UIImageView *iconImageView = [[UIImageView alloc] initWithImage:[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:_dataSource[indexPath.section][indexPath.row][@"iconurl"]]]]];
-                iconImageView.frame = CGRectMake(0, 0, 50, 50);
-                
-                cell.accessoryView = iconImageView;
-                
-                cell.textLabel.text = @"头像";
-            }
-            else if (indexPath.row == 1) {
-                cell.textLabel.text = @"名字";
-                UILabel *rightLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.frame)/2, 15)];
-                rightLabel.font = [UIFont systemFontOfSize:15];
-                rightLabel.textAlignment = NSTextAlignmentRight;
-                rightLabel.text = _dataSource[indexPath.section][indexPath.row][@"name"];
-                cell.accessoryView = rightLabel;
-            }
-            else if (indexPath.row == 2) {
-                cell.textLabel.text = @"性别";
-                UILabel *rightLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.frame)/2, 15)];
-                rightLabel.font = [UIFont systemFontOfSize:15];
-                rightLabel.textAlignment = NSTextAlignmentRight;
-                rightLabel.text = _dataSource[indexPath.section][indexPath.row][@"gender"];
-                cell.accessoryView = rightLabel;
-            }
-        }
         
-        else {
-            cell.textLabel.text = _dataSource[indexPath.section][indexPath.row][@"title"];
-            cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-            
-        }
+        cell.textLabel.text = _dataSource[indexPath.section][indexPath.row][@"title"];
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        
     }
     
     return cell;
@@ -174,13 +153,21 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.row == 0 && indexPath.section == 1) {
-        [self.navigationController pushViewController:[[DKNewsViewController alloc] initWithType:1] animated:YES];
-    }
+    [self.navigationController pushViewController:[[DKNewsViewController alloc] initWithType:1] animated:YES];
 }
 
 - (void)userLoginAction:(UIButton *)sender {
-    [self.navigationController presentViewController:[[DKLoginViewController alloc] init] animated:YES completion:nil];
+    
+    DKLoginViewController *loginVC = [[DKLoginViewController alloc] init];
+    loginVC.callback = ^(NSString *phoneNumber){
+        [[NSUserDefaults standardUserDefaults] setObject:@{@"iconurl":@"",@"name":phoneNumber,@"gender":@""} forKey:@"userInfo"];
+        self.dataSource = @[@[@{@"title":@"收藏"}]];
+        self.tableView.tableFooterView = [[UIView alloc] init];
+        self.tableView.tableHeaderView = self.headerView;
+        [self.tableView reloadData];
+    };
+    
+    [self.navigationController presentViewController:loginVC animated:YES completion:nil];
 }
 
 - (void)loginAction:(UIButton *)sender {
@@ -203,11 +190,12 @@
                     
                     UMSocialUserInfoResponse *resp = result;
                     
-                    //ws.dataSource = @[@[@{@"iconurl":resp.iconurl},@{@"name":resp.name},@{@"gender":resp.gender}],@[@{@"title":@"收藏"}]];
+                    ws.dataSource = @[@[@{@"title":@"收藏"}]];
                     [[NSUserDefaults standardUserDefaults] setObject:@{@"iconurl":resp.iconurl,@"name":resp.name,@"gender":resp.gender} forKey:@"userInfo"];
                     
-                    //ws.tableView.tableFooterView = [[UIView alloc] init];
+                    ws.tableView.tableFooterView = [[UIView alloc] init];
                     
+                    ws.tableView.tableHeaderView = ws.headerView;
                     [ws.tableView reloadData];
                     
                 }else{

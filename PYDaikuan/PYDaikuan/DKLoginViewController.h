@@ -8,6 +8,10 @@
 
 #import "ViewController.h"
 
+typedef void(^Callback)(NSString *phoneNumber);
+
 @interface DKLoginViewController : ViewController
+
+@property (nonatomic, copy) Callback callback;
 
 @end
