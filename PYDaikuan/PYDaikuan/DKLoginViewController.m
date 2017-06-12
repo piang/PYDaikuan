@@ -47,6 +47,7 @@
         //验证结果
         if (succeeded) {
             self.callback(self.phoneNumber);
+            [self dismissViewControllerAnimated:YES completion:nil];
         }
         else {
             [SVProgressHUD showErrorWithStatus:error.localizedDescription];
@@ -66,19 +67,19 @@
             [self countDownTime];
         }
         else {
-            if (error.code == 214) {
-                [AVUser requestMobilePhoneVerify:self.phoneNumber withBlock:^(BOOL succeeded, NSError *error) {
-                    if(succeeded){
-                        [self countDownTime];
-                    }
-                    else {
-                        [SVProgressHUD showErrorWithStatus:error.localizedDescription];
-                    }
-                }];
-            }
-            else {
+//            if (error.code == 214) {
+//                [AVUser requestMobilePhoneVerify:self.phoneNumber withBlock:^(BOOL succeeded, NSError *error) {
+//                    if(succeeded){
+//                        [self countDownTime];
+//                    }
+//                    else {
+//                        [SVProgressHUD showErrorWithStatus:error.localizedDescription];
+//                    }
+//                }];
+//            }
+//            else {
                 [SVProgressHUD showErrorWithStatus:error.localizedDescription];
-            }
+            //}
         }
     }
     else {

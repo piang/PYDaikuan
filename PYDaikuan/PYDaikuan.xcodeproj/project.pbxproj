@@ -29,6 +29,8 @@
 		E88685581E17D2CA004DF0B1 /* DKCaculateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E88685561E17D2CA004DF0B1 /* DKCaculateViewController.xib */; };
 		E89285D91EE596D400A9F3D1 /* DKLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E89285D71EE596D400A9F3D1 /* DKLoginViewController.m */; };
 		E89285DA1EE596D400A9F3D1 /* DKLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E89285D81EE596D400A9F3D1 /* DKLoginViewController.xib */; };
+		E8A0E2F31EEE8ACD002AA3C7 /* DKRealNameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8A0E2F11EEE8ACD002AA3C7 /* DKRealNameViewController.m */; };
+		E8A0E2F41EEE8ACD002AA3C7 /* DKRealNameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8A0E2F21EEE8ACD002AA3C7 /* DKRealNameViewController.xib */; };
 		E8A2B8571E9DD8D700262C3B /* DKBankTelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8A2B8551E9DD8D700262C3B /* DKBankTelViewController.m */; };
 		E8A2B8581E9DD8D700262C3B /* DKBankTelViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8A2B8561E9DD8D700262C3B /* DKBankTelViewController.xib */; };
 		E8A2B8671E9DD9E900262C3B /* DKAllCaculateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8A2B8651E9DD9E900262C3B /* DKAllCaculateViewController.m */; };
@@ -106,6 +108,9 @@
 		E89285D61EE596D400A9F3D1 /* DKLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKLoginViewController.h; sourceTree = "<group>"; };
 		E89285D71EE596D400A9F3D1 /* DKLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKLoginViewController.m; sourceTree = "<group>"; };
 		E89285D81EE596D400A9F3D1 /* DKLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DKLoginViewController.xib; sourceTree = "<group>"; };
+		E8A0E2F01EEE8ACD002AA3C7 /* DKRealNameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKRealNameViewController.h; sourceTree = "<group>"; };
+		E8A0E2F11EEE8ACD002AA3C7 /* DKRealNameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKRealNameViewController.m; sourceTree = "<group>"; };
+		E8A0E2F21EEE8ACD002AA3C7 /* DKRealNameViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DKRealNameViewController.xib; sourceTree = "<group>"; };
 		E8A2B8541E9DD8D700262C3B /* DKBankTelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKBankTelViewController.h; sourceTree = "<group>"; };
 		E8A2B8551E9DD8D700262C3B /* DKBankTelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKBankTelViewController.m; sourceTree = "<group>"; };
 		E8A2B8561E9DD8D700262C3B /* DKBankTelViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DKBankTelViewController.xib; sourceTree = "<group>"; };
@@ -232,6 +237,9 @@
 				E89285D61EE596D400A9F3D1 /* DKLoginViewController.h */,
 				E89285D71EE596D400A9F3D1 /* DKLoginViewController.m */,
 				E89285D81EE596D400A9F3D1 /* DKLoginViewController.xib */,
+				E8A0E2F01EEE8ACD002AA3C7 /* DKRealNameViewController.h */,
+				E8A0E2F11EEE8ACD002AA3C7 /* DKRealNameViewController.m */,
+				E8A0E2F21EEE8ACD002AA3C7 /* DKRealNameViewController.xib */,
 			);
 			path = PYDaikuan;
 			sourceTree = "<group>";
@@ -424,6 +432,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E8A0E2F41EEE8ACD002AA3C7 /* DKRealNameViewController.xib in Resources */,
 				E8A2B8581E9DD8D700262C3B /* DKBankTelViewController.xib in Resources */,
 				040DB9FA1D60715D002F1B4B /* DKNewsViewController.xib in Resources */,
 				E8E838081E2332A5005B2483 /* DKPersonalTaxViewController.xib in Resources */,
@@ -508,6 +517,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E8A0E2F31EEE8ACD002AA3C7 /* DKRealNameViewController.m in Sources */,
 				E8BFBDD21EBF089800F5538F /* DKIndexRecommendTableViewCell.m in Sources */,
 				E89285D91EE596D400A9F3D1 /* DKLoginViewController.m in Sources */,
 				045435C01D605B5A00990CCE /* DKNavigationController.m in Sources */,

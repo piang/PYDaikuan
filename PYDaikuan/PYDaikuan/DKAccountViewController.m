@@ -11,6 +11,7 @@
 #import <UShareUI/UMSocialUIUtility.h>
 #import "DKNewsViewController.h"
 #import "DKLoginViewController.h"
+#import "DKRealNameViewController.h"
 
 @interface DKAccountViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -34,11 +35,12 @@
     
     self.tableView.tableHeaderView = self.headerView;
     
+    self.dataSource = @[@[@{@"title":@"收藏"},@{@"title":@"我要借钱"}]];
+    
     if ([[NSUserDefaults standardUserDefaults] objectForKey:@"userInfo"] == nil) {
         self.tableView.tableFooterView = self.footerView;
     }
     else {
-        self.dataSource = @[@[@{@"title":@"收藏"}]];
         self.tableView.tableFooterView = [[UIView alloc] init];
     }
 }
@@ -58,7 +60,7 @@
     UIButton *loginButton = [UIButton buttonWithType:UIButtonTypeCustom];
     
     [loginButton setTitleColor:[UIColor colorWithRed:25/255.0 green:66/255.0 blue:16/255.0 alpha:1] forState:UIControlStateNormal];
-    loginButton.frame = CGRectMake(CGRectGetMaxX(iconImageView.frame) + 25, 0, 100, 100);
+    loginButton.frame = CGRectMake(CGRectGetMaxX(iconImageView.frame) + 25, 0, 200, 200);
     [loginButton setContentHorizontalAlignment:UIControlContentHorizontalAlignmentLeft];
     loginButton.center = CGPointMake(loginButton.center.x, iconImageView.center.y);
     [loginButton addTarget:self action:@selector(userLoginAction:) forControlEvents:UIControlEventTouchUpInside];
@@ -67,7 +69,7 @@
         loginButton.enabled = YES;
     }
     else {
-        [loginButton setTitle:[[NSUserDefaults standardUserDefaults] objectForKey:@"userInfo"][@"name"] forState:UIControlStateNormal];
+        [loginButton setTitle:[[[NSUserDefaults standardUserDefaults] objectForKey:@"userInfo"][@"name"] isEqualToString:@""] ? [[NSUserDefaults standardUserDefaults] objectForKey:@"userInfo"][@"name"]: [[NSUserDefaults standardUserDefaults] objectForKey:@"userInfo"][@"mobile"] forState:UIControlStateNormal];
         loginButton.enabled = NO;
     }
     _loginButton = loginButton;
@@ -153,15 +155,26 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    [self.navigationController pushViewController:[[DKNewsViewController alloc] initWithType:1] animated:YES];
+    
+    if ([[NSUserDefaults standardUserDefaults] objectForKey:@"userInfo"] == nil) {
+        [self userLoginAction:nil];
+    }
+    else {
+        
+        if (indexPath.row == 0) {
+            [self.navigationController pushViewController:[[DKNewsViewController alloc] initWithType:1] animated:YES];
+        }
+        else {
+            [self.navigationController pushViewController:[[DKRealNameViewController alloc] init] animated:YES];
+        }
+    }
 }
 
 - (void)userLoginAction:(UIButton *)sender {
     
     DKLoginViewController *loginVC = [[DKLoginViewController alloc] init];
     loginVC.callback = ^(NSString *phoneNumber){
-        [[NSUserDefaults standardUserDefaults] setObject:@{@"iconurl":@"",@"name":phoneNumber,@"gender":@""} forKey:@"userInfo"];
-        self.dataSource = @[@[@{@"title":@"收藏"}]];
+        [[NSUserDefaults standardUserDefaults] setObject:@{@"iconurl":@"",@"name":@"",@"phone":phoneNumber,@"gender":@""} forKey:@"userInfo"];
         self.tableView.tableFooterView = [[UIView alloc] init];
         self.tableView.tableHeaderView = self.headerView;
         [self.tableView reloadData];
@@ -190,7 +203,7 @@
                     
                     UMSocialUserInfoResponse *resp = result;
                     
-                    ws.dataSource = @[@[@{@"title":@"收藏"}]];
+                    ws.dataSource = @[@[@{@"title":@"收藏"},@{@"title":@"我要借钱"}]];
                     [[NSUserDefaults standardUserDefaults] setObject:@{@"iconurl":resp.iconurl,@"name":resp.name,@"gender":resp.gender} forKey:@"userInfo"];
                     
                     ws.tableView.tableFooterView = [[UIView alloc] init];
