@@ -165,7 +165,13 @@
             [self.navigationController pushViewController:[[DKNewsViewController alloc] initWithType:1] animated:YES];
         }
         else {
-            [self.navigationController pushViewController:[[DKRealNameViewController alloc] init] animated:YES];
+            
+            if ([[NSUserDefaults standardUserDefaults] objectForKey:@"userInfo"][@"idCard"] != nil) {
+                [self.navigationController pushViewController:[[DKRealNameViewController alloc] init] animated:YES];
+            }
+            else {
+                [SVProgressHUD showWithStatus:@"等待审核中!"];
+            }
         }
     }
 }

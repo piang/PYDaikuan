@@ -8,6 +8,7 @@
 
 #import "DKRealNameViewController.h"
 #import "AVUser.h"
+#import <AVOSCloud/AVOSCloud.h>
 
 @interface DKRealNameViewController ()
 @property (copy, nonatomic) NSString *name;
@@ -34,6 +35,22 @@
     // Dispose of any resources that can be recreated.
 }
 - (IBAction)commitAction:(id)sender {
+    [[[NSUserDefaults standardUserDefaults] objectForKey:@"userInfo"] setObject:self.name forKey:@"name"];
+    
+    [AVOSCloud setApplicationId:@"XpuV4q5fN2hj9hGr4CwzYvHO-gzGzoHsz" clientKey:@"vOcE9YRm4PLFdxv3GYrnkTVb"];
+    AVObject *realUser = [AVObject objectWithClassName:@"User_RealName"];
+    [realUser setObject:self.name forKey:@"name"];
+    [realUser setObject:self.idCard forKey:@"idCard"];
+    [realUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+        if (succeeded) {
+           [[[NSUserDefaults standardUserDefaults] objectForKey:@"userInfo"] setObject:self.idCard forKey:@"idCard"];
+            [SVProgressHUD showWithStatus:@"提交成功，等待审核!"];
+            [self.navigationController popViewControllerAnimated:YES];
+        }
+        else {
+            [SVProgressHUD showErrorWithStatus:error.localizedDescription];
+        }
+    }];
     
 }
 
